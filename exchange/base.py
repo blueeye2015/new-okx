@@ -1,7 +1,7 @@
 import ccxt
 import logging
-import os
 from dotenv import load_dotenv
+import os
 
 class ExchangeBase:
     _instance = None
@@ -19,20 +19,18 @@ class ExchangeBase:
         return self._exchange
     
     def _create_exchange(self):
-        load_dotenv('D:\OKex-API\.env')
-        # 检查必要的环境变量是否存在
-        required_env_vars = ['API_KEY', 'SECRET_KEY', 'PASSPHRASE']
-        missing_vars = [var for var in required_env_vars if not os.getenv(var)]
-        if missing_vars:
-            raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
+        load_dotenv('../.env')
+        api_key = os.getenv('API_KEY')
+        secret_key = os.getenv('SECRET_KEY')
+        passphrase = os.getenv('PASSPHRASE')
         proxies = {
             'http': 'http://127.0.0.1:7890',
             'https': 'http://127.0.0.1:7890'
         }
         return ccxt.okx({
-            'apiKey': os.getenv('API_KEY'),
-            'secret': os.getenv('SECRET_KEY'),
-            'password': os.getenv('PASSPHRASE'),
+            'apiKey': api_key,
+            'secret': secret_key,
+            'password': passphrase,
             'enableRateLimit': True,
             'proxies': proxies,
             'timeout': 30000,
