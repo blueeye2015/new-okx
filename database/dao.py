@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.future import select
-from database.models import KlineModel,TradeModel
+from database.models import KlineModel,FundingRateModel
 from models.kline import Kline
-from models.trade import trade
+from models.fundingrate import Fundingrate
 from datetime import datetime, timedelta
 from sqlalchemy.ext.asyncio import AsyncSession
 import logging
@@ -43,6 +43,85 @@ class BaseDAO(ABC):
     
     @abstractmethod
     async def query(self, **kwargs): pass
+
+class FundingrateDAO(BaseDAO):
+    async def create_table(self):
+        pass
+    
+    #@async_timer
+    async def insert(self, fundingrate: Fundingrate):
+        """插入单条数据"""
+        async with self.db_manager.get_session() as session:
+            try:
+                fundingrate_model = FundingRateModel(
+                    symbol=fundingrate.symbol,
+                    fundingTime=fundingrate.fundingTime,
+                    fundingRate=fundingrate.fundingRate,
+                    realizedRate=fundingrate.realizedRate,
+                    method=fundingrate.method
+                )
+                
+                stmt = insert(FundingRateModel).values(
+                    vars(fundingrate_model)
+                ).on_conflict_do_update(
+                    index_elements=['symbol', 'fundingTime'],
+                    set_={
+                        'fundingRate': fundingrate_model.fundingRate,
+                        'realizedRate': fundingrate_model.realizedRate,
+                        'method': fundingrate_model.method
+                    }
+                )
+                
+                await session.execute(stmt)
+                await session.commit()
+            except Exception as e:
+                await session.rollback()
+                raise e
+            finally:
+                await session.close()
+    
+    #@async_timer
+    async def save_fundingrate(self, fundingrate_model: List[Fundingrate]):
+        if not fundingrate_model:
+            return
+        async with self.db_manager.get_session() as session:
+            try:
+                # 使用批量插入
+                values = [{
+                    'symbol': model.symbol,
+                    'fundingTime': model.fundingTime,
+                    'fundingRate': model.fundingRate,
+                    'realizedRate': model.realizedRate,
+                    'method': model.method
+                } for model in fundingrate_model]
+                
+                await session.execute(
+                    text("""
+                    INSERT INTO klines_5m_tz (symbol, timestamp, open, high, low, close, volume)
+                    VALUES (:symbol, :timestamp, :open, :high, :low, :close, :volume)
+                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
+                        open = EXCLUDED.open,
+                        high = EXCLUDED.high,
+                        low = EXCLUDED.low,
+                        close = EXCLUDED.close,
+                        volume = EXCLUDED.volume
+                    """),
+                    values
+                )
+                await session.commit()
+            except Exception as e:
+                await session.rollback()
+                raise e
+    
+    #@async_timer
+    async def get_latest_kline(self):
+        """获取指定交易对的最新K线数据（同步方式）"""
+        pass
+           
+    #@async_timer
+    async def query(self) :
+        """查询数据"""
+        pass
 
 class KlineDAO(BaseDAO):
     async def create_table(self):
@@ -178,4 +257,3 @@ class KlineDAO(BaseDAO):
                     volume=row.volume
                 ) for row in query.all()
             ]
-

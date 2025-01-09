@@ -27,4 +27,14 @@ class TradeModel(Base):
     px = sa.Column(sa.Float)
     sz = sa.Column(sa.Float)
     side = sa.Column(sa.String)
+
+class FundingRateModel(Base):
+    __tablename__ = 'FundingRate'    
     
+    symbol = sa.Column(sa.String, primary_key=True)
+    fundingTime = sa.Column(sa.DateTime, primary_key=True)
+    fundingRate = sa.Column(sa.Float)
+    realizedRate = sa.Column(sa.Float)
+    method = sa.Column(sa.String)
+    
+     

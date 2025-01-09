@@ -4,12 +4,12 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Tuple
 import asyncio
 import json
-import okex.Market_api as Market 
 from exchange.base import ExchangeBase
 from config.settings import Config
-from database.dao  import KlineDAO
+from database.dao  import KlineDAO,FundingrateDAO
 from database.manager import DatabaseManager
 from models.kline import Kline
+from models.fundingrate import Fundingrate
 
 
 
@@ -30,9 +30,10 @@ class MarketDataService(ExchangeBase):
         self.config = config
         self.db_manager = DatabaseManager(config.DB_CONFIG)
         self.kline_dao = KlineDAO(self.db_manager)
-        
+        self.fundingrate_dao = FundingrateDAO(self.db_manager)
         self._init_database()
-        self.semaphore = asyncio.Semaphore(20)  # 限制并发请求数
+        self.klines_semaphore = asyncio.Semaphore(20)  # 限制并发请求数
+        self.fundingrate_semaphore = asyncio.Semaphore(1)  # 限制并发请求数
         self._initialized_symbols = set()  # 只需要记录是否是首次执行
         
         
@@ -59,7 +60,7 @@ class MarketDataService(ExchangeBase):
         Raises:
             Exception: 当获取数据失败时抛出异常
         """
-        async with self.semaphore:  # 使用信号量控制并发
+        async with self.klines_semaphore:  # 使用信号量控制并发
             try:
                 # 将时间转换为毫秒时间戳
                 # since = int(start_time.timestamp() * 1000)
@@ -144,7 +145,54 @@ class MarketDataService(ExchangeBase):
                 if isinstance(result, Exception):
                     logging.error(f"更新 {symbol} 失败: {str(result)}")
     
-    
+    async def fetch_fundingrate(self, symbol: str) -> List[Fundingrate]:
+        """
+        从交易所获取K线数据
+        
+        Args:
+            symbol (str): 交易对符号，例如 "BTC-USDT"
+            start_time (datetime): 开始时间
+            
+        Returns:
+            List[Kline]: K线数据列表
+            
+        Raises:
+            Exception: 当获取数据失败时抛出异常
+        """
+        async with self.fundingrate_semaphore:  # 使用信号量控制并发
+            try:
+                # 将时间转换为毫秒时间戳
+                # since = int(start_time.timestamp() * 1000)
+                
+                # 将交易对格式转换为交易所要求的格式（BTC-USDT -> BTC/USDT）
+                exchange_symbol = symbol.replace('-', '/')
+                
+                # 根据是否首次执行决定获取数量
+                limit = 100 if symbol not in self._initialized_symbols else 10
+                
+                # 获取K线数据
+                ohlcv = self.exchange.fetchFundingRateHistory  (
+                    exchange_symbol,                    
+                    limit=limit
+                )
+                
+                # 转换为 Kline 对象列表
+                return [
+                    Kline(
+                        symbol=symbol,
+                        timestamp=datetime.fromtimestamp(data[0] / 1000),
+                        open=float(data[1]),
+                        high=float(data[2]),
+                        low=float(data[3]),
+                        close=float(data[4]),
+                        volume=float(data[5])
+                    )
+                    for data in ohlcv
+                ]
+                    
+            except Exception as e:
+                logging.error(f"获取 {symbol} K线数据失败: {e}")
+                raise
             
 
     
