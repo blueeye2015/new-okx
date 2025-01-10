@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 import time
 
+
 from exchange.base import ExchangeBase
 
 class MarketAnalyzer(ExchangeBase):
@@ -198,8 +199,30 @@ class MarketAnalyzer(ExchangeBase):
         except Exception as e:
             logging.error(f"获取有效交易对时出错: {str(e)}")
             return []
+        
     def get_valid_swap(self) -> List[str]:
-        swap = self.exchange.public_api.funding_rate_history
+        """
+        获取符合条件的合约
+        
+        Args:
+            min_market_cap (float): 最小市值（美元）
+            min_age_months (int): 最小上市月数
+            
+        Returns:
+            List[str]: 符合条件的交易对列表
+        """
+        swap = self.public_api.get_instruments('SWAP') #获取所有永续合约
+        
+        valid_symbols = []
+        for symbol in swap['data']:
+            try:
+                if symbol['state'] == 'live':
+                    valid_symbols.append(symbol)
+                    
+                return valid_symbols
+            except Exception as e:
+                    logging.warning(f"处理交易对 {symbol} 时出错: {str(e)}")
+                    continue
 
 
     def analyze_market_trend(self, symbol: str, days: int = 7) -> Dict:

@@ -25,7 +25,7 @@ async def main():
             
             #market_service.update_market_data()
             await market_service.update_market_data()
-            #await market_service.update_trade_data()
+            await market_service.update_swap_data()
             
             await asyncio.sleep(100)
             

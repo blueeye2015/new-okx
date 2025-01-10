@@ -19,6 +19,7 @@ class Config:
     INTERVAL = "5m"
     BATCH_SIZE = 10
     SYMBOLS = []  # 将由market_analyzer更新
+    SYMBOLS_SWAP = [] # 所有合约
 
     def __init__(self):
         from services.market_analyzer import MarketAnalyzer
@@ -27,3 +28,4 @@ class Config:
     
     def update_symbols(self):
         self.SYMBOLS = self.market_analyzer.get_valid_symbols()
+        self.SYMBOLS_SWAP = self.market_analyzer.get_valid_swap() 
