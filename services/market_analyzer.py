@@ -198,7 +198,10 @@ class MarketAnalyzer(ExchangeBase):
         except Exception as e:
             logging.error(f"获取有效交易对时出错: {str(e)}")
             return []
-            
+    def get_valid_swap(self) -> List[str]:
+        swap = self.exchange.public_api.funding_rate_history
+
+
     def analyze_market_trend(self, symbol: str, days: int = 7) -> Dict:
         """
         分析市场趋势（示例方法）
