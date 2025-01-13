@@ -23,11 +23,7 @@ async def main():
             if datetime.now().hour == 0 and datetime.now().minute == 0:
                 config.update_symbols()
             
-            #market_service.update_market_data()
-            await market_service.update_market_data()
-            await market_service.update_swap_data()
-            
-            await asyncio.sleep(100)
+            await market_service.run()
             
         except KeyboardInterrupt:
             logging.info("程序正在退出...")

@@ -217,12 +217,14 @@ class MarketAnalyzer(ExchangeBase):
         for symbol in swap['data']:
             try:
                 if symbol['state'] == 'live':
-                    valid_symbols.append(symbol)
+                    valid_symbols.append(symbol['instId'])
                     
-                return valid_symbols
+                
             except Exception as e:
                     logging.warning(f"处理交易对 {symbol} 时出错: {str(e)}")
                     continue
+        
+        return valid_symbols
 
 
     def analyze_market_trend(self, symbol: str, days: int = 7) -> Dict:

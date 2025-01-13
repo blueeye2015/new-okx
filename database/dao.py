@@ -97,14 +97,12 @@ class FundingrateDAO(BaseDAO):
                 
                 await session.execute(
                     text("""
-                    INSERT INTO klines_5m_tz (symbol, timestamp, open, high, low, close, volume)
-                    VALUES (:symbol, :timestamp, :open, :high, :low, :close, :volume)
-                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
-                        open = EXCLUDED.open,
-                        high = EXCLUDED.high,
-                        low = EXCLUDED.low,
-                        close = EXCLUDED.close,
-                        volume = EXCLUDED.volume
+                    INSERT INTO Fundingrate (symbol, fundingTime, fundingRate, realizedRate, method)
+                    VALUES (:symbol, :fundingTime, :fundingRate, :realizedRate, :method)
+                    ON CONFLICT (symbol, fundingTime) DO UPDATE SET
+                        fundingRate = EXCLUDED.fundingRate,
+                        realizedRate = EXCLUDED.realizedRate,
+                        method = EXCLUDED.method
                     """),
                     values
                 )
@@ -182,7 +180,7 @@ class KlineDAO(BaseDAO):
                 
                 await session.execute(
                     text("""
-                    INSERT INTO klines_5m_tz (symbol, timestamp, open, high, low, close, volume)
+                    INSERT INTO klines (symbol, timestamp, open, high, low, close, volume)
                     VALUES (:symbol, :timestamp, :open, :high, :low, :close, :volume)
                     ON CONFLICT (symbol, timestamp) DO UPDATE SET
                         open = EXCLUDED.open,
