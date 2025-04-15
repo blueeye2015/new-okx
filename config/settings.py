@@ -16,7 +16,7 @@ class Config:
         user="postgres",
         password="12"
     )
-    INTERVAL = "1d"
+    INTERVAL = "1m"
     BATCH_SIZE = 10
     SYMBOLS = []  # 将由market_analyzer更新
     SYMBOLS_SWAP = [] # 所有合约
@@ -27,5 +27,6 @@ class Config:
         self.update_symbols()
     
     def update_symbols(self):
-        self.SYMBOLS = self.market_analyzer.get_valid_symbols()
+        #self.SYMBOLS = self.market_analyzer.get_valid_symbols()
+        self.SYMBOLS = ['BTC-USDT','ETH-USDT','XRP-USDT','SOL-USDT']
         self.SYMBOLS_SWAP = self.market_analyzer.get_valid_swap() 

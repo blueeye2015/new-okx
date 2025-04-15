@@ -137,7 +137,7 @@ class MarketAnalyzer(ExchangeBase):
                 return self.cache
             return {}
 
-    def get_valid_symbols(self, min_market_cap: float = 0, min_age_months: int = 1) -> List[str]:
+    def get_valid_symbols(self, min_market_cap: float = 0, min_age_months: int = 0) -> List[str]:
         """
         获取符合条件的交易对
         
@@ -161,25 +161,25 @@ class MarketAnalyzer(ExchangeBase):
             
             valid_symbols = []
             
-            for symbol, market in market_cap_data.items():
+            for symbol, market in markets.items():
                 try:
-                    # 只考虑USDT交易对
+                    # # 只考虑USDT交易对
                     # if not symbol.endswith('/USDT'):
                     #     continue
                         
                     # base_currency = market['base']  # 基础货币 (例如 BTC, ETH)
                     
-                    # 检查是否有市值数据
+                    # # 检查是否有市值数据
                     # if base_currency not in market_cap_data:
                     #     continue
                         
                     # market_info = market_cap_data[base_currency]
                     
-                    # 检查市值
+                    # # # 检查市值
                     # if market_info['market_cap'] < min_market_cap:
                     #     continue
                         
-                    # 检查上市时间
+                    # # 检查上市时间
                     # if market_info['first_listed']:
                     #     list_date = datetime.strptime(market_info['first_listed'], '%Y-%m-%d')
                     #     if list_date > min_list_date:

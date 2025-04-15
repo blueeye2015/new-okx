@@ -20,8 +20,8 @@ async def main():
   
     while True:
         try:
-            if datetime.now().hour == 0 and datetime.now().minute == 0:
-                config.update_symbols()
+            
+            config.update_symbols()
             
             await market_service.run()
             
