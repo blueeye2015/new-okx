@@ -229,14 +229,117 @@ class MarketAnalyzer(ExchangeBase):
 
     def analyze_market_trend(self, symbol: str, days: int = 7) -> Dict:
         """
-        分析市场趋势（示例方法）
+        分析市场趋势
         
         Args:
             symbol (str): 交易对符号
             days (int): 分析的天数
             
         Returns:
-            Dict: 分析结果
+            Dict: 趋势分析结果
         """
-        # 这里可以添加更多的市场分析逻辑
-        pass
+        # 获取历史价格数据
+        price_data = self.get_historical_price_data(symbol, days)
+        
+        # 计算趋势指标
+        trend_indicators = self.calculate_trend_indicators(price_data)
+        
+        # 判断主趋势
+        main_trend = self.determine_main_trend(trend_indicators)
+        
+        # 判断趋势强度
+        trend_strength = self.determine_trend_strength(trend_indicators)
+        
+        # 判断趋势阶段
+        trend_stage = self.determine_trend_stage(trend_indicators)
+        
+        # 返回趋势分析结果
+        return {
+            "main_trend": main_trend,
+            "trend_strength": trend_strength,
+            "trend_stage": trend_stage
+        }
+
+    def get_historical_price_data(self, symbol: str, days: int) -> List[float]:
+        """
+        获取历史价格数据
+        
+        Args:
+            symbol (str): 交易对符号
+            days (int): 获取的天数
+            
+        Returns:
+            List[float]: 历史价格数据
+        """
+        from database.dao import KlineDAO
+        from config.settings import Config
+        
+        # 获取数据库配置
+        db_config = Config.DB_CONFIG
+        
+        # 创建KlineDAO对象
+        kline_dao = KlineDAO(db_config)
+        
+        # 获取klines表数据
+        klines = kline_dao.query(symbol=symbol, start_time=datetime.now() - timedelta(days=days))
+        
+        # 提取价格数据
+        price_data = [kline.close for kline in klines]
+        
+        return price_data
+
+    def calculate_trend_indicators(self, price_data: List[float]) -> Dict:
+        """
+        计算趋势指标
+        
+        Args:
+            price_data (List[float]): 历史价格数据
+            
+        Returns:
+            Dict: 趋势指标
+        """
+        # 计算趋势指标，如MA、MACD、RSI等
+        # ...
+        return trend_indicators
+
+    def determine_main_trend(self, trend_indicators: Dict) -> str:
+        """
+        判断主趋势
+        
+        Args:
+            trend_indicators (Dict): 趋势指标
+            
+        Returns:
+            str: 主趋势（上升/下降/盘整）
+        """
+        # 根据趋势指标判断主趋势
+        # ...
+        return main_trend
+
+    def determine_trend_strength(self, trend_indicators: Dict) -> int:
+        """
+        判断趋势强度
+        
+        Args:
+            trend_indicators (Dict): 趋势指标
+            
+        Returns:
+            int: 趋势强度（1-10分）
+        """
+        # 根据趋势指标判断趋势强度
+        # ...
+        return trend_strength
+
+    def determine_trend_stage(self, trend_indicators: Dict) -> str:
+        """
+        判断趋势阶段
+        
+        Args:
+            trend_indicators (Dict): 趋势指标
+            
+        Returns:
+            str: 趋势阶段（初期/中期/成熟期/可能反转）
+        """
+        # 根据趋势指标判断趋势阶段
+        # ...
+        return trend_stage
