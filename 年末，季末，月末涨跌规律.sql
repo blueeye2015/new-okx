@@ -1,140 +1,92 @@
 WITH daily_returns AS (
     SELECT 
         trade_date,
-        (close - open) / open * 100 as daily_return,
-        CASE WHEN close > open THEN 1 ELSE 0 END as is_up,
-        -- 年末标记（12月最后一个交易日）
-        CASE WHEN 
-            EXTRACT(MONTH FROM trade_date) = 12 
-            AND trade_date = DATE_TRUNC('MONTH', trade_date) + INTERVAL '1 MONTH - 1 day'
-        THEN 1 ELSE 0 END as is_year_end,
-        -- 季末标记（3,6,9,12月最后一个交易日）
-        CASE WHEN 
-            EXTRACT(MONTH FROM trade_date) IN (3,6,9,12)
-            AND trade_date = DATE_TRUNC('MONTH', trade_date) + INTERVAL '1 MONTH - 1 day'
-        THEN 1 ELSE 0 END as is_quarter_end,
-        -- 月末标记
-        CASE WHEN 
-            trade_date = DATE_TRUNC('MONTH', trade_date) + INTERVAL '1 MONTH - 1 day'
-        THEN 1 ELSE 0 END as is_month_end,
-        -- 月初标记（用于对比）
-        CASE WHEN 
-            trade_date = DATE_TRUNC('MONTH', trade_date)
-        THEN 1 ELSE 0 END as is_month_start,
-        -- 记录具体是几月
-        EXTRACT(MONTH FROM trade_date) as month
+        week_period,
+        close,
+        close / LAG(close) OVER (ORDER BY trade_date) - 1 as daily_return
     FROM crypto_prices
-)
-select * into TEMPORARY daily_returns from daily_returns
--- 1. 总体统计
-SELECT 
-    '年末' as period_type,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_year_end = 1
-
-UNION ALL
-
-SELECT 
-    '季末' as period_type,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_quarter_end = 1
-
-UNION ALL
-
-SELECT 
-    '月末' as period_type,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_month_end = 1
-
-UNION ALL
-
-SELECT 
-    '月初' as period_type,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_month_start = 1
-
-UNION ALL
-
-SELECT 
-    '普通交易日' as period_type,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_month_end = 0 AND is_month_start = 0;
-
--- 2. 按月份分析月末表现
-SELECT 
-    month,
-    COUNT(*) as total_days,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_return,
-    ROUND(COUNT(CASE WHEN is_up = 1 THEN 1 END) * 100.0 / COUNT(*), 2) as win_rate,
-    ROUND(AVG(CASE WHEN is_up = 1 THEN daily_return ELSE NULL END)::numeric, 2) as avg_gain,
-    ROUND(AVG(CASE WHEN is_up = 0 THEN daily_return ELSE NULL END)::numeric, 2) as avg_loss
-FROM daily_returns
-WHERE is_month_end = 1
-GROUP BY month
-ORDER BY month;
-
--- 3. 分析前后走势
-WITH period_analysis AS (
+),
+consecutive_pattern AS (
     SELECT 
         trade_date,
+        week_period,
         daily_return,
-        is_up,
-        -- 获取前5天和后5天的平均收益率
-        AVG(daily_return) OVER (
-            ORDER BY trade_date
-            ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING
-        ) as prev_5d_return,
-        AVG(daily_return) OVER (
-            ORDER BY trade_date
-            ROWS BETWEEN 1 FOLLOWING AND 5 FOLLOWING
-        ) as next_5d_return,
-        is_month_end,
-        is_quarter_end,
-        is_year_end
+        LAG(daily_return) OVER (ORDER BY trade_date) as prev_day_return,
+        LEAD(daily_return) OVER (ORDER BY trade_date) as next_day_return
     FROM daily_returns
 )
 SELECT 
+    week_period,
     CASE 
-        WHEN is_year_end = 1 THEN '年末'
-        WHEN is_quarter_end = 1 THEN '季末'
-        WHEN is_month_end = 1 THEN '月末'
-        ELSE '普通交易日'
-    END as period_type,
-    COUNT(*) as total_samples,
-    ROUND(AVG(prev_5d_return)::numeric, 2) as avg_prev_5d_return,
-    ROUND(AVG(daily_return)::numeric, 2) as avg_current_return,
-    ROUND(AVG(next_5d_return)::numeric, 2) as avg_next_5d_return
-FROM period_analysis
-WHERE is_month_end = 1 OR is_quarter_end = 1 OR is_year_end = 1
-GROUP BY 
+        WHEN prev_day_return > 0 AND daily_return > 0 THEN '连续上涨'
+        WHEN prev_day_return < 0 AND daily_return < 0 THEN '连续下跌'
+        WHEN prev_day_return < 0 AND daily_return > 0 THEN '先跌后涨'
+        ELSE '先涨后跌'
+    END as pattern,
+    COUNT(*) as cases,
+    ROUND((AVG(next_day_return) * 100)::numeric, 2) as avg_next_return,
+    ROUND((COUNT(CASE WHEN next_day_return > 0 THEN 1 END) * 100.0 / COUNT(*))::numeric, 2) as next_day_win_rate,
+    -- 添加平均涨跌幅度
+    ROUND((AVG(daily_return) * 100)::numeric, 2) as avg_current_return,
+    ROUND((AVG(ABS(daily_return)) * 100)::numeric, 2) as avg_movement
+FROM consecutive_pattern
+WHERE 
+     prev_day_return IS NOT NULL 
+    AND next_day_return IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 
+     week_period,
+    pattern;
+
+-- 分析不同时间段的连续涨跌
+WITH time_pattern AS (
+    SELECT 
+        trade_date,
+        week_period,
+        EXTRACT(HOUR FROM trade_time) as hour,
+        close / LAG(close) OVER (ORDER BY trade_date, trade_time) - 1 as hourly_return
+    FROM crypto_prices
+    WHERE week_period IN ('周五', '周六', '周一')
+)
+SELECT 
+    week_period,
     CASE 
-        WHEN is_year_end = 1 THEN '年末'
-        WHEN is_quarter_end = 1 THEN '季末'
-        WHEN is_month_end = 1 THEN '月末'
-        ELSE '普通交易日'
-    END;
+        WHEN hour < 8 THEN '凌晨(0-8点)'
+        WHEN hour < 16 THEN '白天(8-16点)'
+        ELSE '晚上(16-24点)'
+    END as time_period,
+    COUNT(*) as total_cases,
+    ROUND((AVG(hourly_return) * 100)::numeric, 2) as avg_return,
+    ROUND((COUNT(CASE WHEN hourly_return > 0 THEN 1 END) * 100.0 / COUNT(*))::numeric, 2) as win_rate
+FROM time_pattern
+WHERE hourly_return IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 1, 2;
+
+-- 分析周五到周一的持续性趋势
+WITH trend_analysis AS (
+    SELECT 
+        trade_date,
+        week_period,
+        close,
+        close / LAG(close) OVER (ORDER BY trade_date) - 1 as daily_return,
+        SUM(CASE WHEN close / LAG(close) OVER (ORDER BY trade_date) - 1 > 0 THEN 1 ELSE -1 END) 
+            OVER (ORDER BY trade_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) as trend_strength
+    FROM crypto_prices
+    WHERE week_period IN ('周五', '周六', '周一')
+)
+SELECT 
+    week_period,
+    CASE 
+        WHEN trend_strength = 3 THEN '强势上涨'
+        WHEN trend_strength = -3 THEN '强势下跌'
+        WHEN trend_strength > 0 THEN '偏强'
+        WHEN trend_strength < 0 THEN '偏弱'
+        ELSE '盘整'
+    END as trend_type,
+    COUNT(*) as cases,
+    ROUND((AVG(daily_return) * 100)::numeric, 2) as avg_return
+FROM trend_analysis
+WHERE trend_strength IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 1, 2;
