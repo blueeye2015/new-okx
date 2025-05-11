@@ -66,7 +66,17 @@ ALTER SEQUENCE public.crypto_prices_id_seq OWNED BY public.crypto_prices.id;
 --
 
 ALTER TABLE ONLY public.crypto_prices ALTER COLUMN id SET DEFAULT nextval('public.crypto_prices_id_seq'::regclass);
-
+ALTER TABLE public.crypto_prices
+ADD COLUMN week_period character varying(6) 
+GENERATED ALWAYS AS ( CASE 
+            WHEN EXTRACT(DOW FROM trade_date) = 5 THEN '周五'
+            WHEN EXTRACT(DOW FROM trade_date) = 1 THEN '周一'
+            WHEN EXTRACT(DOW FROM trade_date) = 0 THEN '周日'
+			WHEN EXTRACT(DOW FROM trade_date) = 6 THEN '周六'
+			WHEN EXTRACT(DOW FROM trade_date) = 2 THEN '周二'
+			WHEN EXTRACT(DOW FROM trade_date) = 3 THEN '周三'
+			WHEN EXTRACT(DOW FROM trade_date) = 4 THEN '周四'
+            END) STORED;
 
 --
 -- Data for Name: crypto_prices; Type: TABLE DATA; Schema: public; Owner: postgres
