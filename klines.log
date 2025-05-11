@@ -788,3 +788,27 @@
 2025-04-15 16:25:53,923 - INFO - 更新了 ETH-USDT 的 10 条K线数据
 2025-04-15 16:25:54,098 - INFO - 更新了 XRP-USDT 的 10 条K线数据
 2025-04-15 16:25:54,276 - INFO - 更新了 SOL-USDT 的 10 条K线数据
+2025-05-10 13:29:16,959 - INFO - 数据库表初始化成功
+2025-05-10 13:29:18,452 - INFO - 更新了 BTC-USDT 的 300 条K线数据
+2025-05-10 13:30:18,810 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:31:19,305 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:32:19,608 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:33:19,980 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:34:20,657 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:35:20,946 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:36:21,252 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:37:21,846 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:38:22,308 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:39:22,625 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:40:23,133 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:41:23,459 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:42:23,752 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:43:24,138 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:44:24,461 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:45:24,941 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:46:25,258 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:47:30,302 - ERROR - 获取 BTC-USDT K线数据失败: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
+2025-05-10 13:47:30,302 - ERROR - 更新spot BTC-USDT 时出错: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
+2025-05-10 13:47:30,303 - ERROR - 更新 BTC-USDT 失败: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
+2025-05-10 13:48:30,642 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-10 13:49:30,961 - INFO - 更新了 BTC-USDT 的 10 条K线数据

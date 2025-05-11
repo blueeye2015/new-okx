@@ -10,13 +10,13 @@ class DBConfig:
 
 class Config:
     DB_CONFIG = DBConfig(
-        host="localhost",
+        host="192.168.50.149",
         port=5432,
         database="market_data",
         user="postgres",
         password="12"
     )
-    INTERVAL = "1m"
+    INTERVAL = "1d"
     BATCH_SIZE = 10
     SYMBOLS = []  # 将由market_analyzer更新
     SYMBOLS_SWAP = [] # 所有合约
@@ -28,5 +28,5 @@ class Config:
     
     def update_symbols(self):
         #self.SYMBOLS = self.market_analyzer.get_valid_symbols()
-        self.SYMBOLS = ['BTC-USDT','ETH-USDT','XRP-USDT','SOL-USDT']
-        self.SYMBOLS_SWAP = self.market_analyzer.get_valid_swap() 
+        self.SYMBOLS = ['BTC-USDT']
+        #self.SYMBOLS_SWAP = self.market_analyzer.get_valid_swap() 

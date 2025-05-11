@@ -32,7 +32,7 @@ def get_crypto_data():
         print("正在从 Binance 获取数据...")
         
         # 设置时间范围
-        start_date = datetime(2017, 1, 1)
+        start_date = datetime(2014, 1, 1)
         end_date = datetime.now()
         
         start_ts = int(start_date.timestamp() * 1000)
