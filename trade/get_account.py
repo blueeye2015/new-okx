@@ -3,31 +3,20 @@ import json
 from api_parser import parse_positions, parse_orderlist, parse_balance
 import logging
 from regular_err import SpecialJumpException
+from exchange.base import ExchangeBase
 
-class OkexAccountManager:
-    def __init__(self, api_key, secret_key, passphrase, is_simulated=False):
+class OkexAccountManager(ExchangeBase):
+    def __init__(self, is_simulated=False):
         """
         初始化OkexAccountManager
         
         Args:
-            api_key (str): API密钥
-            secret_key (str): 密钥
-            passphrase (str): API密码
             is_simulated (bool): 是否使用模拟盘，默认False表示实盘
         """
-        # 设置API凭证
-        self.api_key = api_key
-        self.secret_key = secret_key
-        self.passphrase = passphrase
-        
+        super().__init__()
+                
         # 设置是否为模拟盘
         self.flag = '1' if is_simulated else '0'
-        
-        # 设置代理
-        self.proxies = {
-            'http': 'http://127.0.0.1:7890',
-            'https': 'http://127.0.0.1:7890'
-        }
         
         # 初始化API
         self.init_api()
@@ -38,7 +27,7 @@ class OkexAccountManager:
     def setup_logging(self):
         """设置日志配置"""
         logging.basicConfig(
-            filename='output.log',
+            filename='get_account.log',
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s'
         )
