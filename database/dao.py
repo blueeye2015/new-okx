@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import List, Optional, Dict
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.future import select
 from database.models import KlineModel,FundingRateModel
@@ -255,3 +255,131 @@ class KlineDAO(BaseDAO):
                     volume=row.volume
                 ) for row in query.all()
             ]
+        
+
+class TradeStrategyDAO(BaseDAO):
+    
+    @async_timer
+    async def get_price_patterns(self) -> List[Dict]:
+        """获取价格模式统计数据"""
+        async with self.db_manager.get_session() as session:
+            try:
+                result = await session.execute(text("SELECT * FROM get_price_patterns();"))
+                rows = result.fetchall()
+                return [dict(row) for row in rows] if rows else []
+            except Exception as e:
+                logging.error(f"获取价格模式统计数据失败: {e}")
+                return []
+    
+    @async_timer
+    async def get_pattern_stats_from_table(self) -> List[Dict]:
+        """从price_patterns表获取最近更新的价格模式统计数据"""
+        async with self.db_manager.get_session() as session:
+            try:
+                result = await session.execute(text("""
+                SELECT day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size
+                FROM price_patterns
+                WHERE updated_at >= NOW() - INTERVAL '1 day'
+                """))
+                rows = result.fetchall()
+                return [dict(row) for row in rows] if rows else []
+            except Exception as e:
+                logging.error(f"从price_patterns表获取价格模式统计数据失败: {e}")
+                return []
+    
+    @async_timer
+    async def update_price_patterns(self, pattern_data: List[Dict]) -> None:
+        """更新价格模式统计表"""
+        if not pattern_data:
+            return
+            
+        async with self.db_manager.get_session() as session:
+            try:
+                for row in pattern_data:
+                    await session.execute(text("""
+                    INSERT INTO price_patterns (
+                        day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                    ) VALUES (:day_of_week, :pattern_type, :win_rate, :return_rate, :volatility, :sample_size, NOW())
+                    ON CONFLICT (day_of_week, pattern_type) 
+                    DO UPDATE SET
+                        win_rate = EXCLUDED.win_rate,
+                        return_rate = EXCLUDED.return_rate,
+                        volatility = EXCLUDED.volatility,
+                        sample_size = EXCLUDED.sample_size,
+                        updated_at = NOW()
+                    """), row)
+                
+                await session.commit()
+                logging.info("价格模式统计表已更新")
+            except Exception as e:
+                await session.rollback()
+                logging.error(f"更新价格模式统计表失败: {e}")
+                raise e
+    
+    @async_timer
+    async def record_trade(self, trade_data: Dict) -> None:
+        """记录交易结果到数据库"""
+        async with self.db_manager.get_session() as session:
+            try:
+                await session.execute(text("""
+                INSERT INTO trade_history (
+                    entry_time, exit_time, entry_price, exit_price, 
+                    profit_pct, profit_amount, day_of_week, pattern_type, exit_reason
+                ) VALUES (
+                    :entry_time, :exit_time, :entry_price, :exit_price, 
+                    :profit_pct, :profit_amount, :day_of_week, :pattern_type, :exit_reason
+                )
+                """), trade_data)
+                
+                await session.commit()
+                logging.info("交易记录已保存到数据库")
+            except Exception as e:
+                await session.rollback()
+                logging.error(f"记录交易错误: {e}")
+                raise e
+    
+    @async_timer
+    async def should_update_model(self) -> bool:
+        """判断是否应该更新模型数据"""
+        async with self.db_manager.get_session() as session:
+            try:
+                result = await session.execute(text("""
+                SELECT COUNT(*) FROM trade_history
+                WHERE exit_time >= NOW() - INTERVAL '1 hour'
+                """))
+                recent_trades = result.scalar()
+                
+                # 如果最近一小时有超过5笔交易，更新模型
+                return recent_trades >= 5
+            except Exception as e:
+                logging.error(f"检查是否应更新模型时出错: {e}")
+                return False
+    
+    @async_timer
+    async def refresh_model_data(self) -> None:
+        """刷新模型数据"""
+        async with self.db_manager.get_session() as session:
+            try:
+                await session.execute(text("""
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                """))
+                
+                await session.commit()
+                logging.info("模型数据已刷新")
+            except Exception as e:
+                await session.rollback()
+                logging.error(f"刷新模型数据时出错: {e}")
+                raise e
