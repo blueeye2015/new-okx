@@ -381,3 +381,14 @@ class BitcoinTradingSystem(ExchangeBase):
             self.logger.info("模型数据已刷新")
         except Exception as e:
             self.logger.error(f"刷新模型数据时出错: {str(e)}")
+
+    async def run(self) -> None:
+        """
+        启动定时任务
+        """
+        while True:
+            await asyncio.gather(
+                self.refresh_model_data(),
+                ##self.update_swap_data()
+            )
+            await asyncio.sleep(60) #8小时更新一次

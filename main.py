@@ -18,6 +18,7 @@ async def main():
     config = Config()
     db_manager = DatabaseManager(config.DB_CONFIG)
     market_service = MarketDataService(config)
+    trade_service = BitcoinTradingSystem(config)
   
     while True:
         try:
@@ -25,6 +26,7 @@ async def main():
             config.update_symbols()
             
             await market_service.run()
+            await trade_service.run()
             
         except KeyboardInterrupt:
             logging.info("程序正在退出...")
