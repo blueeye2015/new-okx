@@ -23,9 +23,9 @@ class BitcoinTradingSystem:
         self.take_profit = None
         self.db_config = db_config or {
             'host': 'localhost',
-            'database': 'trading_db',
-            'user': 'trader',
-            'password': 'password'
+            'database': 'market_data',
+            'user': 'postgres',
+            'password': '12'
         }
         
         # 设置日志
