@@ -5,30 +5,32 @@ import logging
 from typing import Dict, Tuple, Optional, List, Any
 import asyncio
 from database.dao import TradeStrategyDAO
+from exchange.base import ExchangeBase
+from config.settings import Config
+from database.manager import DatabaseManager
 
-class BitcoinTradingSystem:
-    def __init__(self, initial_capital: float, risk_level: str = 'medium', db_manager=None):
+class BitcoinTradingSystem(ExchangeBase):
+    def __init__(self, config: Config):
         """
         初始化交易系统
         :param initial_capital: 初始资金
         :param risk_level: 风险等级 (low/medium/high)
         :param db_manager: 数据库管理器
         """
-        self.capital = initial_capital
-        self.risk_level = risk_level
+        
         self.position = None
         self.entry_price = None
         self.stop_loss = None
         self.take_profit = None
-        self.db_manager = db_manager
+        self.config = config
+        self.db_manager = DatabaseManager(config.DB_CONFIG)
+        self.dao = TradeStrategyDAO(self.db_manager)
+        self._initialized_symbols = set()  # 只需要记录是否是首次执行
+        self._initialized_swap = set()
         
         # 设置日志
         self.setup_logging()
-        
-        # 初始化DAO
-        if db_manager:
-            self.dao = TradeStrategyDAO(db_manager)
-        
+                
         # 模型数据缓存
         self.pattern_stats = {}
         self.volatility_data = {}

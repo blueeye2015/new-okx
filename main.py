@@ -4,6 +4,7 @@ from datetime import datetime
 from config.settings import Config
 from database.manager import DatabaseManager
 from services.market_data import MarketDataService
+from services.trade_strategy import BitcoinTradingSystem
 import asyncio
 
 
