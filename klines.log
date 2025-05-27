@@ -812,3 +812,164 @@
 2025-05-10 13:47:30,303 - ERROR - 更新 BTC-USDT 失败: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
 2025-05-10 13:48:30,642 - INFO - 更新了 BTC-USDT 的 10 条K线数据
 2025-05-10 13:49:30,961 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-05-26 15:29:42,095 - INFO - 数据库表初始化成功
+2025-05-27 09:15:25,188 - INFO - 数据库表初始化成功
+2025-05-27 09:15:39,519 - INFO - Starting task get_pattern_stats_from_table (ID: 1902732396848)
+2025-05-27 09:15:40,026 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:15:40,027 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:15:40,027 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:16:00,581 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 09:16:00,584 - INFO - Task get_pattern_stats_from_table (ID: 1902732396848) completed in 21.06 seconds
+2025-05-27 09:16:00,585 - INFO - Starting task get_price_patterns (ID: 1902732396848)
+2025-05-27 09:16:21,643 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 09:16:21,646 - INFO - Task get_price_patterns (ID: 1902732396848) completed in 21.06 seconds
+2025-05-27 09:16:21,646 - INFO - Starting task update_price_patterns (ID: 1902732396848)
+2025-05-27 09:16:21,646 - INFO - Task update_price_patterns (ID: 1902732396848) completed in 0.00 seconds
+2025-05-27 09:16:21,647 - INFO - 成功从数据库加载模型数据
+2025-05-27 09:16:21,647 - WARNING - 使用默认模型数据
+2025-05-27 09:16:48,336 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:16:48,336 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:16:48,337 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:18:08,516 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:18:08,516 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 09:18:08,516 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
+2025-05-27 10:14:29,248 - INFO - 数据库表初始化成功
+2025-05-27 10:14:59,652 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:15:49,505 - INFO - Starting task get_pattern_stats_from_table (ID: 2115749356000)
+2025-05-27 10:16:00,269 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:16:47,667 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 10:16:49,952 - INFO - Task get_pattern_stats_from_table (ID: 2115749356000) completed in 106.83 seconds
+2025-05-27 10:16:52,699 - INFO - Starting task get_price_patterns (ID: 2115749356000)
+2025-05-27 10:17:00,292 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:17:19,315 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 10:17:20,946 - INFO - Task get_price_patterns (ID: 2115749356000) completed in 28.30 seconds
+2025-05-27 10:17:23,553 - INFO - Starting task update_price_patterns (ID: 2115749356000)
+2025-05-27 10:17:25,352 - INFO - Task update_price_patterns (ID: 2115749356000) completed in 2.08 seconds
+2025-05-27 10:17:27,371 - INFO - 成功从数据库加载模型数据
+2025-05-27 10:17:32,092 - WARNING - 使用默认模型数据
+2025-05-27 10:18:00,301 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:19:00,304 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:20:00,316 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:21:00,329 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:22:00,334 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:23:00,340 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:24:00,343 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:25:00,355 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 10:26:01,389 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:05:29,224 - INFO - 数据库表初始化成功
+2025-05-27 14:05:56,208 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:05:59,177 - INFO - Starting task get_pattern_stats_from_table (ID: 2871897969328)
+2025-05-27 14:06:22,775 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 14:06:31,549 - INFO - Task get_pattern_stats_from_table (ID: 2871897969328) completed in 32.78 seconds
+2025-05-27 14:06:34,558 - INFO - Starting task get_price_patterns (ID: 2871897969328)
+2025-05-27 14:06:56,417 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:07:03,973 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 14:07:05,726 - INFO - Task get_price_patterns (ID: 2871897969328) completed in 31.46 seconds
+2025-05-27 14:07:09,726 - INFO - Starting task update_price_patterns (ID: 2871897969328)
+2025-05-27 14:07:11,861 - INFO - Task update_price_patterns (ID: 2871897969328) completed in 2.34 seconds
+2025-05-27 14:07:13,685 - INFO - 成功从数据库加载模型数据
+2025-05-27 14:07:18,724 - WARNING - 使用默认模型数据
+2025-05-27 14:07:56,442 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:08:56,450 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:09:56,462 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 14:15:56,750 - INFO - 数据库表初始化成功
+2025-05-27 14:16:48,571 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 15:54:34,857 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
+2025-05-27 16:32:20,556 - INFO - Starting task get_pattern_stats_from_table (ID: 1520261096768)
+2025-05-27 16:32:20,569 - INFO - Starting task refresh_model_data (ID: 1520261097088)
+2025-05-27 16:32:41,611 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:32:41,614 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:32:41,615 - INFO - Task get_pattern_stats_from_table (ID: 1520261096768) completed in 21.06 seconds
+2025-05-27 16:32:41,616 - INFO - Starting task get_price_patterns (ID: 1520261096768)
+2025-05-27 16:32:41,619 - ERROR - Task refresh_model_data (ID: 1520261097088) failed after 21.05 seconds: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:32:41,619 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:33:02,649 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:33:02,650 - INFO - Task get_price_patterns (ID: 1520261096768) completed in 21.03 seconds
+2025-05-27 16:33:02,650 - INFO - Starting task update_price_patterns (ID: 1520261096768)
+2025-05-27 16:33:02,650 - INFO - Task update_price_patterns (ID: 1520261096768) completed in 0.00 seconds
+2025-05-27 16:33:02,650 - INFO - 成功从数据库加载模型数据
+2025-05-27 16:33:02,651 - WARNING - 使用默认模型数据
+2025-05-27 16:37:37,725 - INFO - Starting task get_pattern_stats_from_table (ID: 3068508595680)
+2025-05-27 16:37:37,731 - INFO - Starting task refresh_model_data (ID: 3068508595840)
+2025-05-27 16:37:58,768 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:37:58,770 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:37:58,772 - INFO - Task get_pattern_stats_from_table (ID: 3068508595680) completed in 21.05 seconds
+2025-05-27 16:37:58,772 - INFO - Starting task get_price_patterns (ID: 3068508595680)
+2025-05-27 16:37:58,775 - ERROR - Task refresh_model_data (ID: 3068508595840) failed after 21.04 seconds: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:37:58,775 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:38:22,584 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
+2025-05-27 16:38:22,585 - INFO - Task get_price_patterns (ID: 3068508595680) completed in 23.81 seconds
+2025-05-27 16:38:22,585 - INFO - Starting task update_price_patterns (ID: 3068508595680)
+2025-05-27 16:38:22,585 - INFO - Task update_price_patterns (ID: 3068508595680) completed in 0.00 seconds
+2025-05-27 16:38:22,585 - INFO - 成功从数据库加载模型数据
+2025-05-27 16:38:22,586 - WARNING - 使用默认模型数据
+2025-05-27 16:41:10,548 - INFO - Starting task get_pattern_stats_from_table (ID: 2657446545184)
+2025-05-27 16:41:10,564 - INFO - Starting task refresh_model_data (ID: 2657446545024)
+2025-05-27 16:41:10,736 - INFO - Task get_pattern_stats_from_table (ID: 2657446545184) completed in 0.19 seconds
+2025-05-27 16:41:10,736 - INFO - Starting task get_price_patterns (ID: 2657446545184)
+2025-05-27 16:41:10,746 - ERROR - 获取价格模式统计数据失败: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
+DETAIL:  Returned type numeric does not match expected type double precision in column 4.
+[SQL: SELECT * FROM get_price_patterns();]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-27 16:41:10,747 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
+DETAIL:  Returned type numeric does not match expected type double precision in column 4.
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-27 16:41:10,748 - INFO - Task get_price_patterns (ID: 2657446545184) completed in 0.01 seconds
+2025-05-27 16:41:10,748 - INFO - Starting task update_price_patterns (ID: 2657446545184)
+2025-05-27 16:41:10,748 - INFO - Task update_price_patterns (ID: 2657446545184) completed in 0.00 seconds
+2025-05-27 16:41:10,748 - INFO - 成功从数据库加载模型数据
+2025-05-27 16:41:10,748 - WARNING - 使用默认模型数据
+2025-05-27 16:41:10,748 - ERROR - Task refresh_model_data (ID: 2657446545024) failed after 0.18 seconds: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
+DETAIL:  Returned type numeric does not match expected type double precision in column 4.
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-27 16:41:10,748 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
+DETAIL:  Returned type numeric does not match expected type double precision in column 4.
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)

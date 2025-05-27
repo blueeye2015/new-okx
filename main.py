@@ -6,7 +6,7 @@ from database.manager import DatabaseManager
 from services.market_data import MarketDataService
 from services.trade_strategy import BitcoinTradingSystem
 import asyncio
-
+import argparse
 
 
 async def main():
@@ -17,16 +17,24 @@ async def main():
     
     config = Config()
     db_manager = DatabaseManager(config.DB_CONFIG)
-    market_service = MarketDataService(config)
-    trade_service = BitcoinTradingSystem(config)
-  
+    
+    
+    
+    parser = argparse.ArgumentParser(description='Run market or trade service')
+    parser.add_argument('--service', choices=['market', 'trade'], default='market', help='Service to run (market, trade)')
+    args = parser.parse_args()
     while True:
         try:
             
             config.update_symbols()
-            
-            await market_service.run()
-            await trade_service.run()
+            if args.service == 'market':
+                market_service = MarketDataService(config)
+                await market_service.run()
+            elif args.service == 'trade':
+                trade_service = BitcoinTradingSystem(config)
+                await trade_service.run()
+            #await market_service.run()
+            #await trade_service.run()
             
         except KeyboardInterrupt:
             logging.info("程序正在退出...")

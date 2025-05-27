@@ -10,7 +10,7 @@ class DBConfig:
 
 class Config:
     DB_CONFIG = DBConfig(
-        host="192.168.50.149",
+        host="localhost",
         port=5432,
         database="market_data",
         user="postgres",

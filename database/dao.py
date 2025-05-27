@@ -258,6 +258,86 @@ class KlineDAO(BaseDAO):
         
 
 class TradeStrategyDAO(BaseDAO):
+    @async_timer
+    async def create_table(self):
+        """创建交易策略相关的表"""
+        async with self.db_manager.get_session() as session:
+            try:
+                # 创建交易历史表
+                await session.execute(text("""
+                CREATE TABLE IF NOT EXISTS trade_history (
+                    id SERIAL PRIMARY KEY,
+                    entry_time TIMESTAMP NOT NULL,
+                    exit_time TIMESTAMP NOT NULL,
+                    entry_price DECIMAL(18, 2) NOT NULL,
+                    exit_price DECIMAL(18, 2) NOT NULL,
+                    profit_pct DECIMAL(8, 4) NOT NULL,
+                    profit_amount DECIMAL(18, 2) NOT NULL,
+                    day_of_week TEXT NOT NULL,
+                    pattern_type TEXT NOT NULL,
+                    exit_reason TEXT NOT NULL
+                );
+                """))
+                
+                # 创建价格模式统计表
+                await session.execute(text("""
+                CREATE TABLE IF NOT EXISTS price_patterns (
+                    id SERIAL PRIMARY KEY,
+                    day_of_week TEXT NOT NULL,
+                    pattern_type TEXT NOT NULL,
+                    win_rate DECIMAL(8, 4) NOT NULL,
+                    return_rate DECIMAL(8, 4) NOT NULL,
+                    volatility DECIMAL(8, 4) NOT NULL,
+                    sample_size INT NOT NULL,
+                    updated_at TIMESTAMP NOT NULL,
+                    UNIQUE(day_of_week, pattern_type)
+                );
+                """))
+                
+                # 创建索引以提高查询性能
+                await session.execute(text("""
+                CREATE INDEX IF NOT EXISTS idx_trade_history_entry_time ON trade_history(entry_time);
+                CREATE INDEX IF NOT EXISTS idx_price_patterns_day_pattern ON price_patterns(day_of_week, pattern_type);
+                """))
+                
+                # 创建价格模式统计函数
+                await session.execute(text("""
+                CREATE OR REPLACE FUNCTION get_price_patterns()
+                RETURNS TABLE (
+                    day_of_week TEXT,
+                    pattern_type TEXT,
+                    win_rate FLOAT,
+                    return_rate FLOAT,
+                    volatility FLOAT,
+                    sample_size INT
+                ) AS $$
+                BEGIN
+                    RETURN QUERY
+                    SELECT 
+                        th.day_of_week,
+                        th.pattern_type,
+                        COUNT(CASE WHEN th.profit_pct > 0 THEN 1 END)::FLOAT / COUNT(*)::FLOAT AS win_rate,
+                        AVG(th.profit_pct) AS return_rate,
+                        STDDEV(th.profit_pct) AS volatility,
+                        COUNT(*) AS sample_size
+                    FROM 
+                        trade_history th
+                    WHERE 
+                        th.entry_time >= NOW() - INTERVAL '6 months'
+                    GROUP BY 
+                        th.day_of_week, th.pattern_type
+                    HAVING 
+                        COUNT(*) >= 20;  -- 确保样本量足够
+                END;
+                $$ LANGUAGE plpgsql;
+                """))
+                
+                await session.commit()
+                logging.info("交易策略相关表创建成功")
+            except Exception as e:
+                await session.rollback()
+                logging.error(f"创建交易策略相关表失败: {e}")
+                raise e
     
     @async_timer
     async def get_price_patterns(self) -> List[Dict]:
@@ -266,7 +346,7 @@ class TradeStrategyDAO(BaseDAO):
             try:
                 result = await session.execute(text("SELECT * FROM get_price_patterns();"))
                 rows = result.fetchall()
-                return [dict(row) for row in rows] if rows else []
+                return [dict(row._mapping) for row in rows] if rows else []
             except Exception as e:
                 logging.error(f"获取价格模式统计数据失败: {e}")
                 return []
@@ -282,7 +362,7 @@ class TradeStrategyDAO(BaseDAO):
                 WHERE updated_at >= NOW() - INTERVAL '1 day'
                 """))
                 rows = result.fetchall()
-                return [dict(row) for row in rows] if rows else []
+                return [dict(row._mapping) for row in rows] if rows else []
             except Exception as e:
                 logging.error(f"从price_patterns表获取价格模式统计数据失败: {e}")
                 return []
@@ -383,3 +463,11 @@ class TradeStrategyDAO(BaseDAO):
                 await session.rollback()
                 logging.error(f"刷新模型数据时出错: {e}")
                 raise e
+                
+    async def insert(self, data):
+        """实现抽象方法"""
+        pass
+        
+    async def query(self, **kwargs):
+        """实现抽象方法"""
+        pass
