@@ -590,3 +590,58 @@ select* from factor_weights
           ELSE '强卖出信号'
       END as signal
   FROM factor_predictions;
+
+
+  CREATE OR REPLACE FUNCTION public.get_price_patterns(
+	)
+    RETURNS TABLE(week_period character varying, pattern character varying, cases bigint, avg_next_return numeric, next_day_win_rate numeric, avg_current_return numeric, avg_movement numeric) 
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+    ROWS 1000
+
+AS $BODY$
+BEGIN
+    RETURN QUERY 
+	
+	WITH daily_returns AS (
+    SELECT 
+        trade_date,
+        a.week_period,
+        close,
+        close / LAG(close) OVER (ORDER BY trade_date) - 1 as daily_return
+    FROM crypto_prices a
+),
+consecutive_pattern AS (
+    SELECT 
+        trade_date,
+        a.week_period,
+        daily_return,
+        LAG(daily_return) OVER (ORDER BY trade_date) as prev_day_return,
+        LEAD(daily_return) OVER (ORDER BY trade_date) as next_day_return
+    FROM daily_returns a
+)
+SELECT 
+    a.week_period,
+    CASE 
+        WHEN prev_day_return > 0 AND daily_return > 0 THEN '连续上涨'
+        WHEN prev_day_return < 0 AND daily_return < 0 THEN '连续下跌'
+        WHEN prev_day_return < 0 AND daily_return > 0 THEN '先跌后涨'
+        ELSE '先涨后跌'
+    END::VARCHAR(20) as pattern,
+    COUNT(*) as cases,
+    ROUND((AVG(next_day_return) * 100)::numeric, 2) as avg_next_return,
+    ROUND((COUNT(CASE WHEN next_day_return > 0 THEN 1 END) * 100.0 / COUNT(*))::numeric, 2) as next_day_win_rate,
+    -- 添加平均涨跌幅度
+    ROUND((AVG(daily_return) * 100)::numeric, 2) as avg_current_return,
+    ROUND((AVG(ABS(daily_return)) * 100)::numeric, 2) as avg_movement
+FROM consecutive_pattern a
+WHERE 
+    prev_day_return IS NOT NULL 
+    AND next_day_return IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 
+    a.week_period ,
+    pattern;
+END;
+$BODY$;
