@@ -1075,3 +1075,17 @@ DETAIL:  Returned type numeric does not match expected type double precision in 
 2025-05-28 16:20:28,754 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.00 seconds
 2025-05-28 16:20:28,754 - INFO - 成功从数据库加载模型数据
 2025-05-28 16:20:28,755 - INFO - 模型数据已刷新
+2025-05-28 16:21:28,758 - INFO - Starting task refresh_model_data (ID: 2496393690624)
+2025-05-28 16:21:28,781 - INFO - 模型数据已刷新
+2025-05-28 16:21:28,782 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.02 seconds
+2025-05-28 16:21:28,782 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
+2025-05-28 16:21:28,789 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.01 seconds
+2025-05-28 16:21:28,789 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:21:28,789 - INFO - 模型数据已刷新
+2025-05-28 16:22:28,812 - INFO - Starting task refresh_model_data (ID: 2496393690624)
+2025-05-28 16:22:28,842 - INFO - 模型数据已刷新
+2025-05-28 16:22:28,843 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.03 seconds
+2025-05-28 16:22:28,843 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
+2025-05-28 16:22:28,853 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.01 seconds
+2025-05-28 16:22:28,853 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:22:28,854 - INFO - 模型数据已刷新
