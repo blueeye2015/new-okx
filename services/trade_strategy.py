@@ -56,30 +56,28 @@ class BitcoinTradingSystem(ExchangeBase):
     async def load_model_data(self) -> None:
         """从数据库加载模型数据"""
         if not self.db_manager:
-            self._set_default_model_data()
             return
             
         try:
-            # 首先从price_patterns表获取数据（这是已经计算好的数据）
+            # 从price_patterns表获取数据
             pattern_data = await self.dao.get_pattern_stats_from_table()
             
-            # 如果没有最近的数据，则直接调用get_price_patterns函数计算
+            # 如果没有最近的数据，则使用默认值
             if not pattern_data:
-                pattern_data = await self.dao.get_price_patterns()
-                
-                # 同时更新price_patterns表
-                await self.dao.update_price_patterns(pattern_data)
+                self._set_default_model_data()
+                self.logger.warning("数据库中没有找到模型数据，使用默认值")
+                return
             
             # 处理查询结果，构建pattern_stats和volatility_data字典
             self.pattern_stats = {}
             self.volatility_data = {}
             
             for row in pattern_data:
-                day = row['day_of_week']
-                pattern = row['pattern_type']
-                win_rate = float(row['win_rate'])
-                return_rate = float(row['return_rate'])
-                volatility = float(row['volatility'])
+                day = row['week_period']
+                pattern = row['pattern']
+                win_rate = float(row['next_day_win_rate']) / 100  # 转换为小数
+                return_rate = float(row['avg_next_return']) / 100  # 转换为小数
+                movement = float(row['avg_movement']) / 100  # 转换为小数
                 
                 # 初始化当天的字典（如果不存在）
                 if day not in self.pattern_stats:
@@ -88,21 +86,17 @@ class BitcoinTradingSystem(ExchangeBase):
                 # 添加模式数据
                 self.pattern_stats[day][pattern] = {
                     'win_rate': win_rate,
-                    'return_rate': return_rate
+                    'return_rate': return_rate,
+                    'cases': int(row['cases'])
                 }
                 
                 # 更新波动率数据
-                self.volatility_data[day] = max(volatility, self.volatility_data.get(day, 0))
+                self.volatility_data[day] = max(movement, self.volatility_data.get(day, 0))
             
             self.logger.info("成功从数据库加载模型数据")
-            
-            # 如果没有数据，使用默认值
-            if not self.pattern_stats:
-                self._set_default_model_data()
                 
         except Exception as e:
             self.logger.error(f"加载模型数据错误: {str(e)}")
-            # 设置默认值
             self._set_default_model_data()
 
     def _set_default_model_data(self) -> None:

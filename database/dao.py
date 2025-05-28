@@ -353,11 +353,12 @@ class TradeStrategyDAO(BaseDAO):
     
     @async_timer
     async def get_pattern_stats_from_table(self) -> List[Dict]:
-        """从price_patterns表获取最近更新的价格模式统计数据"""
+        """从price_patterns表获取价格模式统计数据"""
         async with self.db_manager.get_session() as session:
             try:
                 result = await session.execute(text("""
-                SELECT day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size
+                SELECT week_period, pattern, cases, avg_next_return, 
+                    next_day_win_rate, avg_current_return, avg_movement
                 FROM price_patterns
                 WHERE updated_at >= NOW() - INTERVAL '1 day'
                 """))
@@ -378,14 +379,19 @@ class TradeStrategyDAO(BaseDAO):
                 for row in pattern_data:
                     await session.execute(text("""
                     INSERT INTO price_patterns (
-                        day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                    ) VALUES (:day_of_week, :pattern_type, :win_rate, :return_rate, :volatility, :sample_size, NOW())
-                    ON CONFLICT (day_of_week, pattern_type) 
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    ) VALUES (
+                        :week_period, :pattern, :cases, :avg_next_return, 
+                        :next_day_win_rate, :avg_current_return, :avg_movement, NOW()
+                    )
+                    ON CONFLICT (week_period, pattern) 
                     DO UPDATE SET
-                        win_rate = EXCLUDED.win_rate,
-                        return_rate = EXCLUDED.return_rate,
-                        volatility = EXCLUDED.volatility,
-                        sample_size = EXCLUDED.sample_size,
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
                         updated_at = NOW()
                     """), row)
                 
@@ -442,18 +448,27 @@ class TradeStrategyDAO(BaseDAO):
             try:
                 await session.execute(text("""
                 INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                    week_period, pattern, cases, avg_next_return, 
+                    next_day_win_rate, avg_current_return, avg_movement, updated_at
                 )
                 SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                    week_period, 
+                    pattern,
+                    cases,
+                    avg_next_return,
+                    next_day_win_rate,
+                    avg_current_return,
+                    avg_movement,
+                    NOW()
                 FROM 
                     get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
+                ON CONFLICT (week_period, pattern) 
                 DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
+                    cases = EXCLUDED.cases,
+                    avg_next_return = EXCLUDED.avg_next_return,
+                    next_day_win_rate = EXCLUDED.next_day_win_rate,
+                    avg_current_return = EXCLUDED.avg_current_return,
+                    avg_movement = EXCLUDED.avg_movement,
                     updated_at = NOW();
                 """))
                 

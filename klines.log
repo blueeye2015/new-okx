@@ -973,3 +973,105 @@ DETAIL:  Returned type numeric does not match expected type double precision in 
                     updated_at = NOW();
                 ]
 (Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-28 15:25:36,012 - INFO - Starting task get_pattern_stats_from_table (ID: 1556622300960)
+2025-05-28 15:25:36,030 - INFO - Starting task refresh_model_data (ID: 1556622301280)
+2025-05-28 15:25:36,143 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-28 15:25:36,145 - ERROR - Task refresh_model_data (ID: 1556622301280) failed after 0.12 seconds: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-28 15:25:36,145 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
+[SQL: 
+                INSERT INTO price_patterns (
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
+                )
+                SELECT 
+                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
+                FROM 
+                    get_price_patterns()
+                ON CONFLICT (day_of_week, pattern_type) 
+                DO UPDATE SET
+                    win_rate = EXCLUDED.win_rate,
+                    return_rate = EXCLUDED.return_rate,
+                    volatility = EXCLUDED.volatility,
+                    sample_size = EXCLUDED.sample_size,
+                    updated_at = NOW();
+                ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-28 15:25:37,793 - INFO - Task get_pattern_stats_from_table (ID: 1556622300960) completed in 1.78 seconds
+2025-05-28 15:25:37,793 - WARNING - 使用默认模型数据
+2025-05-28 15:25:37,802 - WARNING - 数据库中没有找到模型数据，使用默认值
+2025-05-28 15:33:52,657 - INFO - 程序正在退出...
+2025-05-28 16:10:42,005 - INFO - Starting task get_pattern_stats_from_table (ID: 1928562755360)
+2025-05-28 16:10:42,013 - INFO - Starting task refresh_model_data (ID: 1928562755520)
+2025-05-28 16:10:42,176 - INFO - Task get_pattern_stats_from_table (ID: 1928562755360) completed in 0.17 seconds
+2025-05-28 16:10:42,176 - WARNING - 使用默认模型数据
+2025-05-28 16:10:42,176 - WARNING - 数据库中没有找到模型数据，使用默认值
+2025-05-28 16:10:42,191 - INFO - 模型数据已刷新
+2025-05-28 16:10:42,191 - INFO - Task refresh_model_data (ID: 1928562755520) completed in 0.18 seconds
+2025-05-28 16:10:42,191 - INFO - Starting task get_pattern_stats_from_table (ID: 1928562755520)
+2025-05-28 16:10:42,195 - INFO - Task get_pattern_stats_from_table (ID: 1928562755520) completed in 0.00 seconds
+2025-05-28 16:10:42,196 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:10:42,197 - INFO - 模型数据已刷新
+2025-05-28 16:17:28,465 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688224)
+2025-05-28 16:17:28,472 - INFO - Starting task refresh_model_data (ID: 2496393688384)
+2025-05-28 16:17:28,621 - INFO - Task get_pattern_stats_from_table (ID: 2496393688224) completed in 0.16 seconds
+2025-05-28 16:17:28,622 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:17:28,635 - INFO - 模型数据已刷新
+2025-05-28 16:17:28,635 - INFO - Task refresh_model_data (ID: 2496393688384) completed in 0.16 seconds
+2025-05-28 16:17:28,635 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688384)
+2025-05-28 16:17:28,639 - INFO - Task get_pattern_stats_from_table (ID: 2496393688384) completed in 0.00 seconds
+2025-05-28 16:17:28,639 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:17:28,639 - INFO - 模型数据已刷新
+2025-05-28 16:18:28,642 - INFO - Starting task refresh_model_data (ID: 2496393688384)
+2025-05-28 16:18:28,666 - INFO - 模型数据已刷新
+2025-05-28 16:18:28,667 - INFO - Task refresh_model_data (ID: 2496393688384) completed in 0.03 seconds
+2025-05-28 16:18:28,667 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688384)
+2025-05-28 16:18:28,678 - INFO - Task get_pattern_stats_from_table (ID: 2496393688384) completed in 0.01 seconds
+2025-05-28 16:18:28,679 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:18:28,679 - INFO - 模型数据已刷新
+2025-05-28 16:19:28,686 - INFO - Starting task refresh_model_data (ID: 2496393690624)
+2025-05-28 16:19:28,709 - INFO - 模型数据已刷新
+2025-05-28 16:19:28,709 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.02 seconds
+2025-05-28 16:19:28,709 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
+2025-05-28 16:19:28,713 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.00 seconds
+2025-05-28 16:19:28,713 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:19:28,713 - INFO - 模型数据已刷新
+2025-05-28 16:20:28,724 - INFO - Starting task refresh_model_data (ID: 2496393690624)
+2025-05-28 16:20:28,749 - INFO - 模型数据已刷新
+2025-05-28 16:20:28,749 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.03 seconds
+2025-05-28 16:20:28,749 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
+2025-05-28 16:20:28,754 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.00 seconds
+2025-05-28 16:20:28,754 - INFO - 成功从数据库加载模型数据
+2025-05-28 16:20:28,755 - INFO - 模型数据已刷新
