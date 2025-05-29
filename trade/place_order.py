@@ -1,8 +1,8 @@
 import okex.Account_api as Account
 import json
-from api_parser import parse_positions, parse_orderlist, parse_balance
+from trade.api_parser import parse_positions, parse_orderlist, parse_balance
 import logging
-from regular_err import SpecialJumpException
+from trade.regular_err import SpecialJumpException
 from exchange.base import ExchangeBase
 import okex.Trade_api as Trade
 

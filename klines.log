@@ -1089,3 +1089,7 @@ DETAIL:  Returned type numeric does not match expected type double precision in 
 2025-05-28 16:22:28,853 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.01 seconds
 2025-05-28 16:22:28,853 - INFO - 成功从数据库加载模型数据
 2025-05-28 16:22:28,854 - INFO - 模型数据已刷新
+2025-05-29 10:32:59,364 - ERROR - 发生错误: 'Config' object has no attribute 'INITIAL_CAPITAL'
+2025-05-29 16:59:19,029 - ERROR - 发生错误: 'Config' object has no attribute 'IS_SIMULATED'
+2025-05-29 17:01:48,706 - ERROR - 发生错误: 'Config' object has no attribute 'DEFAULT_CAPITAL'
+2025-05-29 17:06:39,584 - ERROR - 发生错误: 'BitcoinTradingSystem' object has no attribute 'capital'

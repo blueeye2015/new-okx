@@ -4,7 +4,7 @@ from datetime import datetime
 from config.settings import Config
 from database.manager import DatabaseManager
 from services.market_data import MarketDataService
-from services.trade_strategy import BitcoinTradingSystem
+from trading.bitcoin_trading_system import BitcoinTradingSystem
 import asyncio
 import argparse
 
@@ -17,9 +17,6 @@ async def main():
     
     config = Config()
     db_manager = DatabaseManager(config.DB_CONFIG)
-    
-    
-    
     parser = argparse.ArgumentParser(description='Run market or trade service')
     parser.add_argument('--service', choices=['market', 'trade'], default='market', help='Service to run (market, trade)')
     args = parser.parse_args()
@@ -31,8 +28,8 @@ async def main():
                 market_service = MarketDataService(config)
                 await market_service.run()
             elif args.service == 'trade':
-                trade_service = BitcoinTradingSystem(config)
-                await trade_service.run()
+                trading_system = BitcoinTradingSystem(config)
+                await trading_system.run()
             #await market_service.run()
             #await trade_service.run()
             
