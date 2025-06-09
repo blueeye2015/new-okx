@@ -20,6 +20,9 @@ class Config:
     BATCH_SIZE = 10
     SYMBOLS = []  # 将由market_analyzer更新
     SYMBOLS_SWAP = [] # 所有合约
+    INITIAL_CAPITAL =  100 #默认初始资金
+    IS_SIMULATED = False  # 是否使用模拟盘，默认使用实盘
+    TRADING_SYMBOL = 'BTC-USDT'  # 交易对
 
     def __init__(self):
         from services.market_analyzer import MarketAnalyzer
