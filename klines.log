@@ -1093,3 +1093,328 @@ DETAIL:  Returned type numeric does not match expected type double precision in 
 2025-05-29 16:59:19,029 - ERROR - 发生错误: 'Config' object has no attribute 'IS_SIMULATED'
 2025-05-29 17:01:48,706 - ERROR - 发生错误: 'Config' object has no attribute 'DEFAULT_CAPITAL'
 2025-05-29 17:06:39,584 - ERROR - 发生错误: 'BitcoinTradingSystem' object has no attribute 'capital'
+2025-06-10 09:21:53,415 - INFO - MarketAnalyzer initialized
+2025-06-10 09:21:53,440 - INFO - 所有API初始化成功
+2025-06-10 09:21:55,307 - INFO - ExchangeBase initialized
+2025-06-10 09:21:55,314 - INFO - 所有API初始化成功
+2025-06-10 09:21:55,314 - ERROR - 发生错误: name 'OkexAccountManager' is not defined
+2025-06-10 09:24:30,650 - INFO - MarketAnalyzer initialized
+2025-06-10 09:24:30,655 - INFO - 所有API初始化成功
+2025-06-10 09:24:32,299 - INFO - ExchangeBase initialized
+2025-06-10 09:24:32,304 - INFO - 所有API初始化成功
+2025-06-10 09:24:32,713 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-10 09:24:32,713 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-10 09:24:32,714 - INFO - Starting task create_table (ID: 2178957367392)
+2025-06-10 09:24:32,714 - INFO - Task create_table (ID: 2178957367392) completed in 0.00 seconds
+2025-06-10 09:24:32,714 - INFO - 数据库初始化成功
+2025-06-10 09:24:32,714 - INFO - Starting task get_pattern_stats_from_table (ID: 2178959075744)
+2025-06-10 09:24:33,031 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-10 09:24:33,355 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-10 09:24:33,359 - ERROR - 获取价格历史错误: 7 columns passed, passed data had 9 columns
+2025-06-10 09:24:33,359 - ERROR - 交易循环错误: 7 columns passed, passed data had 9 columns
+2025-06-10 09:24:33,628 - INFO - Task get_pattern_stats_from_table (ID: 2178959075744) completed in 0.91 seconds
+2025-06-10 09:24:33,628 - WARNING - 使用默认模型数据
+2025-06-10 09:24:33,628 - WARNING - 数据库中没有找到模型数据，使用默认值
+2025-06-10 09:24:33,637 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 09:24:33,638 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 09:37:38,473 - INFO - MarketAnalyzer initialized
+2025-06-10 09:37:38,485 - INFO - 所有API初始化成功
+2025-06-10 09:37:50,044 - INFO - ExchangeBase initialized
+2025-06-10 09:37:50,048 - INFO - 所有API初始化成功
+2025-06-10 09:37:50,428 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-10 09:37:50,428 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-10 09:37:50,429 - INFO - Starting task create_table (ID: 1637544367904)
+2025-06-10 09:37:50,430 - INFO - Task create_table (ID: 1637544367904) completed in 0.00 seconds
+2025-06-10 09:37:50,430 - INFO - 数据库初始化成功
+2025-06-10 09:37:55,260 - INFO - Starting task get_pattern_stats_from_table (ID: 1637563580480)
+2025-06-10 09:37:55,596 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-10 09:38:30,327 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-10 09:38:51,969 - INFO - Task get_pattern_stats_from_table (ID: 1637563580480) completed in 56.71 seconds
+2025-06-10 09:38:51,969 - WARNING - 使用默认模型数据
+2025-06-10 09:38:51,969 - WARNING - 数据库中没有找到模型数据，使用默认值
+2025-06-10 09:38:51,978 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 09:38:51,978 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 10:00:26,892 - INFO - MarketAnalyzer initialized
+2025-06-10 10:00:26,898 - INFO - 所有API初始化成功
+2025-06-10 10:00:53,132 - INFO - ExchangeBase initialized
+2025-06-10 10:00:53,135 - INFO - 所有API初始化成功
+2025-06-10 10:00:53,509 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-10 10:00:53,509 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-10 10:00:53,509 - INFO - Starting task create_table (ID: 2137249810528)
+2025-06-10 10:00:53,509 - INFO - Task create_table (ID: 2137249810528) completed in 0.00 seconds
+2025-06-10 10:00:53,509 - INFO - 数据库初始化成功
+2025-06-10 10:01:00,664 - INFO - Starting task get_pattern_stats_from_table (ID: 2137251506912)
+2025-06-10 10:01:27,878 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-10 10:02:24,457 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-10 10:02:55,113 - ERROR - 从price_patterns表获取价格模式统计数据失败: 
+2025-06-10 10:02:55,124 - INFO - Task get_pattern_stats_from_table (ID: 2137251506912) completed in 115.05 seconds
+2025-06-10 10:02:55,125 - WARNING - 使用默认模型数据
+2025-06-10 10:02:55,125 - WARNING - 数据库中没有找到模型数据，使用默认值
+2025-06-10 10:02:55,244 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 10:02:55,244 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
+[SQL: 
+                    INSERT INTO price_patterns (
+                        week_period, pattern, cases, avg_next_return, 
+                        next_day_win_rate, avg_current_return, avg_movement, updated_at
+                    )
+                    SELECT 
+                        day_of_week as week_period, 
+                        pattern_type as pattern,
+                        sample_size as cases,
+                        return_rate * 100 as avg_next_return,
+                        win_rate * 100 as next_day_win_rate,
+                        volatility * 100 as avg_current_return,
+                        volatility * 100 as avg_movement,
+                        NOW()
+                    FROM 
+                        get_price_patterns()
+                    ON CONFLICT (week_period, pattern) 
+                    DO UPDATE SET
+                        cases = EXCLUDED.cases,
+                        avg_next_return = EXCLUDED.avg_next_return,
+                        next_day_win_rate = EXCLUDED.next_day_win_rate,
+                        avg_current_return = EXCLUDED.avg_current_return,
+                        avg_movement = EXCLUDED.avg_movement,
+                        updated_at = NOW();
+                    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 10:13:45,260 - INFO - MarketAnalyzer initialized
+2025-06-10 10:13:45,266 - INFO - 所有API初始化成功
+2025-06-10 10:13:45,734 - INFO - ExchangeBase initialized
+2025-06-10 10:13:45,737 - INFO - 所有API初始化成功
+2025-06-10 10:13:46,082 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-10 10:13:46,082 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-10 10:13:46,083 - INFO - Starting task create_table (ID: 2062099691616)
+2025-06-10 10:13:46,083 - INFO - Task create_table (ID: 2062099691616) completed in 0.00 seconds
+2025-06-10 10:13:46,083 - INFO - 数据库初始化成功
+2025-06-10 10:13:58,255 - INFO - Starting task get_pattern_stats_from_table (ID: 2062101379808)
+2025-06-10 10:13:58,587 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-10 10:14:01,546 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-10 11:15:35,872 - INFO - MarketAnalyzer initialized
+2025-06-10 11:15:35,873 - INFO - 所有API初始化成功
+2025-06-10 11:15:35,943 - INFO - MarketDataService initialized
+2025-06-10 11:15:35,945 - INFO - 所有API初始化成功
+2025-06-10 11:15:35,945 - INFO - 数据库表初始化成功
+2025-06-10 11:15:35,945 - ERROR - 获取 BTC-USDT K线数据失败: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 11:15:35,945 - ERROR - 更新spot BTC-USDT 时出错: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 11:15:35,945 - ERROR - 更新 BTC-USDT 失败: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 11:16:52,777 - INFO - MarketAnalyzer initialized
+2025-06-10 11:16:52,780 - INFO - 所有API初始化成功
+2025-06-10 11:17:02,611 - INFO - MarketDataService initialized
+2025-06-10 11:17:26,732 - INFO - 所有API初始化成功
+2025-06-10 11:17:42,232 - INFO - 数据库表初始化成功
+2025-06-10 11:17:47,678 - ERROR - 获取 BTC-USDT K线数据失败: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 11:17:47,679 - ERROR - 更新spot BTC-USDT 时出错: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 11:17:47,679 - ERROR - 更新 BTC-USDT 失败: 'MarketDataService' object has no attribute 'exchange'
+2025-06-10 13:51:23,347 - INFO - MarketAnalyzer initialized
+2025-06-10 13:51:23,350 - INFO - 所有API初始化成功
+2025-06-10 13:51:24,419 - INFO - MarketDataService initialized
+2025-06-10 13:51:24,423 - INFO - 所有API初始化成功
+2025-06-10 13:51:24,423 - INFO - 数据库表初始化成功
+2025-06-10 14:00:06,555 - INFO - MarketAnalyzer initialized
+2025-06-10 14:00:06,562 - INFO - 所有API初始化成功
+2025-06-10 14:00:07,953 - INFO - MarketDataService initialized
+2025-06-10 14:00:07,956 - INFO - 所有API初始化成功
+2025-06-10 14:00:07,956 - INFO - 数据库表初始化成功
+2025-06-10 14:20:39,459 - INFO - MarketAnalyzer initialized
+2025-06-10 14:20:39,465 - INFO - 所有API初始化成功
+2025-06-10 14:20:40,222 - INFO - MarketDataService initialized
+2025-06-10 14:20:40,227 - INFO - 所有API初始化成功
+2025-06-10 14:20:40,227 - INFO - 数据库表初始化成功
+2025-06-10 14:21:38,757 - INFO - MarketAnalyzer initialized
+2025-06-10 14:21:38,761 - INFO - 所有API初始化成功
+2025-06-10 14:21:39,648 - INFO - MarketDataService initialized
+2025-06-10 14:21:39,650 - INFO - 所有API初始化成功
+2025-06-10 14:21:39,650 - INFO - 数据库表初始化成功
+2025-06-10 14:56:40,165 - INFO - MarketAnalyzer initialized
+2025-06-10 14:56:40,170 - INFO - 所有API初始化成功
+2025-06-10 14:56:40,794 - INFO - MarketDataService initialized
+2025-06-10 14:56:40,796 - INFO - 所有API初始化成功
+2025-06-10 14:56:40,796 - INFO - 数据库表初始化成功
+2025-06-10 14:56:48,443 - ERROR - 更新spot BTC-USDT 时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "open" of relation "kline_data" does not exist
+[SQL: 
+                    INSERT INTO kline_data (
+                        symbol, timestamp, open, high, low, close, volume, 
+                        vol_ccy, vol_quote, confirm
+                    )
+                    VALUES (
+                        $1, $2, $3, $4, $5, $6, $7,
+                        $8, $9, $10
+                    )
+                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
+                        open = EXCLUDED.open,
+                        high = EXCLUDED.high,
+                        low = EXCLUDED.low,
+                        close = EXCLUDED.close,
+                        volume = EXCLUDED.volume,
+                        vol_ccy = EXCLUDED.vol_ccy,
+                        vol_quote = EXCLUDED.vol_quote,
+                        confirm = EXCLUDED.confirm
+                    ]
+[parameters: [('BTC-USDT', datetime.datetime(2025, 6, 10, 0, 0), 107638.2, 110650.0, 107638.1, 109523.7, 3713.0496793, 406269384.8947623, 406269384.8947623, '0'), ('BTC-USDT', datetime.datetime(2025, 6, 9, 0, 0), 105975.0, 108034.8, 105313.4, 107638.1, 4556.94942643, 486509851.887073, 486509851.887073, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 8, 0, 0), 105558.4, 106158.7, 104969.6, 105975.1, 2058.66434771, 217427360.3904655, 217427360.3904655, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 7, 0, 0), 105094.7, 105799.0, 103876.8, 105558.3, 4501.0489018, 471638751.6637017, 471638751.6637017, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 6, 0, 0), 104540.1, 105330.8, 100400.0, 105094.2, 11241.28413802, 1155829246.420338, 1155829246.420338, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 5, 0, 0), 105302.7, 105914.9, 103900.0, 104539.6, 4009.27148826, 420477327.67686427, 420477327.67686427, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 4, 0, 0), 106630.2, 106688.0, 104181.4, 105302.7, 4642.72856035, 489876263.60640883, 489876263.60640883, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 3, 0, 0), 104434.9, 106804.0, 104031.2, 106630.2, 5104.15006989, 539249364.2489601, 539249364.2489601, '1')  ... displaying 10 of 300 total bound parameter sets ...  ('BTC-USDT', datetime.datetime(2024, 8, 16, 0, 0), 59676.0, 59850.0, 56093.7, 58074.1, 11344.38939645, 657211355.366465, 657211355.366465, '1'), ('BTC-USDT', datetime.datetime(2024, 8, 15, 0, 0), 59443.8, 59774.0, 57718.1, 59675.8, 8163.04134558, 479943083.56510025, 479943083.56510025, '1')]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 14:56:48,444 - ERROR - 更新 BTC-USDT 失败: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "open" of relation "kline_data" does not exist
+[SQL: 
+                    INSERT INTO kline_data (
+                        symbol, timestamp, open, high, low, close, volume, 
+                        vol_ccy, vol_quote, confirm
+                    )
+                    VALUES (
+                        $1, $2, $3, $4, $5, $6, $7,
+                        $8, $9, $10
+                    )
+                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
+                        open = EXCLUDED.open,
+                        high = EXCLUDED.high,
+                        low = EXCLUDED.low,
+                        close = EXCLUDED.close,
+                        volume = EXCLUDED.volume,
+                        vol_ccy = EXCLUDED.vol_ccy,
+                        vol_quote = EXCLUDED.vol_quote,
+                        confirm = EXCLUDED.confirm
+                    ]
+[parameters: [('BTC-USDT', datetime.datetime(2025, 6, 10, 0, 0), 107638.2, 110650.0, 107638.1, 109523.7, 3713.0496793, 406269384.8947623, 406269384.8947623, '0'), ('BTC-USDT', datetime.datetime(2025, 6, 9, 0, 0), 105975.0, 108034.8, 105313.4, 107638.1, 4556.94942643, 486509851.887073, 486509851.887073, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 8, 0, 0), 105558.4, 106158.7, 104969.6, 105975.1, 2058.66434771, 217427360.3904655, 217427360.3904655, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 7, 0, 0), 105094.7, 105799.0, 103876.8, 105558.3, 4501.0489018, 471638751.6637017, 471638751.6637017, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 6, 0, 0), 104540.1, 105330.8, 100400.0, 105094.2, 11241.28413802, 1155829246.420338, 1155829246.420338, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 5, 0, 0), 105302.7, 105914.9, 103900.0, 104539.6, 4009.27148826, 420477327.67686427, 420477327.67686427, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 4, 0, 0), 106630.2, 106688.0, 104181.4, 105302.7, 4642.72856035, 489876263.60640883, 489876263.60640883, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 3, 0, 0), 104434.9, 106804.0, 104031.2, 106630.2, 5104.15006989, 539249364.2489601, 539249364.2489601, '1')  ... displaying 10 of 300 total bound parameter sets ...  ('BTC-USDT', datetime.datetime(2024, 8, 16, 0, 0), 59676.0, 59850.0, 56093.7, 58074.1, 11344.38939645, 657211355.366465, 657211355.366465, '1'), ('BTC-USDT', datetime.datetime(2024, 8, 15, 0, 0), 59443.8, 59774.0, 57718.1, 59675.8, 8163.04134558, 479943083.56510025, 479943083.56510025, '1')]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-10 15:01:28,193 - INFO - MarketAnalyzer initialized
+2025-06-10 15:01:28,197 - INFO - 所有API初始化成功
+2025-06-10 15:01:28,999 - INFO - MarketDataService initialized
+2025-06-10 15:01:29,002 - INFO - 所有API初始化成功
+2025-06-10 15:01:29,002 - INFO - 数据库表初始化成功
+2025-06-10 15:01:35,012 - INFO - 更新了 BTC-USDT 的 300 条K线数据
+2025-06-10 15:02:47,366 - INFO - 更新了 BTC-USDT 的 10 条K线数据
+2025-06-11 09:24:16,016 - INFO - MarketAnalyzer initialized
+2025-06-11 09:24:16,034 - INFO - 所有API初始化成功
+2025-06-11 09:24:16,893 - INFO - MarketDataService initialized
+2025-06-11 09:24:16,897 - INFO - 所有API初始化成功
+2025-06-11 09:24:16,898 - INFO - 数据库表初始化成功
+2025-06-11 09:24:21,350 - INFO - 更新了 BTC-USDT 的 93 条K线数据

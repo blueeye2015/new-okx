@@ -52,7 +52,6 @@ class MarketDataService(ExchangeBase):
         
         Args:
             symbol (str): 交易对符号，例如 "BTC-USDT"
-            start_time (datetime): 开始时间
             
         Returns:
             List[Kline]: K线数据列表
@@ -62,34 +61,34 @@ class MarketDataService(ExchangeBase):
         """
         async with self.klines_semaphore:  # 使用信号量控制并发
             try:
-                # 将时间转换为毫秒时间戳
-                # since = int(start_time.timestamp() * 1000)
-                
-                # 将交易对格式转换为交易所要求的格式（BTC-USDT -> BTC/USDT）
-                exchange_symbol = symbol.replace('-', '/')
-                
                 # 根据是否首次执行决定获取数量
                 limit = 300 if symbol not in self._initialized_symbols else 10
                 
                 # 获取K线数据
-                ohlcv = self.exchange.fetch_ohlcv(
-                    exchange_symbol,
-                    timeframe=self.config.INTERVAL,
-                    limit=limit
+                kline_data = self.market_api.get_candlesticks(
+                    instId=symbol,
+                    bar=self.config.INTERVAL,
+                    limit=str(limit)
                 )
+                
+                if not kline_data or 'data' not in kline_data:
+                    raise ValueError(f"Invalid kline data received: {kline_data}")
                 
                 # 转换为 Kline 对象列表
                 return [
                     Kline(
                         symbol=symbol,
-                        timestamp=datetime.fromtimestamp(data[0] / 1000),
-                        open=float(data[1]),
-                        high=float(data[2]),
-                        low=float(data[3]),
-                        close=float(data[4]),
-                        volume=float(data[5])
+                        timestamp=datetime.fromtimestamp(float(data[0]) / 1000),  # ts
+                        open=float(data[1]),    # o
+                        high=float(data[2]),    # h
+                        low=float(data[3]),     # l
+                        close=float(data[4]),   # c
+                        volume=float(data[5]),  # vol
+                        vol_ccy=float(data[6]), # volCcy
+                        vol_quote=float(data[7]), # volCcyQuote
+                        confirm=data[8]         # confirm
                     )
-                    for data in ohlcv
+                    for data in kline_data['data']
                 ]
                     
             except Exception as e:

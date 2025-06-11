@@ -11,6 +11,9 @@ class Kline:
     low: float
     close: float
     volume: float
+    vol_ccy: float
+    vol_quote: float
+    confirm: str
     
     @classmethod
     def from_exchange_data(cls, symbol: str, data: list) -> 'Kline':
@@ -25,7 +28,10 @@ class Kline:
             high=float(data[2]),
             low=float(data[3]),
             close=float(data[4]),
-            volume=float(data[5])
+            volume=float(data[5]),
+            vol_ccy=float(data[6]),
+            vol_quote=float(data[7]),
+            confirm=data[8]
         )
         
     def to_dict(self) -> dict:
@@ -37,5 +43,8 @@ class Kline:
             'high': self.high,
             'low': self.low,
             'close': self.close,
-            'volume': self.volume
+            'volume': self.volume,
+            'vol_ccy': self.vol_ccy,
+            'vol_quote': self.vol_quote,
+            'confirm': self.confirm
         }

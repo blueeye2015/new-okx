@@ -1,21 +1,26 @@
 import sqlalchemy as sa
 from sqlalchemy.orm import DeclarativeBase
 import enum
+from sqlalchemy import Column, String, Float, DateTime, Integer, Boolean, Numeric
+from sqlalchemy.ext.declarative import declarative_base
 
-class Base(DeclarativeBase):
-    pass
+Base = declarative_base()
 
 class KlineModel(Base):
-    __tablename__ = 'klines'
+    __tablename__ = 'kline_data'
     
-    symbol = sa.Column(sa.String, primary_key=True)
-    timestamp = sa.Column(sa.DateTime, primary_key=True)
-    open = sa.Column(sa.Float)
-    high = sa.Column(sa.Float)
-    low = sa.Column(sa.Float)
-    close = sa.Column(sa.Float)
-    volume = sa.Column(sa.Float)
-    created_at = sa.Column(sa.DateTime, server_default=sa.func.now())
+    id = Column(Integer, primary_key=True)
+    symbol = Column(String(20))
+    timestamp = Column(DateTime(timezone=True))
+    open_price = Column(Numeric(20, 8))
+    high_price = Column(Numeric(20, 8))
+    low_price = Column(Numeric(20, 8))
+    close_price = Column(Numeric(20, 8))
+    volume = Column(Numeric(20, 8))
+    volume_currency = Column(Numeric(20, 8))
+    volume_currency_quote = Column(Numeric(20, 8))
+    is_confirmed = Column(Boolean)
+    created_at = Column(DateTime(timezone=True), server_default='CURRENT_TIMESTAMP')
 
 
 class TradeModel(Base):

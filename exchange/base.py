@@ -4,14 +4,17 @@ from dotenv import load_dotenv
 import os
 import okex.Public_api as Public
 import okex.Account_api as Account
+import okex.Market_api as Market
 import json
 from typing import Dict, Any, Optional
+from datetime import datetime
 
 class ExchangeBase:
     _instance = None
     _exchange = None
     _public_api = None
     _account_api = None
+    _market_api = None
     
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
@@ -29,11 +32,11 @@ class ExchangeBase:
         self.flag = '1' if is_simulated else '0'
         self._setup_base_logging()
         
-        # 初始化时就加载市场数据
-        if not hasattr(self, '_markets_loaded'):
+        # 初始化时就加载API
+        if not hasattr(self, '_apis_loaded'):
             self._load_credentials()
-            self._initialize_exchange()
-            self._markets_loaded = True
+            self._initialize_apis()
+            self._apis_loaded = True
     
     def _load_credentials(self):
         """加载API凭证"""
@@ -47,22 +50,16 @@ class ExchangeBase:
                 'https': 'http://127.0.0.1:7890'
             }
     
-    def _initialize_exchange(self):
-        """初始化交易所连接并加载市场数据"""
+    def _initialize_apis(self):
+        """初始化所有API"""
         try:
-            self._exchange = self._create_exchange()
-            self._exchange.load_markets()
-            self.logger.info("交易所市场数据加载成功")
+            self._public_api = self._create_public_api()
+            self._account_api = self._create_account_api()
+            self._market_api = self._create_market_api()
+            self.logger.info("所有API初始化成功")
         except Exception as e:
-            self.logger.error(f"交易所市场数据加载失败: {str(e)}")
+            self.logger.error(f"API初始化失败: {str(e)}")
             raise
-    
-    @property
-    def exchange(self) -> ccxt.Exchange:
-        if self._exchange is None:
-            self._load_credentials()
-            self._initialize_exchange()
-        return self._exchange
     
     @property
     def public_api(self):
@@ -77,79 +74,14 @@ class ExchangeBase:
             self._load_credentials()
             self._account_api = self._create_account_api()
         return self._account_api
+
+    @property
+    def market_api(self):
+        if self._market_api is None:
+            self._load_credentials()
+            self._market_api = self._create_market_api()
+        return self._market_api
     
-    def _create_exchange(self):
-        """创建 CCXT exchange 实例"""
-        return ccxt.okx({
-            'apiKey': self.api_key,
-            'secret': self.secret_key,
-            'password': self.passphrase,
-            'enableRateLimit': True,
-            'proxies': self.proxies,
-            'timeout': 30000,
-            'options': {
-                'defaultType': 'spot',
-                'adjustForTimeDifference': True
-            },
-            'headers': {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36'
-            }
-        })
-
-    def convert_symbol_format(self, symbol: str, to_exchange: bool = True) -> str:
-        """
-        转换交易对格式
-        
-        Args:
-            symbol (str): 交易对
-            to_exchange (bool): True 转换为交易所格式 (BTC-USDT)，False 转换为标准格式 (BTC/USDT)
-            
-        Returns:
-            str: 转换后的交易对格式
-        """
-        if to_exchange:
-            return symbol.replace('/', '-')
-        return symbol.replace('-', '/')
-
-    def fetch_ticker(self, symbol: str):
-        """
-        获取交易对的ticker数据
-        
-        Args:
-            symbol (str): 交易对（可以是 BTC/USDT 或 BTC-USDT 格式）
-            
-        Returns:
-            dict: ticker数据
-        """
-        try:
-            # 确保使用交易所要求的格式
-            exchange_symbol = self.convert_symbol_format(symbol, to_exchange=True)
-            return self.exchange.fetch_ticker(exchange_symbol)
-        except Exception as e:
-            self.logger.error(f"获取ticker数据失败: {str(e)}")
-            raise
-
-    def fetch_ohlcv(self, symbol: str, timeframe: str = '1h', since: int = None, limit: int = None):
-        """
-        获取K线数据
-        
-        Args:
-            symbol (str): 交易对（可以是 BTC/USDT 或 BTC-USDT 格式）
-            timeframe (str): 时间周期
-            since (int): 开始时间戳（毫秒）
-            limit (int): 返回记录数量
-            
-        Returns:
-            list: K线数据列表
-        """
-        try:
-            # 确保使用交易所要求的格式
-            exchange_symbol = self.convert_symbol_format(symbol, to_exchange=True)
-            return self.exchange.fetch_ohlcv(exchange_symbol, timeframe, since, limit)
-        except Exception as e:
-            self.logger.error(f"获取K线数据失败: {str(e)}")
-            raise
-
     def _create_public_api(self):
         return Public.PublicAPI(
             self.api_key, 
@@ -169,6 +101,58 @@ class ExchangeBase:
             self.flag,
             proxies=self.proxies
         )
+
+    def _create_market_api(self):
+        return Market.MarketAPI(
+            self.api_key,
+            self.secret_key,
+            self.passphrase,
+            False,  # use_server_time
+            self.flag,
+            proxies=self.proxies
+        )
+
+    def get_ticker(self, symbol: str) -> Dict[str, Any]:
+        """
+        获取交易对的ticker数据
+        
+        Args:
+            symbol (str): 交易对，例如 "BTC-USDT"
+            
+        Returns:
+            dict: ticker数据
+        """
+        try:
+            result = self.market_api.get_ticker(instId=symbol)
+            self.logger.info(f"Successfully retrieved ticker for {symbol}")
+            return result
+        except Exception as e:
+            self.logger.error(f"获取ticker数据失败: {str(e)}")
+            raise
+
+    def get_candlesticks(self, symbol: str, bar: str = '1D', limit: int = 100) -> Dict[str, Any]:
+        """
+        获取K线数据
+        
+        Args:
+            symbol (str): 交易对，例如 "BTC-USDT"
+            bar (str): K线周期，默认'1D'
+            limit (int): 获取条数，默认100
+            
+        Returns:
+            dict: K线数据
+        """
+        try:
+            result = self.market_api.get_candlesticks(
+                instId=symbol,
+                bar=bar,
+                limit=str(limit)
+            )
+            self.logger.info(f"Successfully retrieved candlesticks for {symbol}")
+            return result
+        except Exception as e:
+            self.logger.error(f"获取K线数据失败: {str(e)}")
+            raise
 
     def get_positions(self, instrument_type: str = 'SWAP', instrument_id: str = '') -> Dict[str, Any]:
         """

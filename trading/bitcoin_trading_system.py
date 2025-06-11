@@ -10,7 +10,6 @@ from exchange.base import ExchangeBase
 from config.settings import Config
 from database.manager import DatabaseManager
 from strategies.pattern_strategy import PatternStrategy
-from trade.get_account import OkexAccountManager
 
 class BitcoinTradingSystem:
     def __init__(self, config: Config):
@@ -39,12 +38,10 @@ class BitcoinTradingSystem:
         # 初始化交易所API
         self.exchange_base = ExchangeBase()
         
-        # 初始化账户管理器
-        #self.account_manager = OkexAccountManager(is_simulated=config.IS_SIMULATED)
-        self.account_manager = OkexAccountManager()
+
         # 获取实际账户余额作为初始资金
         try:
-            self.capital = self.account_manager.get_balance()
+            self.capital = self.exchange_base.get_balance()
             self.logger.info(f"从账户获取初始资金: {self.capital} USDT")
         except Exception as e:
             # 如果获取失败，使用配置文件中的默认值
@@ -155,9 +152,9 @@ class BitcoinTradingSystem:
             }
             
         # 计算交易金额
-        from trade.get_account import OkexAccountManager
-        account_manager = OkexAccountManager(is_simulated=self.config.IS_SIMULATED)
-        balance = account_manager.get_balance()
+        
+        
+        balance = self.exchange_base.get_balance()
         trade_amount = balance * position_size
         
         # 设置止损和止盈
@@ -338,13 +335,13 @@ class BitcoinTradingSystem:
                         next_day_win_rate, avg_current_return, avg_movement, updated_at
                     )
                     SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
+                        week_period, 
+                        pattern,
+                        cases,
+                        avg_next_return,
+                        next_day_win_rate,
+                        avg_current_return,
+                        avg_movement,
                         NOW()
                     FROM 
                         get_price_patterns()
@@ -406,13 +403,31 @@ class BitcoinTradingSystem:
         获取当前价格
         :return: 当前价格
         """
-        try:
-            # 使用CCXT获取当前价格
-            ticker = self.exchange_base.exchange.fetch_ticker(self.config.TRADING_SYMBOL)
-            return ticker['last']
-        except Exception as e:
-            self.logger.error(f"获取当前价格错误: {str(e)}")
-            raise e
+        max_retries = 3
+        retry_delay = 2  # seconds
+        
+        for attempt in range(max_retries):
+            try:
+                # 使用OKX API获取当前价格
+                ticker_data = self.exchange_base.get_ticker(self.config.TRADING_SYMBOL)
+                
+                if ticker_data and 'data' in ticker_data and ticker_data['data']:
+                    # OKX API返回的价格在data[0]中的last字段
+                    last_price = float(ticker_data['data'][0].get('last'))
+                    if last_price is not None:
+                        return last_price
+                    else:
+                        raise ValueError(f"No last price in ticker data: {ticker_data}")
+                else:
+                    raise ValueError(f"Invalid ticker data received: {ticker_data}")
+                    
+            except Exception as e:
+                self.logger.error(f"获取当前价格错误 (尝试 {attempt + 1}/{max_retries}): {str(e)}")
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # 指数退避
+                else:
+                    raise Exception(f"获取价格失败，已重试 {max_retries} 次: {str(e)}")
 
     async def get_price_history(self, hours: int = 4) -> pd.Series:
         """
@@ -421,17 +436,32 @@ class BitcoinTradingSystem:
         :return: 价格历史Series
         """
         try:
-            # 获取1小时K线数据
-            since = int((datetime.now() - timedelta(hours=hours)).timestamp() * 1000)
-            ohlcv = self.exchange_base.exchange.fetch_ohlcv(self.config.TRADING_SYMBOL, '1h', since=since)
+            # 使用OKX API获取K线数据
+            kline_data = self.exchange_base.get_candlesticks(
+                symbol=self.config.TRADING_SYMBOL,
+                bar='1H',  # 1小时K线
+                limit=hours
+            )
             
-            # 转换为DataFrame
-            df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-            df.set_index('timestamp', inplace=True)
+            if not kline_data or 'data' not in kline_data:
+                raise ValueError(f"Invalid kline data received: {kline_data}")
+            
+            # OKX API返回的数据格式转换为DataFrame
+            # data字段包含一个列表，每个元素是[ts, o, h, l, c, vol, volCcy, volCcyQuote, confirm]
+            columns = ['ts', 'o', 'h', 'l', 'c', 'vol', 'volCcy', 'volCcyQuote', 'confirm']
+            df = pd.DataFrame(kline_data['data'], columns=columns)
+            
+            # 转换时间戳和数据类型
+            df['ts'] = pd.to_datetime(df['ts'].astype(float), unit='ms')
+            df['c'] = df['c'].astype(float)  # 收盘价转为float
+            df.set_index('ts', inplace=True)
+            
+            # 按时间升序排序
+            df.sort_index(inplace=True)
             
             # 返回收盘价Series
-            return df['close']
+            return df['c']
+            
         except Exception as e:
             self.logger.error(f"获取价格历史错误: {str(e)}")
             raise e

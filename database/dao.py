@@ -171,23 +171,35 @@ class KlineDAO(BaseDAO):
                 values = [{
                     'symbol': model.symbol,
                     'timestamp': model.timestamp,
-                    'open': model.open,
-                    'high': model.high,
-                    'low': model.low,
-                    'close': model.close,
-                    'volume': model.volume
+                    'open_price': model.open,
+                    'high_price': model.high,
+                    'low_price': model.low,
+                    'close_price': model.close,
+                    'volume': model.volume,
+                    'volume_currency': model.vol_ccy,
+                    'volume_currency_quote': model.vol_quote,
+                    'is_confirmed': model.confirm == '1'  # 转换为布尔值
                 } for model in kline_models]
                 
                 await session.execute(
                     text("""
-                    INSERT INTO klines (symbol, timestamp, open, high, low, close, volume)
-                    VALUES (:symbol, :timestamp, :open, :high, :low, :close, :volume)
+                    INSERT INTO kline_data (
+                        symbol, timestamp, open_price, high_price, low_price, close_price,
+                        volume, volume_currency, volume_currency_quote, is_confirmed
+                    )
+                    VALUES (
+                        :symbol, :timestamp, :open_price, :high_price, :low_price, :close_price,
+                        :volume, :volume_currency, :volume_currency_quote, :is_confirmed
+                    )
                     ON CONFLICT (symbol, timestamp) DO UPDATE SET
-                        open = EXCLUDED.open,
-                        high = EXCLUDED.high,
-                        low = EXCLUDED.low,
-                        close = EXCLUDED.close,
-                        volume = EXCLUDED.volume
+                        open_price = EXCLUDED.open_price,
+                        high_price = EXCLUDED.high_price,
+                        low_price = EXCLUDED.low_price,
+                        close_price = EXCLUDED.close_price,
+                        volume = EXCLUDED.volume,
+                        volume_currency = EXCLUDED.volume_currency,
+                        volume_currency_quote = EXCLUDED.volume_currency_quote,
+                        is_confirmed = EXCLUDED.is_confirmed
                     """),
                     values
                 )
@@ -198,7 +210,7 @@ class KlineDAO(BaseDAO):
     
     #@async_timer
     async def get_latest_kline(self, symbol: str) -> Optional[Kline]:
-        """获取指定交易对的最新K线数据（同步方式）"""
+        """获取指定交易对的最新K线数据"""
         async with self.db_manager.get_session() as session:
             try:
                 stmt = select(KlineModel).filter(
@@ -214,11 +226,14 @@ class KlineDAO(BaseDAO):
                     return Kline(
                         symbol=row.symbol,
                         timestamp=row.timestamp,
-                        open=row.open,
-                        high=row.high,
-                        low=row.low,
-                        close=row.close,
-                        volume=row.volume
+                        open=float(row.open_price),
+                        high=float(row.high_price),
+                        low=float(row.low_price),
+                        close=float(row.close_price),
+                        volume=float(row.volume),
+                        vol_ccy=float(row.volume_currency),
+                        vol_quote=float(row.volume_currency_quote),
+                        confirm='1' if row.is_confirmed else '0'
                     )
                 return None
                 

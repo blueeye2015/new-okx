@@ -16,7 +16,7 @@ class Config:
         user="postgres",
         password="12"
     )
-    INTERVAL = "1d"
+    INTERVAL = "1M"
     BATCH_SIZE = 10
     SYMBOLS = []  # 将由market_analyzer更新
     SYMBOLS_SWAP = [] # 所有合约
