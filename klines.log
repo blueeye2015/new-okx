@@ -1418,3 +1418,15 @@ DETAIL:  Returned type numeric does not match expected type double precision in 
 2025-06-11 09:24:16,897 - INFO - 所有API初始化成功
 2025-06-11 09:24:16,898 - INFO - 数据库表初始化成功
 2025-06-11 09:24:21,350 - INFO - 更新了 BTC-USDT 的 93 条K线数据
+2025-06-11 10:22:11,373 - INFO - MarketAnalyzer initialized
+2025-06-11 10:22:11,377 - INFO - 所有API初始化成功
+2025-06-11 10:22:12,678 - INFO - MarketDataService initialized
+2025-06-11 10:22:12,682 - INFO - 所有API初始化成功
+2025-06-11 10:22:12,683 - INFO - 数据库表初始化成功
+2025-06-11 10:24:02,477 - INFO - 更新了 BTC-USDT 的 93 条K线数据
+2025-06-11 10:26:32,935 - INFO - MarketAnalyzer initialized
+2025-06-11 10:26:32,939 - INFO - 所有API初始化成功
+2025-06-11 10:26:33,767 - INFO - MarketDataService initialized
+2025-06-11 10:26:33,771 - INFO - 所有API初始化成功
+2025-06-11 10:26:33,771 - INFO - 数据库表初始化成功
+2025-06-11 10:26:37,652 - INFO - 更新了 BTC-USDT 的 300 条K线数据

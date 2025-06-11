@@ -18,7 +18,6 @@ class BitcoinTradingSystem:
         :param config: 配置对象
         """
         self.position = None
-        #self.capital = config.INITIAL_CAPITAL
         self.config = config
         self.db_manager = DatabaseManager(config.DB_CONFIG)
         self.dao = TradeStrategyDAO(self.db_manager)
@@ -32,13 +31,9 @@ class BitcoinTradingSystem:
         self.pattern_stats = {}
         self.volatility_data = {}
         
-        # 初始化策略
-        self.strategy = PatternStrategy(self)
-        
         # 初始化交易所API
         self.exchange_base = ExchangeBase()
         
-
         # 获取实际账户余额作为初始资金
         try:
             self.capital = self.exchange_base.get_balance()
@@ -48,8 +43,8 @@ class BitcoinTradingSystem:
             #self.capital = config.DEFAULT_CAPITAL
             self.logger.warning(f"获取账户余额失败，使用默认值: {self.capital} USDT, 错误: {str(e)}")
         
-        # 加载模型数据
-        asyncio.create_task(self.load_model_data())
+        # 策略对象先设为None，等待数据加载后再初始化
+        self.strategy = None
 
     def setup_logging(self):
         """设置日志系统"""
@@ -66,74 +61,37 @@ class BitcoinTradingSystem:
             await self.dao.create_table()
             self.logger.info("数据库初始化成功")
 
-    async def load_model_data(self) -> None:
-        """从数据库加载模型数据"""
-        if not self.db_manager:
-            return
+    async def initialize(self):
+        """
+        异步初始化方法，用于加载数据并初始化策略
+        """
+        # 从数据库加载模型数据
+        pattern_data = await self.dao.get_pattern_stats_from_table()
+        
+        if not pattern_data:
+            self.logger.error("无法从数据库获取模型数据，系统无法启动")
+            raise ValueError("模型数据不可用")
             
-        try:
-            # 从price_patterns表获取数据
-            pattern_data = await self.dao.get_pattern_stats_from_table()
+        # 处理数据
+        for row in pattern_data:
+            day = row['week_period']
+            pattern = row['pattern']
             
-            # 如果没有最近的数据，则使用默认值
-            if not pattern_data:
-                self._set_default_model_data()
-                self.logger.warning("数据库中没有找到模型数据，使用默认值")
-                return
-            
-            # 处理查询结果，构建pattern_stats和volatility_data字典
-            self.pattern_stats = {}
-            self.volatility_data = {}
-            
-            for row in pattern_data:
-                day = row['week_period']
-                pattern = row['pattern']
-                win_rate = float(row['next_day_win_rate']) / 100  # 转换为小数
-                return_rate = float(row['avg_next_return']) / 100  # 转换为小数
-                movement = float(row['avg_movement']) / 100  # 转换为小数
+            if day not in self.pattern_stats:
+                self.pattern_stats[day] = {}
                 
-                # 初始化当天的字典（如果不存在）
-                if day not in self.pattern_stats:
-                    self.pattern_stats[day] = {}
-                
-                # 添加模式数据
-                self.pattern_stats[day][pattern] = {
-                    'win_rate': win_rate,
-                    'return_rate': return_rate,
-                    'cases': int(row['cases'])
-                }
-                
-                # 更新波动率数据
-                self.volatility_data[day] = max(movement, self.volatility_data.get(day, 0))
-            
-            self.logger.info("成功从数据库加载模型数据")
-                
-        except Exception as e:
-            self.logger.error(f"加载模型数据错误: {str(e)}")
-            self._set_default_model_data()
-
-    def _set_default_model_data(self) -> None:
-        """设置默认的模型数据"""
-        self.pattern_stats = {
-            'Sunday': {
-                'rise_then_fall': {'win_rate': 0.6125, 'return_rate': 0.0064, 'cases': 100},
-                'continuous_fall': {'win_rate': 0.6036, 'return_rate': 0.0097, 'cases': 100},
-                'fall_then_rise': {'win_rate': 0.4338, 'return_rate': -0.0050, 'cases': 100}
-            },
-            'Friday': {
-                'continuous_rise': {'win_rate': 0.5669, 'return_rate': 0.0083, 'cases': 100},
-                'rise_then_fall': {'win_rate': 0.5868, 'return_rate': 0.0030, 'cases': 100}
-            },
-            'Saturday': {
-                'continuous_rise': {'win_rate': 0.4424, 'return_rate': -0.0060, 'cases': 100}
+            self.pattern_stats[day][pattern] = {
+                'win_rate': float(row['next_day_win_rate']) / 100,  # 转换为小数
+                'return_rate': float(row['avg_next_return']) / 100,  # 转换为小数
+                'cases': int(row['cases'])
             }
-        }
-        self.volatility_data = {
-            'Monday': 0.0299,
-            'Wednesday': 0.0295,
-            'Saturday': 0.0152
-        }
-        self.logger.warning("使用默认模型数据")
+            
+            # 更新波动率数据
+            self.volatility_data[day] = float(row['avg_movement']) / 100
+        
+        # 数据加载完成后初始化策略
+        self.strategy = PatternStrategy(self)
+        self.logger.info("策略初始化完成")
 
     async def execute_trade(self, price: float, day: str, price_history: pd.Series) -> Dict:
         """
@@ -391,7 +349,7 @@ class BitcoinTradingSystem:
                 logging.info("模型数据已刷新")
                 
                 # 刷新后重新加载模型数据
-                await self.load_model_data()
+                await self.refresh_model_data()
                 
             except Exception as e:
                 await session.rollback()
@@ -506,11 +464,42 @@ class BitcoinTradingSystem:
         """
         启动系统
         """
-        # 初始化数据库
-        await self.initialize_database()
-        
-        # 启动交易循环和定时任务
-        await asyncio.gather(
-            self.run_trading_loop(),
-            self.run_scheduled_tasks()
-        )
+        try:
+            # 先初始化
+            await self.initialize()
+            
+            if not self.strategy:
+                self.logger.error("策略未初始化，系统无法启动")
+                return
+                
+            # 启动交易循环和定时任务
+            await asyncio.gather(
+                self.run_trading_loop(),
+                self.run_scheduled_tasks()
+            )
+        except Exception as e:
+            self.logger.error(f"系统启动失败: {str(e)}")
+            raise
+
+    def _load_model_data_sync(self):
+        """同步加载模型数据的初始值"""
+        self.pattern_stats = {
+            'Sunday': {
+                'rise_then_fall': {'win_rate': 0.6125, 'return_rate': 0.0064, 'cases': 100},
+                'continuous_fall': {'win_rate': 0.6036, 'return_rate': 0.0097, 'cases': 100},
+                'fall_then_rise': {'win_rate': 0.4338, 'return_rate': -0.0050, 'cases': 100}
+            },
+            'Friday': {
+                'continuous_rise': {'win_rate': 0.5669, 'return_rate': 0.0083, 'cases': 100},
+                'rise_then_fall': {'win_rate': 0.5868, 'return_rate': 0.0030, 'cases': 100}
+            },
+            'Saturday': {
+                'continuous_rise': {'win_rate': 0.4424, 'return_rate': -0.0060, 'cases': 100}
+            }
+        }
+        self.volatility_data = {
+            'Monday': 0.0299,
+            'Wednesday': 0.0295,
+            'Saturday': 0.0152
+        }
+        self.logger.info("已加载初始模型数据")

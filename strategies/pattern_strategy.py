@@ -1,18 +1,21 @@
+from typing import Dict, Tuple, Optional, List, Any, TYPE_CHECKING
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from typing import Dict, Tuple, Optional, List, Any
 import logging
+
+if TYPE_CHECKING:
+    from trading.bitcoin_trading_system import BitcoinTradingSystem
 
 class PatternStrategy:
     """基于价格模式的交易策略"""
     
-    def __init__(self, trading_system):
+    def __init__(self, trading_system: 'BitcoinTradingSystem'):
         """
         初始化策略
         :param trading_system: BitcoinTradingSystem实例
         """
-        self.system = trading_system
+        self.system: 'BitcoinTradingSystem' = trading_system
         self.logger = trading_system.logger
         
     def analyze_pattern(self, price_history: pd.Series) -> str:
@@ -47,7 +50,11 @@ class PatternStrategy:
         :return: 建议仓位比例
         """
         pattern_stats = self.system.pattern_stats
-        risk_level = self.system.config.RISK_LEVEL
+        if not pattern_stats:
+            self.logger.warning("模型数据为空，使用保守仓位")
+            return 0.1
+            
+        risk_level = getattr(self.system.config, 'RISK_LEVEL', 'low')  # 默认使用低风险
         
         if day in pattern_stats and pattern in pattern_stats[day]:
             stats = pattern_stats[day][pattern]
@@ -69,7 +76,7 @@ class PatternStrategy:
             }
             
             return min(kelly * risk_multiplier[risk_level], 0.5)
-        return 0
+        return 0.1  # 如果没有该模式的统计数据，使用保守仓位
 
     def set_stop_loss(self, price: float, day: str) -> float:
         """
@@ -79,6 +86,10 @@ class PatternStrategy:
         :return: 止损价格
         """
         volatility_data = self.system.volatility_data
+        if not volatility_data:
+            self.logger.warning("波动率数据为空，使用默认波动率")
+            return price * 0.98  # 默认2%止损
+            
         volatility = volatility_data.get(day, 0.02)
         
         if volatility > 0.025:  # 高波动日
@@ -96,8 +107,16 @@ class PatternStrategy:
         判断是否应该交易
         :return: (是否交易, 交易方向, 建议仓位比例)
         """
+        if len(price_history) < 4:
+            self.logger.warning("价格历史数据不足，不进行交易")
+            return False, "none", 0
+            
         pattern = self.analyze_pattern(price_history)
         pattern_stats = self.system.pattern_stats
+        
+        if not pattern_stats:
+            self.logger.warning("模型数据为空，不进行交易")
+            return False, "none", 0
         
         # 检查是否是禁止交易的模式
         if (day == 'Saturday' and pattern == 'continuous_rise') or \
