@@ -17,7 +17,6 @@ class BitcoinTradingSystem:
         初始化交易系统
         :param config: 配置对象
         """
-        self.position = None
         self.config = config
         self.db_manager = DatabaseManager(config.DB_CONFIG)
         self.dao = TradeStrategyDAO(self.db_manager)
@@ -110,8 +109,6 @@ class BitcoinTradingSystem:
             }
             
         # 计算交易金额
-        
-        
         balance = self.exchange_base.get_balance()
         trade_amount = balance * position_size
         
@@ -120,7 +117,7 @@ class BitcoinTradingSystem:
         take_profit = price * (1 + (price - stop_loss) / price * 1.5)  # 1.5倍风险收益比
         
         # 创建持仓记录
-        self.position = {
+        position = {
             'direction': direction,
             'entry_price': price,
             'size': trade_amount,
@@ -148,18 +145,20 @@ class BitcoinTradingSystem:
                 size=btc_amount
             )
             
-            self.logger.info(f"Opening trade: {self.position}")
+            # 保存持仓信息到数据库
+            await self.dao.save_position(position)
+            
+            self.logger.info(f"Opening trade: {position}")
             self.logger.info(f"Order result: {order_result}")
             
             return {
                 'action': 'open_trade',
-                'details': self.position,
+                'details': position,
                 'order_result': order_result
             }
             
         except Exception as e:
             self.logger.error(f"下单失败: {str(e)}")
-            self.position = None
             return {
                 'action': 'trade_failed',
                 'reason': str(e)
@@ -171,17 +170,22 @@ class BitcoinTradingSystem:
         :param current_price: 当前价格
         :return: 更新信息
         """
-        if not self.position:
+        # 从数据库获取当前持仓
+        position = await self.dao.get_active_position()
+        
+        if not position:
             return {'action': 'no_position'}
         
         # 先检查是否需要平仓
-        exit_signal = self.strategy.check_exit_signals(self.position, current_price)
+        exit_signal = self.strategy.check_exit_signals(position, current_price)
         if exit_signal['action'] == 'close_position':
             return await self.close_position(current_price, exit_signal['reason'])
         
         # 如果不需要平仓，更新持仓状态
-        update_result = self.strategy.update_position(self.position, current_price)
-        self.position = update_result['position']  # 更新持仓信息
+        update_result = self.strategy.update_position(position, current_price)
+        
+        # 更新数据库中的持仓信息
+        await self.dao.update_position(update_result['position'])
         
         return update_result
 
@@ -192,22 +196,25 @@ class BitcoinTradingSystem:
         :param reason: 平仓原因
         :return: 平仓信息
         """
-        if not self.position:
+        # 从数据库获取当前持仓
+        position = await self.dao.get_active_position()
+        
+        if not position:
             return {'action': 'no_position'}
             
-        profit = (price - self.position['entry_price']) * \
-                (1 if self.position['direction'] == 'long' else -1)
-        profit_pct = profit / self.position['entry_price']
+        profit = (price - position['entry_price']) * \
+                (1 if position['direction'] == 'long' else -1)
+        profit_pct = profit / position['entry_price']
         
         trade_result = {
-            'entry_time': self.position['entry_time'],
+            'entry_time': position['entry_time'],
             'exit_time': datetime.now(),
-            'entry_price': self.position['entry_price'],
+            'entry_price': position['entry_price'],
             'exit_price': price,
             'profit_pct': profit_pct,
-            'profit_amount': profit * self.position['size'],
-            'day_of_week': self.position['day'],
-            'pattern_type': self.position['pattern'],
+            'profit_amount': profit * position['size'],
+            'day_of_week': position['day'],
+            'pattern_type': position['pattern'],
             'exit_reason': reason
         }
         
@@ -217,13 +224,13 @@ class BitcoinTradingSystem:
             order_manager = OkexOrderManager(is_simulated=self.config.IS_SIMULATED)
             
             # 计算平仓数量
-            btc_amount = self.position['size'] / self.position['entry_price']
+            btc_amount = position['size'] / position['entry_price']
             
             # 执行平仓
             order_result = order_manager.place_order(
                 instrument_id=self.config.TRADING_SYMBOL,
                 order_type="market",
-                side="sell" if self.position['direction'] == "long" else "buy",
+                side="sell" if position['direction'] == "long" else "buy",
                 price=price,
                 size=btc_amount
             )
@@ -235,10 +242,10 @@ class BitcoinTradingSystem:
             self.capital += trade_result['profit_amount']
             
             # 记录交易结果到数据库
-            if self.db_manager:
-                await self.record_trade(trade_result)
+            await self.record_trade(trade_result)
             
-            self.position = None
+            # 删除活跃持仓记录
+            await self.dao.delete_position()
             
             return {
                 'action': 'close_position',

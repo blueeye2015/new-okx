@@ -275,8 +275,26 @@ class KlineDAO(BaseDAO):
 class TradeStrategyDAO(BaseDAO):
     @async_timer
     async def create_table(self):
-        pass
-    
+        """创建必要的数据库表"""
+        async with self.db_manager.get_session() as session:
+            # 创建活跃持仓表
+            await session.execute(text("""
+                CREATE TABLE IF NOT EXISTS active_positions (
+                    id SERIAL PRIMARY KEY,
+                    direction VARCHAR(10) NOT NULL,
+                    entry_price DECIMAL(20, 8) NOT NULL,
+                    size DECIMAL(20, 8) NOT NULL,
+                    stop_loss DECIMAL(20, 8) NOT NULL,
+                    take_profit DECIMAL(20, 8) NOT NULL,
+                    entry_time TIMESTAMP NOT NULL,
+                    pattern VARCHAR(50),
+                    day_of_week VARCHAR(20),
+                    created_at TIMESTAMP DEFAULT NOW(),
+                    updated_at TIMESTAMP DEFAULT NOW()
+                );
+            """))
+            await session.commit()
+
     @async_timer
     async def get_price_patterns(self) -> List[Dict]:
         """获取价格模式统计数据"""
@@ -424,3 +442,76 @@ class TradeStrategyDAO(BaseDAO):
     async def query(self, **kwargs):
         """实现抽象方法"""
         pass
+
+    async def get_active_position(self) -> Optional[Dict]:
+        """获取当前活跃的持仓"""
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(text("""
+                SELECT * FROM active_positions 
+                ORDER BY entry_time DESC 
+                LIMIT 1
+            """))
+            position = result.fetchone()
+            
+            if position:
+                # 将SQLAlchemy Row对象转换为字典
+                return {
+                    'direction': position.direction,
+                    'entry_price': float(position.entry_price),
+                    'size': float(position.size),
+                    'stop_loss': float(position.stop_loss),
+                    'take_profit': float(position.take_profit),
+                    'entry_time': position.entry_time,
+                    'pattern': position.pattern,
+                    'day': position.day_of_week
+                }
+            return None
+
+    async def save_position(self, position: Dict) -> None:
+        """保存新的持仓信息"""
+        async with self.db_manager.get_session() as session:
+            # 先清除之前的持仓记录
+            await session.execute(text("DELETE FROM active_positions"))
+            
+            # 插入新的持仓记录
+            await session.execute(text("""
+                INSERT INTO active_positions (
+                    direction, entry_price, size, stop_loss, take_profit,
+                    entry_time, pattern, day_of_week
+                ) VALUES (
+                    :direction, :entry_price, :size, :stop_loss, :take_profit,
+                    :entry_time, :pattern, :day
+                )
+            """), {
+                'direction': position['direction'],
+                'entry_price': position['entry_price'],
+                'size': position['size'],
+                'stop_loss': position['stop_loss'],
+                'take_profit': position['take_profit'],
+                'entry_time': position['entry_time'],
+                'pattern': position['pattern'],
+                'day': position['day']
+            })
+            await session.commit()
+
+    async def update_position(self, position: Dict) -> None:
+        """更新持仓信息"""
+        async with self.db_manager.get_session() as session:
+            await session.execute(text("""
+                UPDATE active_positions 
+                SET stop_loss = :stop_loss,
+                    take_profit = :take_profit,
+                    updated_at = NOW()
+                WHERE entry_time = :entry_time
+            """), {
+                'stop_loss': position['stop_loss'],
+                'take_profit': position['take_profit'],
+                'entry_time': position['entry_time']
+            })
+            await session.commit()
+
+    async def delete_position(self) -> None:
+        """删除持仓记录"""
+        async with self.db_manager.get_session() as session:
+            await session.execute(text("DELETE FROM active_positions"))
+            await session.commit()
