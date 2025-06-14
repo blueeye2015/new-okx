@@ -29,7 +29,7 @@ class BitcoinTradingSystem(ExchangeBase):
         self._initialized_swap = set()
         
         # 设置日志
-        self.setup_logging()
+        #self.setup_logging()
                 
         # 模型数据缓存
         self.pattern_stats = {}
@@ -38,13 +38,13 @@ class BitcoinTradingSystem(ExchangeBase):
         # 加载模型数据
         asyncio.create_task(self.load_model_data())
 
-    def setup_logging(self):
-        """设置日志系统"""
-        logging.basicConfig(
-            filename=f'trading_log_{datetime.now().strftime("%Y%m%d")}.log',
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
+    # def setup_logging(self):
+    #     """设置日志系统"""
+    #     logging.basicConfig(
+    #         filename=f'trading_log_{datetime.now().strftime("%Y%m%d")}.log',
+    #         level=logging.INFO,
+    #         format='%(asctime)s - %(levelname)s - %(message)s'
+    #     )
         self.logger = logging.getLogger('BitcoinTrader')
 
     async def initialize_database(self):

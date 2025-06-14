@@ -1,1432 +1,364 @@
-2025-04-15 10:51:37,879 - ERROR - 获取有效交易对时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-04-15 10:51:38,408 - INFO - 数据库表初始化成功
-2025-04-15 10:51:38,864 - INFO - 更新了 BTC-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:39,269 - INFO - 更新了 ETH-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:39,664 - INFO - 更新了 SOL-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:40,089 - INFO - 更新了 TON-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:40,522 - INFO - 更新了 DOGE-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:40,922 - INFO - 更新了 XRP-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:41,315 - INFO - 更新了 ADA-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:41,706 - INFO - 更新了 ALGO-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:42,101 - INFO - 更新了 ATOM-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:42,495 - INFO - 更新了 AVAX-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:42,878 - INFO - 更新了 BCH-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:43,301 - INFO - 更新了 BSV-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:43,719 - INFO - 更新了 CRV-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:44,138 - INFO - 更新了 DOT-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:44,566 - INFO - 更新了 EOS-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:44,992 - INFO - 更新了 ETC-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:45,412 - INFO - 更新了 FIL-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:45,830 - INFO - 更新了 LINK-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:46,244 - INFO - 更新了 LTC-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:46,613 - INFO - 更新了 MANA-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:47,050 - INFO - 更新了 NEO-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:47,489 - INFO - 更新了 OP-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:47,906 - INFO - 更新了 SAND-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:48,340 - INFO - 更新了 SUI-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:48,842 - INFO - 更新了 SUSHI-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:49,365 - INFO - 更新了 THETA-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:49,767 - INFO - 更新了 TRX-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:51:50,189 - INFO - 更新了 UNI-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:52:11,253 - ERROR - 获取有效交易对时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-04-15 10:52:11,716 - INFO - 数据库表初始化成功
-2025-04-15 10:52:12,292 - INFO - 更新了 BTC-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:52:12,707 - INFO - 更新了 ETH-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:52:13,097 - INFO - 更新了 SOL-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:52:42,608 - ERROR - 获取有效交易对时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-04-15 10:55:08,405 - ERROR - 获取有效交易对时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-04-15 10:55:08,897 - INFO - 数据库表初始化成功
-2025-04-15 10:55:09,408 - INFO - 更新了 BTC-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:09,896 - INFO - 更新了 ETH-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:10,328 - INFO - 更新了 SOL-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:10,757 - INFO - 更新了 TON-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:11,230 - INFO - 更新了 DOGE-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:11,727 - INFO - 更新了 XRP-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:55:12,136 - INFO - 更新了 ADA-USD-SWAP 的 100 条fundingrate数据
-2025-04-15 10:56:28,909 - ERROR - 获取有效交易对时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-04-15 10:56:29,524 - INFO - 数据库表初始化成功
-2025-04-15 11:10:51,126 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:10:51,631 - INFO - 数据库表初始化成功
-2025-04-15 11:12:20,597 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:12:21,026 - INFO - 数据库表初始化成功
-2025-04-15 11:12:40,449 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:12:40,875 - INFO - 数据库表初始化成功
-2025-04-15 11:13:04,618 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:13:05,128 - INFO - 数据库表初始化成功
-2025-04-15 11:13:46,110 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:13:46,526 - INFO - 数据库表初始化成功
-2025-04-15 11:15:18,726 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 11:15:19,269 - INFO - 数据库表初始化成功
-2025-04-15 11:15:40,451 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:15:05,060 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:15:05,527 - INFO - 数据库表初始化成功
-2025-04-15 15:15:05,528 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:17:08,236 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:17:08,763 - INFO - 数据库表初始化成功
-2025-04-15 15:17:26,275 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:18:57,652 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:18:58,095 - INFO - 数据库表初始化成功
-2025-04-15 15:18:58,096 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:20:24,806 - INFO - 找到 309 个符合条件的交易对
-2025-04-15 15:20:26,046 - INFO - 数据库表初始化成功
-2025-04-15 15:20:26,046 - INFO - 找到 309 个符合条件的交易对
-2025-04-15 15:20:28,616 - INFO - 更新了 BTC-USDT 的 300 条K线数据
-2025-04-15 15:20:28,838 - INFO - 更新了 ETH-USDT 的 300 条K线数据
-2025-04-15 15:20:29,089 - INFO - 更新了 OKB-USDT 的 300 条K线数据
-2025-04-15 15:20:29,291 - INFO - 更新了 SOL-USDT 的 300 条K线数据
-2025-04-15 15:20:29,649 - INFO - 更新了 TON-USDT 的 300 条K线数据
-2025-04-15 15:20:29,838 - INFO - 更新了 DOGE-USDT 的 300 条K线数据
-2025-04-15 15:20:30,034 - INFO - 更新了 XRP-USDT 的 300 条K线数据
-2025-04-15 15:20:30,230 - INFO - 更新了 PI-USDT 的 55 条K线数据
-2025-04-15 15:20:30,434 - INFO - 更新了 OM-USDT 的 300 条K线数据
-2025-04-15 15:20:30,602 - INFO - 更新了 PROMPT-USDT 的 6 条K线数据
-2025-04-15 15:20:30,774 - INFO - 更新了 BABY-USDT 的 6 条K线数据
-2025-04-15 15:20:30,968 - INFO - 更新了 1INCH-USDT 的 300 条K线数据
-2025-04-15 15:20:31,246 - INFO - 更新了 AAVE-USDT 的 300 条K线数据
-2025-04-15 15:20:31,573 - INFO - 更新了 ACA-USDT 的 300 条K线数据
-2025-04-15 15:20:31,758 - INFO - 更新了 ACE-USDT 的 300 条K线数据
-2025-04-15 15:20:31,938 - INFO - 更新了 ACH-USDT 的 300 条K线数据
-2025-04-15 15:20:32,133 - INFO - 更新了 ACT-USDT 的 153 条K线数据
-2025-04-15 15:20:32,333 - INFO - 更新了 ADA-USDT 的 300 条K线数据
-2025-04-15 15:20:32,525 - INFO - 更新了 AERGO-USDT 的 300 条K线数据
-2025-04-15 15:20:32,718 - INFO - 更新了 AEVO-USDT 的 300 条K线数据
-2025-04-15 15:20:32,923 - INFO - 更新了 AGLD-USDT 的 300 条K线数据
-2025-04-15 15:20:33,102 - INFO - 更新了 AIDOGE-USDT 的 300 条K线数据
-2025-04-15 15:20:33,286 - INFO - 更新了 AIXBT-USDT 的 91 条K线数据
-2025-04-15 15:20:33,519 - INFO - 更新了 ALCX-USDT 的 300 条K线数据
-2025-04-15 15:20:33,727 - INFO - 更新了 ALGO-USDT 的 300 条K线数据
-2025-04-15 15:20:33,928 - INFO - 更新了 ALPHA-USDT 的 300 条K线数据
-2025-04-15 15:20:34,103 - INFO - 更新了 ANIME-USDT 的 83 条K线数据
-2025-04-15 15:20:34,311 - INFO - 更新了 APE-USDT 的 300 条K线数据
-2025-04-15 15:20:34,530 - INFO - 更新了 API3-USDT 的 300 条K线数据
-2025-04-15 15:20:34,738 - INFO - 更新了 APT-USDT 的 300 条K线数据
-2025-04-15 15:20:34,981 - INFO - 更新了 AR-USDT 的 300 条K线数据
-2025-04-15 15:20:35,178 - INFO - 更新了 ARB-USDT 的 300 条K线数据
-2025-04-15 15:20:35,356 - INFO - 更新了 ARG-USDT 的 300 条K线数据
-2025-04-15 15:20:35,550 - INFO - 更新了 ARKM-USDT 的 244 条K线数据
-2025-04-15 15:20:35,752 - INFO - 更新了 ARTY-USDT 的 300 条K线数据
-2025-04-15 15:20:35,974 - INFO - 更新了 ASTR-USDT 的 300 条K线数据
-2025-04-15 15:20:36,178 - INFO - 更新了 ATH-USDT 的 300 条K线数据
-2025-04-15 15:20:36,372 - INFO - 更新了 ATOM-USDT 的 300 条K线数据
-2025-04-15 15:20:36,581 - INFO - 更新了 AUCTION-USDT 的 300 条K线数据
-2025-04-15 15:20:36,786 - INFO - 更新了 AVAX-USDT 的 300 条K线数据
-2025-04-15 15:20:36,983 - INFO - 更新了 AXS-USDT 的 300 条K线数据
-2025-04-15 15:20:37,179 - INFO - 更新了 BABYDOGE-USDT 的 300 条K线数据
-2025-04-15 15:20:37,385 - INFO - 更新了 BADGER-USDT 的 300 条K线数据
-2025-04-15 15:20:37,581 - INFO - 更新了 BAL-USDT 的 300 条K线数据
-2025-04-15 15:20:37,872 - INFO - 更新了 BAND-USDT 的 300 条K线数据
-2025-04-15 15:20:38,052 - INFO - 更新了 BANANA-USDT 的 180 条K线数据
-2025-04-15 15:20:38,251 - INFO - 更新了 BAT-USDT 的 300 条K线数据
-2025-04-15 15:20:38,440 - INFO - 更新了 BCH-USDT 的 300 条K线数据
-2025-04-15 15:20:38,596 - INFO - 更新了 BERA-USDT 的 69 条K线数据
-2025-04-15 15:20:38,819 - INFO - 更新了 BETH-USDT 的 300 条K线数据
-2025-04-15 15:20:39,025 - INFO - 更新了 BICO-USDT 的 300 条K线数据
-2025-04-15 15:38:50,095 - WARNING - 处理交易对 BTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 OKB-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 SOL-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 TON-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 DOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 XRP-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 PI-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 OM-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 PROMPT-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 BABY-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 1INCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AAVE-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ACA-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ACE-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ACH-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ACT-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 ADA-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AERGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AEVO-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AGLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AIDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,104 - WARNING - 处理交易对 AIXBT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ALCX-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ALGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ALPHA-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ANIME-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 APE-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 API3-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 APT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 AR-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ARB-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ARG-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ARKM-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ARTY-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ASTR-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ATH-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 ATOM-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 AUCTION-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 AVAX-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 AXS-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BABYDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BADGER-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BAL-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BAND-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BANANA-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BERA-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BICO-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BIGTIME-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BIO-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BLUR-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BNB-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BOME-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BONE-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BONK-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BORA-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BSV-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 BTT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CATI-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CELO-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CELR-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CETUS-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CFG-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CFX-USDT 时出错: 'base'
-2025-04-15 15:38:50,105 - WARNING - 处理交易对 CHZ-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CITY-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CLV-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 COMP-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CORE-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CRV-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CSPR-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CTXC-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CVC-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CVX-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 CXT-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DAI-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DAO-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DEGEN-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DEP-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DGB-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DOGS-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DORA-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DOT-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DUCK-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 DYDX-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 EGLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 EIGEN-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ELF-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ELON-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ENJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ENS-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 EOS-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ERN-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ETC-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ETHW-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 ETHFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FET-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FIL-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FLOW-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FLOKI-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FLR-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FLUID-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FORTH-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FOXY-USDT 时出错: 'base'
-2025-04-15 15:38:50,106 - WARNING - 处理交易对 FXS-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 G-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GALA-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GALFT-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GAS-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GEAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GHST-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GLMR-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GMT-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GMX-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GOAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GODS-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GOG-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 GRT-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 HBAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 HMSTR-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 ICE-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 ICP-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 ICX-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 ID-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 ILV-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 IMX-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 INJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 IOST-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 IOTA-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 IP-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 IQ-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 J-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 JOE-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 JST-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 JTO-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 JUP-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KAIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KAITO-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KDA-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KISHU-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KNC-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 KSM-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 LAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 LDO-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 LEO-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 LINK-USDT 时出错: 'base'
-2025-04-15 15:38:50,107 - WARNING - 处理交易对 LOOKS-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LPT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LQTY-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LRC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LSK-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LUNC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 LUNA-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MAGIC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MAJOR-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MANA-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MASK-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MAX-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MDT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 ME-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MEME-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MEMEFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MENGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MERL-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 METIS-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MEW-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MILO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MINA-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MKR-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MLN-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MOODENG-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MORPHO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MOVR-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MOVE-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 MXC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NAVX-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NC-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NEAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NEIRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NEO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NFT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NMR-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NOT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 NULS-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OAS-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OKSOL-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OKT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OL-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OMI-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 ONDO-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 ONE-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 ONT-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 OP-USDT 时出错: 'base'
-2025-04-15 15:38:50,108 - WARNING - 处理交易对 ORBS-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 ORDI-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 OXT-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PARTI-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PENDLE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PENGU-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PEOPLE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PEPE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PERP-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PHA-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PIXEL-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PNUT-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 POLYDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 POL-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 POR-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PRCL-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PRQ-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PSTAKE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PYTH-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 PYUSD-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 QTUM-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RACA-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RADAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RAY-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RDNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RENDER-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RIO-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RON-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RPL-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RSR-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RSS3-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RUNECOIN-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 RVN-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 S-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SAFE-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SAMO-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SAND-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SATS-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SC-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SCR-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SD-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SHIB-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SKL-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SLERF-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SLP-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SNX-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SONIC-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SPURS-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SSV-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SSWP-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 STETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 STORJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 STRK-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 STX-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SUI-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SUSHI-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SWEAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,109 - WARNING - 处理交易对 SWFTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 T-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 THETA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TNSR-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TRA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TRB-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TRUMP-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TRX-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 TURBO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ULTI-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 UMA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 UNI-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 USDC-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 USTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 UXLINK-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 VELO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 VELODROME-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 VENOM-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 VINE-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 VRA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 W-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WAXP-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WBTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WIF-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WIN-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WOO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 X-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 XAUT-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 XCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 XLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 XNO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 XTZ-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 YFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 YGG-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZBCN-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZENT-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZERO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZETA-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZEUS-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZIL-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZK-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZKJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 ZRX-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - WARNING - 处理交易对 WCT-USDT 时出错: 'base'
-2025-04-15 15:38:50,110 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:38:50,559 - INFO - 数据库表初始化成功
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 BTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 OKB-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 SOL-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 TON-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 DOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 XRP-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 PI-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 OM-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 PROMPT-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 BABY-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 1INCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AAVE-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ACA-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ACE-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ACH-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ACT-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 ADA-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AERGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AEVO-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AGLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AIDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,559 - WARNING - 处理交易对 AIXBT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ALCX-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ALGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ALPHA-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ANIME-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 APE-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 API3-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 APT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 AR-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ARB-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ARG-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ARKM-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ARTY-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ASTR-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ATH-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 ATOM-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 AUCTION-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 AVAX-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 AXS-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BABYDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BADGER-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BAL-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BAND-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BANANA-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BERA-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BICO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BIGTIME-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BIO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BLUR-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BNB-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BOME-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BONE-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BONK-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BORA-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BSV-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 BTT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CATI-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CELO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CELR-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CETUS-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CFG-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CFX-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CHZ-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CITY-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CLV-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 COMP-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CORE-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CRV-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CSPR-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CTXC-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CVC-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CVX-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 CXT-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 DAI-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 DAO-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 DEGEN-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 DEP-USDT 时出错: 'base'
-2025-04-15 15:38:50,560 - WARNING - 处理交易对 DGB-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DOGS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DORA-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DOT-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DUCK-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 DYDX-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 EGLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 EIGEN-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ELF-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ELON-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ENJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ENS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 EOS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ERN-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ETC-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ETHW-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ETHFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FET-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FIL-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FLOW-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FLOKI-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FLR-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FLUID-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FORTH-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FOXY-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 FXS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 G-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GALA-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GALFT-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GAS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GEAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GHST-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GLMR-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GMT-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GMX-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GOAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GODS-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GOG-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 GRT-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 HBAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 HMSTR-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ICE-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ICP-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ICX-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ID-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 ILV-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 IMX-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 INJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 IOST-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 IOTA-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 IP-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 IQ-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 J-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 JOE-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 JST-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 JTO-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 JUP-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 KAIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,561 - WARNING - 处理交易对 KAITO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 KDA-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 KISHU-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 KNC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 KSM-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LDO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LEO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LINK-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LOOKS-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LPT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LQTY-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LRC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LSK-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LUNC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 LUNA-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MAGIC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MAJOR-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MANA-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MASK-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MAX-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MDT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ME-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MEME-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MEMEFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MENGO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MERL-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 METIS-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MEW-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MILO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MINA-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MKR-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MLN-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MOODENG-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MORPHO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MOVR-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MOVE-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 MXC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NAVX-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NC-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NEAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NEIRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NEO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NFT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NMR-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NOT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 NULS-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OAS-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OKSOL-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OKT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OL-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OMI-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ONDO-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ONE-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ONT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OP-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ORBS-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 ORDI-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 OXT-USDT 时出错: 'base'
-2025-04-15 15:38:50,562 - WARNING - 处理交易对 PARTI-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PENDLE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PENGU-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PEOPLE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PEPE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PERP-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PHA-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PIXEL-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PNUT-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 POLYDOGE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 POL-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 POR-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PRCL-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PRQ-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PSTAKE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PYTH-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 PYUSD-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 QTUM-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RACA-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RADAR-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RAY-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RDNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RENDER-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RIO-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RON-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RPL-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RSR-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RSS3-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RUNECOIN-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 RVN-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 S-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SAFE-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SAMO-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SAND-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SATS-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SC-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SCR-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SD-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SHIB-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SKL-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SLERF-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SLP-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SNT-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SNX-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SONIC-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SPURS-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SSV-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SSWP-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 STETH-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 STORJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 STRK-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 STX-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SUI-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SUSHI-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SWEAT-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 SWFTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 T-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 THETA-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 TIA-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 TNSR-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 TRA-USDT 时出错: 'base'
-2025-04-15 15:38:50,563 - WARNING - 处理交易对 TRB-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 TRUMP-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 TRX-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 TURBO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ULTI-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 UMA-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 UNI-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 USDC-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 USTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 UXLINK-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 VELO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 VELODROME-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 VENOM-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 VINE-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 VRA-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 W-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WAXP-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WBTC-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WIF-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WIN-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WLD-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WOO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 X-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 XAUT-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 XCH-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 XLM-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 XNO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 XTZ-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 YFI-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 YGG-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZBCN-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZENT-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZERO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZETA-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZEUS-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZIL-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZK-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZKJ-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZRO-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 ZRX-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - WARNING - 处理交易对 WCT-USDT 时出错: 'base'
-2025-04-15 15:38:50,564 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:42:17,623 - WARNING - 处理交易对 WCT-USDT 时出错: 'base'
-2025-04-15 15:45:02,462 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:45:03,572 - INFO - 数据库表初始化成功
-2025-04-15 15:45:38,796 - INFO - 找到 0 个符合条件的交易对
-2025-04-15 15:45:39,267 - INFO - 数据库表初始化成功
-2025-04-15 16:04:07,360 - INFO - 数据库表初始化成功
-2025-04-15 16:04:10,163 - INFO - 更新了 BTC-USDT 的 300 条K线数据
-2025-04-15 16:04:10,421 - INFO - 更新了 ETH-USDT 的 300 条K线数据
-2025-04-15 16:04:10,638 - INFO - 更新了 XRP-USDT 的 300 条K线数据
-2025-04-15 16:17:43,191 - INFO - 数据库表初始化成功
-2025-04-15 16:17:45,839 - INFO - 更新了 BTC-USDT 的 300 条K线数据
-2025-04-15 16:17:46,079 - INFO - 更新了 ETH-USDT 的 300 条K线数据
-2025-04-15 16:17:46,258 - INFO - 更新了 XRP-USDT 的 300 条K线数据
-2025-04-15 16:17:46,483 - INFO - 更新了 SOL-USDT 的 300 条K线数据
-2025-04-15 16:18:46,929 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:18:47,112 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:18:47,350 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:18:47,516 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:19:47,963 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:19:48,150 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:19:48,312 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:19:48,480 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:20:48,878 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:20:49,066 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:20:49,252 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:20:49,432 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:21:49,929 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:21:50,116 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:21:50,285 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:21:50,453 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:22:50,910 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:22:51,071 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:22:51,249 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:22:51,417 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:23:51,847 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:23:52,019 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:23:52,198 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:23:52,366 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:24:52,763 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:24:52,947 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:24:53,117 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:24:53,305 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-04-15 16:25:53,741 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-04-15 16:25:53,923 - INFO - 更新了 ETH-USDT 的 10 条K线数据
-2025-04-15 16:25:54,098 - INFO - 更新了 XRP-USDT 的 10 条K线数据
-2025-04-15 16:25:54,276 - INFO - 更新了 SOL-USDT 的 10 条K线数据
-2025-05-10 13:29:16,959 - INFO - 数据库表初始化成功
-2025-05-10 13:29:18,452 - INFO - 更新了 BTC-USDT 的 300 条K线数据
-2025-05-10 13:30:18,810 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:31:19,305 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:32:19,608 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:33:19,980 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:34:20,657 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:35:20,946 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:36:21,252 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:37:21,846 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:38:22,308 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:39:22,625 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:40:23,133 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:41:23,459 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:42:23,752 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:43:24,138 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:44:24,461 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:45:24,941 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:46:25,258 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:47:30,302 - ERROR - 获取 BTC-USDT K线数据失败: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
-2025-05-10 13:47:30,302 - ERROR - 更新spot BTC-USDT 时出错: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
-2025-05-10 13:47:30,303 - ERROR - 更新 BTC-USDT 失败: okx GET https://www.okx.com/api/v5/market/candles?instId=BTC-USDT&bar=1Dutc&limit=10
-2025-05-10 13:48:30,642 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-10 13:49:30,961 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-05-26 15:29:42,095 - INFO - 数据库表初始化成功
-2025-05-27 09:15:25,188 - INFO - 数据库表初始化成功
-2025-05-27 09:15:39,519 - INFO - Starting task get_pattern_stats_from_table (ID: 1902732396848)
-2025-05-27 09:15:40,026 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:15:40,027 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:15:40,027 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:16:00,581 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 09:16:00,584 - INFO - Task get_pattern_stats_from_table (ID: 1902732396848) completed in 21.06 seconds
-2025-05-27 09:16:00,585 - INFO - Starting task get_price_patterns (ID: 1902732396848)
-2025-05-27 09:16:21,643 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 09:16:21,646 - INFO - Task get_price_patterns (ID: 1902732396848) completed in 21.06 seconds
-2025-05-27 09:16:21,646 - INFO - Starting task update_price_patterns (ID: 1902732396848)
-2025-05-27 09:16:21,646 - INFO - Task update_price_patterns (ID: 1902732396848) completed in 0.00 seconds
-2025-05-27 09:16:21,647 - INFO - 成功从数据库加载模型数据
-2025-05-27 09:16:21,647 - WARNING - 使用默认模型数据
-2025-05-27 09:16:48,336 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:16:48,336 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:16:48,337 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:18:08,516 - ERROR - 获取 BTC-USDT K线数据失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:18:08,516 - ERROR - 更新spot BTC-USDT 时出错: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 09:18:08,516 - ERROR - 更新 BTC-USDT 失败: okx {"msg":"API key doesn't exist","code":"50119"}
-2025-05-27 10:14:29,248 - INFO - 数据库表初始化成功
-2025-05-27 10:14:59,652 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:15:49,505 - INFO - Starting task get_pattern_stats_from_table (ID: 2115749356000)
-2025-05-27 10:16:00,269 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:16:47,667 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 10:16:49,952 - INFO - Task get_pattern_stats_from_table (ID: 2115749356000) completed in 106.83 seconds
-2025-05-27 10:16:52,699 - INFO - Starting task get_price_patterns (ID: 2115749356000)
-2025-05-27 10:17:00,292 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:17:19,315 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 10:17:20,946 - INFO - Task get_price_patterns (ID: 2115749356000) completed in 28.30 seconds
-2025-05-27 10:17:23,553 - INFO - Starting task update_price_patterns (ID: 2115749356000)
-2025-05-27 10:17:25,352 - INFO - Task update_price_patterns (ID: 2115749356000) completed in 2.08 seconds
-2025-05-27 10:17:27,371 - INFO - 成功从数据库加载模型数据
-2025-05-27 10:17:32,092 - WARNING - 使用默认模型数据
-2025-05-27 10:18:00,301 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:19:00,304 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:20:00,316 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:21:00,329 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:22:00,334 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:23:00,340 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:24:00,343 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:25:00,355 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 10:26:01,389 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:05:29,224 - INFO - 数据库表初始化成功
-2025-05-27 14:05:56,208 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:05:59,177 - INFO - Starting task get_pattern_stats_from_table (ID: 2871897969328)
-2025-05-27 14:06:22,775 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 14:06:31,549 - INFO - Task get_pattern_stats_from_table (ID: 2871897969328) completed in 32.78 seconds
-2025-05-27 14:06:34,558 - INFO - Starting task get_price_patterns (ID: 2871897969328)
-2025-05-27 14:06:56,417 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:07:03,973 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 14:07:05,726 - INFO - Task get_price_patterns (ID: 2871897969328) completed in 31.46 seconds
-2025-05-27 14:07:09,726 - INFO - Starting task update_price_patterns (ID: 2871897969328)
-2025-05-27 14:07:11,861 - INFO - Task update_price_patterns (ID: 2871897969328) completed in 2.34 seconds
-2025-05-27 14:07:13,685 - INFO - 成功从数据库加载模型数据
-2025-05-27 14:07:18,724 - WARNING - 使用默认模型数据
-2025-05-27 14:07:56,442 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:08:56,450 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:09:56,462 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 14:15:56,750 - INFO - 数据库表初始化成功
-2025-05-27 14:16:48,571 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 15:54:34,857 - ERROR - 发生错误: asyncio.run() cannot be called from a running event loop
-2025-05-27 16:32:20,556 - INFO - Starting task get_pattern_stats_from_table (ID: 1520261096768)
-2025-05-27 16:32:20,569 - INFO - Starting task refresh_model_data (ID: 1520261097088)
-2025-05-27 16:32:41,611 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:32:41,614 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:32:41,615 - INFO - Task get_pattern_stats_from_table (ID: 1520261096768) completed in 21.06 seconds
-2025-05-27 16:32:41,616 - INFO - Starting task get_price_patterns (ID: 1520261096768)
-2025-05-27 16:32:41,619 - ERROR - Task refresh_model_data (ID: 1520261097088) failed after 21.05 seconds: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:32:41,619 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:33:02,649 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:33:02,650 - INFO - Task get_price_patterns (ID: 1520261096768) completed in 21.03 seconds
-2025-05-27 16:33:02,650 - INFO - Starting task update_price_patterns (ID: 1520261096768)
-2025-05-27 16:33:02,650 - INFO - Task update_price_patterns (ID: 1520261096768) completed in 0.00 seconds
-2025-05-27 16:33:02,650 - INFO - 成功从数据库加载模型数据
-2025-05-27 16:33:02,651 - WARNING - 使用默认模型数据
-2025-05-27 16:37:37,725 - INFO - Starting task get_pattern_stats_from_table (ID: 3068508595680)
-2025-05-27 16:37:37,731 - INFO - Starting task refresh_model_data (ID: 3068508595840)
-2025-05-27 16:37:58,768 - ERROR - 从price_patterns表获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:37:58,770 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:37:58,772 - INFO - Task get_pattern_stats_from_table (ID: 3068508595680) completed in 21.05 seconds
-2025-05-27 16:37:58,772 - INFO - Starting task get_price_patterns (ID: 3068508595680)
-2025-05-27 16:37:58,775 - ERROR - Task refresh_model_data (ID: 3068508595840) failed after 21.04 seconds: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:37:58,775 - ERROR - 刷新模型数据时出错: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:38:22,584 - ERROR - 获取价格模式统计数据失败: [WinError 121] 信号灯超时时间已到
-2025-05-27 16:38:22,585 - INFO - Task get_price_patterns (ID: 3068508595680) completed in 23.81 seconds
-2025-05-27 16:38:22,585 - INFO - Starting task update_price_patterns (ID: 3068508595680)
-2025-05-27 16:38:22,585 - INFO - Task update_price_patterns (ID: 3068508595680) completed in 0.00 seconds
-2025-05-27 16:38:22,585 - INFO - 成功从数据库加载模型数据
-2025-05-27 16:38:22,586 - WARNING - 使用默认模型数据
-2025-05-27 16:41:10,548 - INFO - Starting task get_pattern_stats_from_table (ID: 2657446545184)
-2025-05-27 16:41:10,564 - INFO - Starting task refresh_model_data (ID: 2657446545024)
-2025-05-27 16:41:10,736 - INFO - Task get_pattern_stats_from_table (ID: 2657446545184) completed in 0.19 seconds
-2025-05-27 16:41:10,736 - INFO - Starting task get_price_patterns (ID: 2657446545184)
-2025-05-27 16:41:10,746 - ERROR - 获取价格模式统计数据失败: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
-DETAIL:  Returned type numeric does not match expected type double precision in column 4.
-[SQL: SELECT * FROM get_price_patterns();]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-27 16:41:10,747 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
-DETAIL:  Returned type numeric does not match expected type double precision in column 4.
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-27 16:41:10,748 - INFO - Task get_price_patterns (ID: 2657446545184) completed in 0.01 seconds
-2025-05-27 16:41:10,748 - INFO - Starting task update_price_patterns (ID: 2657446545184)
-2025-05-27 16:41:10,748 - INFO - Task update_price_patterns (ID: 2657446545184) completed in 0.00 seconds
-2025-05-27 16:41:10,748 - INFO - 成功从数据库加载模型数据
-2025-05-27 16:41:10,748 - WARNING - 使用默认模型数据
-2025-05-27 16:41:10,748 - ERROR - Task refresh_model_data (ID: 2657446545024) failed after 0.18 seconds: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
-DETAIL:  Returned type numeric does not match expected type double precision in column 4.
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-27 16:41:10,748 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.DatatypeMismatchError'>: structure of query does not match function result type
-DETAIL:  Returned type numeric does not match expected type double precision in column 4.
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-28 15:25:36,012 - INFO - Starting task get_pattern_stats_from_table (ID: 1556622300960)
-2025-05-28 15:25:36,030 - INFO - Starting task refresh_model_data (ID: 1556622301280)
-2025-05-28 15:25:36,143 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-28 15:25:36,145 - ERROR - Task refresh_model_data (ID: 1556622301280) failed after 0.12 seconds: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-28 15:25:36,145 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" of relation "price_patterns" does not exist
-[SQL: 
-                INSERT INTO price_patterns (
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, updated_at
-                )
-                SELECT 
-                    day_of_week, pattern_type, win_rate, return_rate, volatility, sample_size, NOW()
-                FROM 
-                    get_price_patterns()
-                ON CONFLICT (day_of_week, pattern_type) 
-                DO UPDATE SET
-                    win_rate = EXCLUDED.win_rate,
-                    return_rate = EXCLUDED.return_rate,
-                    volatility = EXCLUDED.volatility,
-                    sample_size = EXCLUDED.sample_size,
-                    updated_at = NOW();
-                ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-05-28 15:25:37,793 - INFO - Task get_pattern_stats_from_table (ID: 1556622300960) completed in 1.78 seconds
-2025-05-28 15:25:37,793 - WARNING - 使用默认模型数据
-2025-05-28 15:25:37,802 - WARNING - 数据库中没有找到模型数据，使用默认值
-2025-05-28 15:33:52,657 - INFO - 程序正在退出...
-2025-05-28 16:10:42,005 - INFO - Starting task get_pattern_stats_from_table (ID: 1928562755360)
-2025-05-28 16:10:42,013 - INFO - Starting task refresh_model_data (ID: 1928562755520)
-2025-05-28 16:10:42,176 - INFO - Task get_pattern_stats_from_table (ID: 1928562755360) completed in 0.17 seconds
-2025-05-28 16:10:42,176 - WARNING - 使用默认模型数据
-2025-05-28 16:10:42,176 - WARNING - 数据库中没有找到模型数据，使用默认值
-2025-05-28 16:10:42,191 - INFO - 模型数据已刷新
-2025-05-28 16:10:42,191 - INFO - Task refresh_model_data (ID: 1928562755520) completed in 0.18 seconds
-2025-05-28 16:10:42,191 - INFO - Starting task get_pattern_stats_from_table (ID: 1928562755520)
-2025-05-28 16:10:42,195 - INFO - Task get_pattern_stats_from_table (ID: 1928562755520) completed in 0.00 seconds
-2025-05-28 16:10:42,196 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:10:42,197 - INFO - 模型数据已刷新
-2025-05-28 16:17:28,465 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688224)
-2025-05-28 16:17:28,472 - INFO - Starting task refresh_model_data (ID: 2496393688384)
-2025-05-28 16:17:28,621 - INFO - Task get_pattern_stats_from_table (ID: 2496393688224) completed in 0.16 seconds
-2025-05-28 16:17:28,622 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:17:28,635 - INFO - 模型数据已刷新
-2025-05-28 16:17:28,635 - INFO - Task refresh_model_data (ID: 2496393688384) completed in 0.16 seconds
-2025-05-28 16:17:28,635 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688384)
-2025-05-28 16:17:28,639 - INFO - Task get_pattern_stats_from_table (ID: 2496393688384) completed in 0.00 seconds
-2025-05-28 16:17:28,639 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:17:28,639 - INFO - 模型数据已刷新
-2025-05-28 16:18:28,642 - INFO - Starting task refresh_model_data (ID: 2496393688384)
-2025-05-28 16:18:28,666 - INFO - 模型数据已刷新
-2025-05-28 16:18:28,667 - INFO - Task refresh_model_data (ID: 2496393688384) completed in 0.03 seconds
-2025-05-28 16:18:28,667 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393688384)
-2025-05-28 16:18:28,678 - INFO - Task get_pattern_stats_from_table (ID: 2496393688384) completed in 0.01 seconds
-2025-05-28 16:18:28,679 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:18:28,679 - INFO - 模型数据已刷新
-2025-05-28 16:19:28,686 - INFO - Starting task refresh_model_data (ID: 2496393690624)
-2025-05-28 16:19:28,709 - INFO - 模型数据已刷新
-2025-05-28 16:19:28,709 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.02 seconds
-2025-05-28 16:19:28,709 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
-2025-05-28 16:19:28,713 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.00 seconds
-2025-05-28 16:19:28,713 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:19:28,713 - INFO - 模型数据已刷新
-2025-05-28 16:20:28,724 - INFO - Starting task refresh_model_data (ID: 2496393690624)
-2025-05-28 16:20:28,749 - INFO - 模型数据已刷新
-2025-05-28 16:20:28,749 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.03 seconds
-2025-05-28 16:20:28,749 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
-2025-05-28 16:20:28,754 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.00 seconds
-2025-05-28 16:20:28,754 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:20:28,755 - INFO - 模型数据已刷新
-2025-05-28 16:21:28,758 - INFO - Starting task refresh_model_data (ID: 2496393690624)
-2025-05-28 16:21:28,781 - INFO - 模型数据已刷新
-2025-05-28 16:21:28,782 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.02 seconds
-2025-05-28 16:21:28,782 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
-2025-05-28 16:21:28,789 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.01 seconds
-2025-05-28 16:21:28,789 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:21:28,789 - INFO - 模型数据已刷新
-2025-05-28 16:22:28,812 - INFO - Starting task refresh_model_data (ID: 2496393690624)
-2025-05-28 16:22:28,842 - INFO - 模型数据已刷新
-2025-05-28 16:22:28,843 - INFO - Task refresh_model_data (ID: 2496393690624) completed in 0.03 seconds
-2025-05-28 16:22:28,843 - INFO - Starting task get_pattern_stats_from_table (ID: 2496393690624)
-2025-05-28 16:22:28,853 - INFO - Task get_pattern_stats_from_table (ID: 2496393690624) completed in 0.01 seconds
-2025-05-28 16:22:28,853 - INFO - 成功从数据库加载模型数据
-2025-05-28 16:22:28,854 - INFO - 模型数据已刷新
-2025-05-29 10:32:59,364 - ERROR - 发生错误: 'Config' object has no attribute 'INITIAL_CAPITAL'
-2025-05-29 16:59:19,029 - ERROR - 发生错误: 'Config' object has no attribute 'IS_SIMULATED'
-2025-05-29 17:01:48,706 - ERROR - 发生错误: 'Config' object has no attribute 'DEFAULT_CAPITAL'
-2025-05-29 17:06:39,584 - ERROR - 发生错误: 'BitcoinTradingSystem' object has no attribute 'capital'
-2025-06-10 09:21:53,415 - INFO - MarketAnalyzer initialized
-2025-06-10 09:21:53,440 - INFO - 所有API初始化成功
-2025-06-10 09:21:55,307 - INFO - ExchangeBase initialized
-2025-06-10 09:21:55,314 - INFO - 所有API初始化成功
-2025-06-10 09:21:55,314 - ERROR - 发生错误: name 'OkexAccountManager' is not defined
-2025-06-10 09:24:30,650 - INFO - MarketAnalyzer initialized
-2025-06-10 09:24:30,655 - INFO - 所有API初始化成功
-2025-06-10 09:24:32,299 - INFO - ExchangeBase initialized
-2025-06-10 09:24:32,304 - INFO - 所有API初始化成功
-2025-06-10 09:24:32,713 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
-2025-06-10 09:24:32,713 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
-2025-06-10 09:24:32,714 - INFO - Starting task create_table (ID: 2178957367392)
-2025-06-10 09:24:32,714 - INFO - Task create_table (ID: 2178957367392) completed in 0.00 seconds
-2025-06-10 09:24:32,714 - INFO - 数据库初始化成功
-2025-06-10 09:24:32,714 - INFO - Starting task get_pattern_stats_from_table (ID: 2178959075744)
-2025-06-10 09:24:33,031 - INFO - Successfully retrieved ticker for BTC-USDT
-2025-06-10 09:24:33,355 - INFO - Successfully retrieved candlesticks for BTC-USDT
-2025-06-10 09:24:33,359 - ERROR - 获取价格历史错误: 7 columns passed, passed data had 9 columns
-2025-06-10 09:24:33,359 - ERROR - 交易循环错误: 7 columns passed, passed data had 9 columns
-2025-06-10 09:24:33,628 - INFO - Task get_pattern_stats_from_table (ID: 2178959075744) completed in 0.91 seconds
-2025-06-10 09:24:33,628 - WARNING - 使用默认模型数据
-2025-06-10 09:24:33,628 - WARNING - 数据库中没有找到模型数据，使用默认值
-2025-06-10 09:24:33,637 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 09:24:33,638 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 09:37:38,473 - INFO - MarketAnalyzer initialized
-2025-06-10 09:37:38,485 - INFO - 所有API初始化成功
-2025-06-10 09:37:50,044 - INFO - ExchangeBase initialized
-2025-06-10 09:37:50,048 - INFO - 所有API初始化成功
-2025-06-10 09:37:50,428 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
-2025-06-10 09:37:50,428 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
-2025-06-10 09:37:50,429 - INFO - Starting task create_table (ID: 1637544367904)
-2025-06-10 09:37:50,430 - INFO - Task create_table (ID: 1637544367904) completed in 0.00 seconds
-2025-06-10 09:37:50,430 - INFO - 数据库初始化成功
-2025-06-10 09:37:55,260 - INFO - Starting task get_pattern_stats_from_table (ID: 1637563580480)
-2025-06-10 09:37:55,596 - INFO - Successfully retrieved ticker for BTC-USDT
-2025-06-10 09:38:30,327 - INFO - Successfully retrieved candlesticks for BTC-USDT
-2025-06-10 09:38:51,969 - INFO - Task get_pattern_stats_from_table (ID: 1637563580480) completed in 56.71 seconds
-2025-06-10 09:38:51,969 - WARNING - 使用默认模型数据
-2025-06-10 09:38:51,969 - WARNING - 数据库中没有找到模型数据，使用默认值
-2025-06-10 09:38:51,978 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 09:38:51,978 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 10:00:26,892 - INFO - MarketAnalyzer initialized
-2025-06-10 10:00:26,898 - INFO - 所有API初始化成功
-2025-06-10 10:00:53,132 - INFO - ExchangeBase initialized
-2025-06-10 10:00:53,135 - INFO - 所有API初始化成功
-2025-06-10 10:00:53,509 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
-2025-06-10 10:00:53,509 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
-2025-06-10 10:00:53,509 - INFO - Starting task create_table (ID: 2137249810528)
-2025-06-10 10:00:53,509 - INFO - Task create_table (ID: 2137249810528) completed in 0.00 seconds
-2025-06-10 10:00:53,509 - INFO - 数据库初始化成功
-2025-06-10 10:01:00,664 - INFO - Starting task get_pattern_stats_from_table (ID: 2137251506912)
-2025-06-10 10:01:27,878 - INFO - Successfully retrieved ticker for BTC-USDT
-2025-06-10 10:02:24,457 - INFO - Successfully retrieved candlesticks for BTC-USDT
-2025-06-10 10:02:55,113 - ERROR - 从price_patterns表获取价格模式统计数据失败: 
-2025-06-10 10:02:55,124 - INFO - Task get_pattern_stats_from_table (ID: 2137251506912) completed in 115.05 seconds
-2025-06-10 10:02:55,125 - WARNING - 使用默认模型数据
-2025-06-10 10:02:55,125 - WARNING - 数据库中没有找到模型数据，使用默认值
-2025-06-10 10:02:55,244 - ERROR - 刷新模型数据时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 10:02:55,244 - ERROR - 发生错误: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "day_of_week" does not exist
-[SQL: 
-                    INSERT INTO price_patterns (
-                        week_period, pattern, cases, avg_next_return, 
-                        next_day_win_rate, avg_current_return, avg_movement, updated_at
-                    )
-                    SELECT 
-                        day_of_week as week_period, 
-                        pattern_type as pattern,
-                        sample_size as cases,
-                        return_rate * 100 as avg_next_return,
-                        win_rate * 100 as next_day_win_rate,
-                        volatility * 100 as avg_current_return,
-                        volatility * 100 as avg_movement,
-                        NOW()
-                    FROM 
-                        get_price_patterns()
-                    ON CONFLICT (week_period, pattern) 
-                    DO UPDATE SET
-                        cases = EXCLUDED.cases,
-                        avg_next_return = EXCLUDED.avg_next_return,
-                        next_day_win_rate = EXCLUDED.next_day_win_rate,
-                        avg_current_return = EXCLUDED.avg_current_return,
-                        avg_movement = EXCLUDED.avg_movement,
-                        updated_at = NOW();
-                    ]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 10:13:45,260 - INFO - MarketAnalyzer initialized
-2025-06-10 10:13:45,266 - INFO - 所有API初始化成功
-2025-06-10 10:13:45,734 - INFO - ExchangeBase initialized
-2025-06-10 10:13:45,737 - INFO - 所有API初始化成功
-2025-06-10 10:13:46,082 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
-2025-06-10 10:13:46,082 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
-2025-06-10 10:13:46,083 - INFO - Starting task create_table (ID: 2062099691616)
-2025-06-10 10:13:46,083 - INFO - Task create_table (ID: 2062099691616) completed in 0.00 seconds
-2025-06-10 10:13:46,083 - INFO - 数据库初始化成功
-2025-06-10 10:13:58,255 - INFO - Starting task get_pattern_stats_from_table (ID: 2062101379808)
-2025-06-10 10:13:58,587 - INFO - Successfully retrieved ticker for BTC-USDT
-2025-06-10 10:14:01,546 - INFO - Successfully retrieved candlesticks for BTC-USDT
-2025-06-10 11:15:35,872 - INFO - MarketAnalyzer initialized
-2025-06-10 11:15:35,873 - INFO - 所有API初始化成功
-2025-06-10 11:15:35,943 - INFO - MarketDataService initialized
-2025-06-10 11:15:35,945 - INFO - 所有API初始化成功
-2025-06-10 11:15:35,945 - INFO - 数据库表初始化成功
-2025-06-10 11:15:35,945 - ERROR - 获取 BTC-USDT K线数据失败: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 11:15:35,945 - ERROR - 更新spot BTC-USDT 时出错: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 11:15:35,945 - ERROR - 更新 BTC-USDT 失败: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 11:16:52,777 - INFO - MarketAnalyzer initialized
-2025-06-10 11:16:52,780 - INFO - 所有API初始化成功
-2025-06-10 11:17:02,611 - INFO - MarketDataService initialized
-2025-06-10 11:17:26,732 - INFO - 所有API初始化成功
-2025-06-10 11:17:42,232 - INFO - 数据库表初始化成功
-2025-06-10 11:17:47,678 - ERROR - 获取 BTC-USDT K线数据失败: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 11:17:47,679 - ERROR - 更新spot BTC-USDT 时出错: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 11:17:47,679 - ERROR - 更新 BTC-USDT 失败: 'MarketDataService' object has no attribute 'exchange'
-2025-06-10 13:51:23,347 - INFO - MarketAnalyzer initialized
-2025-06-10 13:51:23,350 - INFO - 所有API初始化成功
-2025-06-10 13:51:24,419 - INFO - MarketDataService initialized
-2025-06-10 13:51:24,423 - INFO - 所有API初始化成功
-2025-06-10 13:51:24,423 - INFO - 数据库表初始化成功
-2025-06-10 14:00:06,555 - INFO - MarketAnalyzer initialized
-2025-06-10 14:00:06,562 - INFO - 所有API初始化成功
-2025-06-10 14:00:07,953 - INFO - MarketDataService initialized
-2025-06-10 14:00:07,956 - INFO - 所有API初始化成功
-2025-06-10 14:00:07,956 - INFO - 数据库表初始化成功
-2025-06-10 14:20:39,459 - INFO - MarketAnalyzer initialized
-2025-06-10 14:20:39,465 - INFO - 所有API初始化成功
-2025-06-10 14:20:40,222 - INFO - MarketDataService initialized
-2025-06-10 14:20:40,227 - INFO - 所有API初始化成功
-2025-06-10 14:20:40,227 - INFO - 数据库表初始化成功
-2025-06-10 14:21:38,757 - INFO - MarketAnalyzer initialized
-2025-06-10 14:21:38,761 - INFO - 所有API初始化成功
-2025-06-10 14:21:39,648 - INFO - MarketDataService initialized
-2025-06-10 14:21:39,650 - INFO - 所有API初始化成功
-2025-06-10 14:21:39,650 - INFO - 数据库表初始化成功
-2025-06-10 14:56:40,165 - INFO - MarketAnalyzer initialized
-2025-06-10 14:56:40,170 - INFO - 所有API初始化成功
-2025-06-10 14:56:40,794 - INFO - MarketDataService initialized
-2025-06-10 14:56:40,796 - INFO - 所有API初始化成功
-2025-06-10 14:56:40,796 - INFO - 数据库表初始化成功
-2025-06-10 14:56:48,443 - ERROR - 更新spot BTC-USDT 时出错: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "open" of relation "kline_data" does not exist
-[SQL: 
-                    INSERT INTO kline_data (
-                        symbol, timestamp, open, high, low, close, volume, 
-                        vol_ccy, vol_quote, confirm
-                    )
-                    VALUES (
-                        $1, $2, $3, $4, $5, $6, $7,
-                        $8, $9, $10
-                    )
-                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
-                        open = EXCLUDED.open,
-                        high = EXCLUDED.high,
-                        low = EXCLUDED.low,
-                        close = EXCLUDED.close,
-                        volume = EXCLUDED.volume,
-                        vol_ccy = EXCLUDED.vol_ccy,
-                        vol_quote = EXCLUDED.vol_quote,
-                        confirm = EXCLUDED.confirm
-                    ]
-[parameters: [('BTC-USDT', datetime.datetime(2025, 6, 10, 0, 0), 107638.2, 110650.0, 107638.1, 109523.7, 3713.0496793, 406269384.8947623, 406269384.8947623, '0'), ('BTC-USDT', datetime.datetime(2025, 6, 9, 0, 0), 105975.0, 108034.8, 105313.4, 107638.1, 4556.94942643, 486509851.887073, 486509851.887073, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 8, 0, 0), 105558.4, 106158.7, 104969.6, 105975.1, 2058.66434771, 217427360.3904655, 217427360.3904655, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 7, 0, 0), 105094.7, 105799.0, 103876.8, 105558.3, 4501.0489018, 471638751.6637017, 471638751.6637017, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 6, 0, 0), 104540.1, 105330.8, 100400.0, 105094.2, 11241.28413802, 1155829246.420338, 1155829246.420338, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 5, 0, 0), 105302.7, 105914.9, 103900.0, 104539.6, 4009.27148826, 420477327.67686427, 420477327.67686427, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 4, 0, 0), 106630.2, 106688.0, 104181.4, 105302.7, 4642.72856035, 489876263.60640883, 489876263.60640883, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 3, 0, 0), 104434.9, 106804.0, 104031.2, 106630.2, 5104.15006989, 539249364.2489601, 539249364.2489601, '1')  ... displaying 10 of 300 total bound parameter sets ...  ('BTC-USDT', datetime.datetime(2024, 8, 16, 0, 0), 59676.0, 59850.0, 56093.7, 58074.1, 11344.38939645, 657211355.366465, 657211355.366465, '1'), ('BTC-USDT', datetime.datetime(2024, 8, 15, 0, 0), 59443.8, 59774.0, 57718.1, 59675.8, 8163.04134558, 479943083.56510025, 479943083.56510025, '1')]]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 14:56:48,444 - ERROR - 更新 BTC-USDT 失败: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "open" of relation "kline_data" does not exist
-[SQL: 
-                    INSERT INTO kline_data (
-                        symbol, timestamp, open, high, low, close, volume, 
-                        vol_ccy, vol_quote, confirm
-                    )
-                    VALUES (
-                        $1, $2, $3, $4, $5, $6, $7,
-                        $8, $9, $10
-                    )
-                    ON CONFLICT (symbol, timestamp) DO UPDATE SET
-                        open = EXCLUDED.open,
-                        high = EXCLUDED.high,
-                        low = EXCLUDED.low,
-                        close = EXCLUDED.close,
-                        volume = EXCLUDED.volume,
-                        vol_ccy = EXCLUDED.vol_ccy,
-                        vol_quote = EXCLUDED.vol_quote,
-                        confirm = EXCLUDED.confirm
-                    ]
-[parameters: [('BTC-USDT', datetime.datetime(2025, 6, 10, 0, 0), 107638.2, 110650.0, 107638.1, 109523.7, 3713.0496793, 406269384.8947623, 406269384.8947623, '0'), ('BTC-USDT', datetime.datetime(2025, 6, 9, 0, 0), 105975.0, 108034.8, 105313.4, 107638.1, 4556.94942643, 486509851.887073, 486509851.887073, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 8, 0, 0), 105558.4, 106158.7, 104969.6, 105975.1, 2058.66434771, 217427360.3904655, 217427360.3904655, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 7, 0, 0), 105094.7, 105799.0, 103876.8, 105558.3, 4501.0489018, 471638751.6637017, 471638751.6637017, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 6, 0, 0), 104540.1, 105330.8, 100400.0, 105094.2, 11241.28413802, 1155829246.420338, 1155829246.420338, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 5, 0, 0), 105302.7, 105914.9, 103900.0, 104539.6, 4009.27148826, 420477327.67686427, 420477327.67686427, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 4, 0, 0), 106630.2, 106688.0, 104181.4, 105302.7, 4642.72856035, 489876263.60640883, 489876263.60640883, '1'), ('BTC-USDT', datetime.datetime(2025, 6, 3, 0, 0), 104434.9, 106804.0, 104031.2, 106630.2, 5104.15006989, 539249364.2489601, 539249364.2489601, '1')  ... displaying 10 of 300 total bound parameter sets ...  ('BTC-USDT', datetime.datetime(2024, 8, 16, 0, 0), 59676.0, 59850.0, 56093.7, 58074.1, 11344.38939645, 657211355.366465, 657211355.366465, '1'), ('BTC-USDT', datetime.datetime(2024, 8, 15, 0, 0), 59443.8, 59774.0, 57718.1, 59675.8, 8163.04134558, 479943083.56510025, 479943083.56510025, '1')]]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2025-06-10 15:01:28,193 - INFO - MarketAnalyzer initialized
-2025-06-10 15:01:28,197 - INFO - 所有API初始化成功
-2025-06-10 15:01:28,999 - INFO - MarketDataService initialized
-2025-06-10 15:01:29,002 - INFO - 所有API初始化成功
-2025-06-10 15:01:29,002 - INFO - 数据库表初始化成功
-2025-06-10 15:01:35,012 - INFO - 更新了 BTC-USDT 的 300 条K线数据
-2025-06-10 15:02:47,366 - INFO - 更新了 BTC-USDT 的 10 条K线数据
-2025-06-11 09:24:16,016 - INFO - MarketAnalyzer initialized
-2025-06-11 09:24:16,034 - INFO - 所有API初始化成功
-2025-06-11 09:24:16,893 - INFO - MarketDataService initialized
-2025-06-11 09:24:16,897 - INFO - 所有API初始化成功
-2025-06-11 09:24:16,898 - INFO - 数据库表初始化成功
-2025-06-11 09:24:21,350 - INFO - 更新了 BTC-USDT 的 93 条K线数据
-2025-06-11 10:22:11,373 - INFO - MarketAnalyzer initialized
-2025-06-11 10:22:11,377 - INFO - 所有API初始化成功
-2025-06-11 10:22:12,678 - INFO - MarketDataService initialized
-2025-06-11 10:22:12,682 - INFO - 所有API初始化成功
-2025-06-11 10:22:12,683 - INFO - 数据库表初始化成功
-2025-06-11 10:24:02,477 - INFO - 更新了 BTC-USDT 的 93 条K线数据
-2025-06-11 10:26:32,935 - INFO - MarketAnalyzer initialized
-2025-06-11 10:26:32,939 - INFO - 所有API初始化成功
-2025-06-11 10:26:33,767 - INFO - MarketDataService initialized
-2025-06-11 10:26:33,771 - INFO - 所有API初始化成功
-2025-06-11 10:26:33,771 - INFO - 数据库表初始化成功
-2025-06-11 10:26:37,652 - INFO - 更新了 BTC-USDT 的 300 条K线数据
+2025-06-14 16:08:30,708 - INFO - MarketAnalyzer initialized
+2025-06-14 16:08:30,708 - INFO - 所有API初始化成功
+2025-06-14 16:10:51,170 - INFO - MarketAnalyzer initialized
+2025-06-14 16:10:51,173 - INFO - 所有API初始化成功
+2025-06-14 16:10:59,155 - INFO - ExchangeBase initialized
+2025-06-14 16:10:59,159 - INFO - 所有API初始化成功
+2025-06-14 16:11:00,575 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:13:04,921 - INFO - MarketAnalyzer initialized
+2025-06-14 16:13:04,929 - INFO - 所有API初始化成功
+2025-06-14 16:13:12,755 - INFO - BitcoinTradingSystem logging initialized
+2025-06-14 16:13:13,106 - INFO - ExchangeBase initialized
+2025-06-14 16:13:13,113 - INFO - 所有API初始化成功
+2025-06-14 16:13:14,565 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:13:15,978 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-14 16:13:46,073 - INFO - Starting task get_pattern_stats_from_table (ID: 2939797166336)
+2025-06-14 16:14:01,620 - INFO - Task get_pattern_stats_from_table (ID: 2939797166336) completed in 16.16 seconds
+2025-06-14 16:14:34,891 - INFO - 模型数据加载完成
+2025-06-14 16:14:34,892 - INFO - 策略初始化完成
+2025-06-14 16:14:34,892 - INFO - 系统初始化完成
+2025-06-14 16:14:34,892 - INFO - 交易循环已启动
+2025-06-14 16:14:34,892 - INFO - 开始执行交易循环检查...
+2025-06-14 16:14:35,854 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:14:36,603 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:14:36,620 - INFO - ExchangeBase initialized
+2025-06-14 16:14:36,958 - INFO - Successfully retrieved positions
+2025-06-14 16:14:37,244 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:14:37,245 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:14:37,245 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:14:37,245 - INFO - 定时任务已启动
+2025-06-14 16:14:37,245 - INFO - 开始执行定时任务 - 刷新模型数据...
+2025-06-14 16:14:37,318 - INFO - 模型数据已刷新
+2025-06-14 16:14:37,318 - INFO - Starting task get_pattern_stats_from_table (ID: 2939799550048)
+2025-06-14 16:14:37,329 - INFO - Task get_pattern_stats_from_table (ID: 2939799550048) completed in 0.01 seconds
+2025-06-14 16:14:39,387 - INFO - 模型数据加载完成
+2025-06-14 16:14:39,392 - INFO - 模型数据刷新完成
+2025-06-14 16:14:39,393 - INFO - 下次模型数据更新将在: 2025-06-15 00:14:39.392234
+2025-06-14 16:14:47,250 - INFO - 开始执行交易循环检查...
+2025-06-14 16:14:47,753 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:14:48,188 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:14:48,191 - INFO - ExchangeBase initialized
+2025-06-14 16:14:48,723 - INFO - Successfully retrieved positions
+2025-06-14 16:14:49,061 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:14:49,061 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:14:49,061 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:14:59,064 - INFO - 开始执行交易循环检查...
+2025-06-14 16:14:59,515 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:14:59,801 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:14:59,803 - INFO - ExchangeBase initialized
+2025-06-14 16:15:00,099 - INFO - Successfully retrieved positions
+2025-06-14 16:15:00,374 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:00,374 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:00,374 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:15:10,388 - INFO - 开始执行交易循环检查...
+2025-06-14 16:15:10,692 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:15:10,980 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:15:10,987 - INFO - ExchangeBase initialized
+2025-06-14 16:15:11,511 - INFO - Successfully retrieved positions
+2025-06-14 16:15:11,798 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:11,798 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:11,799 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:15:21,803 - INFO - 开始执行交易循环检查...
+2025-06-14 16:15:22,087 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:15:22,352 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:15:22,352 - INFO - ExchangeBase initialized
+2025-06-14 16:15:22,624 - INFO - Successfully retrieved positions
+2025-06-14 16:15:23,136 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:23,137 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:23,138 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:15:33,139 - INFO - 开始执行交易循环检查...
+2025-06-14 16:15:33,888 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:15:34,348 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:15:34,349 - INFO - ExchangeBase initialized
+2025-06-14 16:15:34,619 - INFO - Successfully retrieved positions
+2025-06-14 16:15:34,879 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:34,879 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:34,880 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:15:44,882 - INFO - 开始执行交易循环检查...
+2025-06-14 16:15:45,223 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:15:46,246 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:15:46,250 - INFO - ExchangeBase initialized
+2025-06-14 16:15:46,546 - INFO - Successfully retrieved positions
+2025-06-14 16:15:46,854 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:46,854 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:46,854 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:15:56,863 - INFO - 开始执行交易循环检查...
+2025-06-14 16:15:57,426 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:15:57,916 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:15:57,918 - INFO - ExchangeBase initialized
+2025-06-14 16:15:58,198 - INFO - Successfully retrieved positions
+2025-06-14 16:15:58,497 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:15:58,497 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:15:58,498 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:16:08,504 - INFO - 开始执行交易循环检查...
+2025-06-14 16:16:08,885 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:16:09,290 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:16:09,293 - INFO - ExchangeBase initialized
+2025-06-14 16:16:09,582 - INFO - Successfully retrieved positions
+2025-06-14 16:16:09,866 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:16:09,870 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:16:09,870 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:16:19,871 - INFO - 开始执行交易循环检查...
+2025-06-14 16:16:20,160 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:16:20,472 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:16:20,479 - INFO - ExchangeBase initialized
+2025-06-14 16:16:21,097 - INFO - Successfully retrieved positions
+2025-06-14 16:16:21,388 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:16:21,389 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:16:21,390 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:16:31,399 - INFO - 开始执行交易循环检查...
+2025-06-14 16:16:31,671 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:16:32,018 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:16:32,020 - INFO - ExchangeBase initialized
+2025-06-14 16:16:32,443 - INFO - Successfully retrieved positions
+2025-06-14 16:16:32,710 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:16:32,713 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:16:32,713 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:16:42,730 - INFO - 开始执行交易循环检查...
+2025-06-14 16:16:43,034 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:16:43,311 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:16:43,318 - INFO - ExchangeBase initialized
+2025-06-14 16:16:44,604 - INFO - Successfully retrieved positions
+2025-06-14 16:16:44,899 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:16:44,899 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:16:44,900 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:16:54,906 - INFO - 开始执行交易循环检查...
+2025-06-14 16:16:56,316 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:16:56,866 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:16:56,872 - INFO - ExchangeBase initialized
+2025-06-14 16:16:57,199 - INFO - Successfully retrieved positions
+2025-06-14 16:16:57,822 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:16:57,822 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:16:57,822 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:17:07,823 - INFO - 开始执行交易循环检查...
+2025-06-14 16:17:08,284 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:17:08,562 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:17:08,574 - INFO - ExchangeBase initialized
+2025-06-14 16:17:08,840 - INFO - Successfully retrieved positions
+2025-06-14 16:17:09,105 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:17:09,105 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:17:09,106 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:17:19,118 - INFO - 开始执行交易循环检查...
+2025-06-14 16:17:22,714 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:17:23,566 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:17:23,569 - INFO - ExchangeBase initialized
+2025-06-14 16:17:23,933 - INFO - Successfully retrieved positions
+2025-06-14 16:17:24,223 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:17:24,223 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:17:24,223 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:17:34,237 - INFO - 开始执行交易循环检查...
+2025-06-14 16:17:34,719 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:17:35,216 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:17:35,219 - INFO - ExchangeBase initialized
+2025-06-14 16:17:35,906 - INFO - Successfully retrieved positions
+2025-06-14 16:17:36,208 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:17:36,208 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:17:36,208 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:17:46,210 - INFO - 开始执行交易循环检查...
+2025-06-14 16:17:46,639 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:17:46,940 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:17:46,950 - INFO - ExchangeBase initialized
+2025-06-14 16:17:47,291 - INFO - Successfully retrieved positions
+2025-06-14 16:17:47,577 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:17:47,578 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:17:47,578 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:17:57,578 - INFO - 开始执行交易循环检查...
+2025-06-14 16:17:58,024 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:17:58,426 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:17:58,431 - INFO - ExchangeBase initialized
+2025-06-14 16:17:58,698 - INFO - Successfully retrieved positions
+2025-06-14 16:17:58,971 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:17:58,971 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:17:58,972 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:18:08,985 - INFO - 开始执行交易循环检查...
+2025-06-14 16:18:09,253 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:18:09,672 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:18:09,679 - INFO - ExchangeBase initialized
+2025-06-14 16:18:10,064 - INFO - Successfully retrieved positions
+2025-06-14 16:18:10,496 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:18:10,496 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:18:10,497 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:18:20,500 - INFO - 开始执行交易循环检查...
+2025-06-14 16:18:20,798 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:18:21,126 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:18:21,127 - INFO - ExchangeBase initialized
+2025-06-14 16:18:21,519 - INFO - Successfully retrieved positions
+2025-06-14 16:18:21,791 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:18:21,792 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:18:21,792 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:18:31,801 - INFO - 开始执行交易循环检查...
+2025-06-14 16:18:32,092 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:18:32,505 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:18:32,507 - INFO - ExchangeBase initialized
+2025-06-14 16:18:32,829 - INFO - Successfully retrieved positions
+2025-06-14 16:18:33,221 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:18:33,222 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:18:33,222 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:18:43,230 - INFO - 开始执行交易循环检查...
+2025-06-14 16:18:43,882 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:18:44,152 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:18:44,160 - INFO - ExchangeBase initialized
+2025-06-14 16:18:44,474 - INFO - Successfully retrieved positions
+2025-06-14 16:18:44,757 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:18:44,757 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:18:44,757 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:18:54,769 - INFO - 开始执行交易循环检查...
+2025-06-14 16:18:55,044 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:18:55,323 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:18:55,328 - INFO - ExchangeBase initialized
+2025-06-14 16:18:55,847 - INFO - Successfully retrieved positions
+2025-06-14 16:18:56,139 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:18:56,139 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:18:56,139 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:19:06,145 - INFO - 开始执行交易循环检查...
+2025-06-14 16:19:06,532 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:19:06,827 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:19:06,835 - INFO - ExchangeBase initialized
+2025-06-14 16:19:08,261 - INFO - Successfully retrieved positions
+2025-06-14 16:19:08,823 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:19:08,823 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:19:08,823 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:19:18,828 - INFO - 开始执行交易循环检查...
+2025-06-14 16:19:19,364 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:19:19,650 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:19:19,652 - INFO - ExchangeBase initialized
+2025-06-14 16:19:19,943 - INFO - Successfully retrieved positions
+2025-06-14 16:19:20,236 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:19:20,238 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:19:20,238 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:19:30,246 - INFO - 开始执行交易循环检查...
+2025-06-14 16:19:30,792 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:19:31,421 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:19:31,452 - INFO - ExchangeBase initialized
+2025-06-14 16:19:31,720 - INFO - Successfully retrieved positions
+2025-06-14 16:19:31,998 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:19:31,998 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:19:31,999 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:21:27,062 - INFO - MarketAnalyzer initialized
+2025-06-14 16:21:27,066 - INFO - 所有API初始化成功
+2025-06-14 16:21:30,518 - INFO - BitcoinTradingSystem logging initialized
+2025-06-14 16:21:30,518 - INFO - ExchangeBase initialized
+2025-06-14 16:21:30,523 - INFO - 所有API初始化成功
+2025-06-14 16:21:30,965 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:21:30,965 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-14 16:21:41,493 - INFO - Starting task get_pattern_stats_from_table (ID: 2950631057664)
+2025-06-14 16:21:41,706 - INFO - Task get_pattern_stats_from_table (ID: 2950631057664) completed in 0.21 seconds
+2025-06-14 16:21:48,309 - INFO - 模型数据加载完成
+2025-06-14 16:21:48,309 - INFO - 策略初始化完成
+2025-06-14 16:21:48,309 - INFO - 系统初始化完成
+2025-06-14 16:21:48,309 - INFO - 交易循环已启动
+2025-06-14 16:21:48,311 - INFO - 开始执行交易循环检查...
+2025-06-14 16:21:48,816 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:21:49,107 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:21:49,118 - INFO - ExchangeBase initialized
+2025-06-14 16:21:49,404 - INFO - Successfully retrieved positions
+2025-06-14 16:21:49,689 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:21:49,690 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:21:49,691 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:21:49,691 - INFO - 定时任务已启动
+2025-06-14 16:21:49,691 - INFO - 开始执行定时任务 - 刷新模型数据...
+2025-06-14 16:21:49,750 - INFO - 模型数据已刷新
+2025-06-14 16:21:49,750 - INFO - Starting task get_pattern_stats_from_table (ID: 2950633726816)
+2025-06-14 16:21:49,755 - INFO - Task get_pattern_stats_from_table (ID: 2950633726816) completed in 0.01 seconds
+2025-06-14 16:22:01,068 - INFO - 模型数据加载完成
+2025-06-14 16:22:01,068 - INFO - 开始执行交易循环检查...
+2025-06-14 16:22:01,562 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:22:01,847 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:22:01,851 - INFO - ExchangeBase initialized
+2025-06-14 16:22:02,187 - INFO - Successfully retrieved positions
+2025-06-14 16:22:02,505 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:22:02,505 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:22:02,505 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:22:02,505 - INFO - 模型数据刷新完成
+2025-06-14 16:22:02,505 - INFO - 下次模型数据更新将在: 2025-06-15 00:22:02.505711
+2025-06-14 16:23:11,489 - INFO - MarketAnalyzer initialized
+2025-06-14 16:23:11,497 - INFO - 所有API初始化成功
+2025-06-14 16:23:12,640 - INFO - BitcoinTradingSystem logging initialized
+2025-06-14 16:23:12,640 - INFO - ExchangeBase initialized
+2025-06-14 16:23:12,649 - INFO - 所有API初始化成功
+2025-06-14 16:23:13,026 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:23:13,030 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-14 16:23:14,376 - INFO - Starting task get_pattern_stats_from_table (ID: 2339448019200)
+2025-06-14 16:23:14,589 - INFO - Task get_pattern_stats_from_table (ID: 2339448019200) completed in 0.21 seconds
+2025-06-14 16:23:15,717 - INFO - 模型数据加载完成
+2025-06-14 16:23:15,725 - INFO - 策略初始化完成
+2025-06-14 16:23:15,725 - INFO - 系统初始化完成
+2025-06-14 16:23:15,725 - INFO - 交易循环已启动
+2025-06-14 16:23:15,725 - INFO - 开始执行交易循环检查...
+2025-06-14 16:23:16,013 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:23:16,520 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:23:16,534 - INFO - ExchangeBase initialized
+2025-06-14 16:23:16,992 - INFO - Successfully retrieved positions
+2025-06-14 16:23:17,269 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:23:17,274 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:31:33,343 - INFO - MarketAnalyzer initialized
+2025-06-14 16:31:33,346 - INFO - 所有API初始化成功
+2025-06-14 16:31:35,146 - INFO - BitcoinTradingSystem logging initialized
+2025-06-14 16:31:35,146 - INFO - ExchangeBase initialized
+2025-06-14 16:31:35,146 - INFO - 所有API初始化成功
+2025-06-14 16:31:35,493 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:31:35,495 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-14 16:31:51,961 - INFO - Starting task get_pattern_stats_from_table (ID: 1544435181824)
+2025-06-14 16:31:52,168 - INFO - Task get_pattern_stats_from_table (ID: 1544435181824) completed in 0.21 seconds
+2025-06-14 16:31:53,249 - INFO - 模型数据加载完成
+2025-06-14 16:31:53,249 - INFO - 策略初始化完成
+2025-06-14 16:31:53,249 - INFO - 系统初始化完成
+2025-06-14 16:31:53,256 - INFO - 交易循环已启动
+2025-06-14 16:31:53,256 - INFO - 开始执行交易循环检查...
+2025-06-14 16:31:53,863 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:31:54,151 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:31:54,163 - INFO - ExchangeBase initialized
+2025-06-14 16:31:54,454 - INFO - Successfully retrieved positions
+2025-06-14 16:31:54,739 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:31:54,766 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:32:11,824 - INFO - Current day: 周六, Previous day: 周五, Pattern: continuous_fall
+2025-06-14 16:32:12,172 - INFO - Available days in pattern_stats: ['周四', '周日', '周一', '周三', '周二', '周五', '周六']
+2025-06-14 16:32:13,601 - INFO - Pattern continuous_fall not found for previous day 周五
+2025-06-14 16:32:37,800 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:32:39,061 - INFO - 定时任务已启动
+2025-06-14 16:32:39,061 - INFO - 开始执行定时任务 - 刷新模型数据...
+2025-06-14 16:32:39,127 - INFO - 模型数据已刷新
+2025-06-14 16:32:39,127 - INFO - Starting task get_pattern_stats_from_table (ID: 1544437904224)
+2025-06-14 16:32:39,135 - INFO - Task get_pattern_stats_from_table (ID: 1544437904224) completed in 0.01 seconds
+2025-06-14 16:32:43,275 - INFO - 模型数据加载完成
+2025-06-14 16:32:43,280 - INFO - 模型数据刷新完成
+2025-06-14 16:32:43,280 - INFO - 下次模型数据更新将在: 2025-06-15 00:32:43.280433
+2025-06-14 16:32:49,072 - INFO - 开始执行交易循环检查...
+2025-06-14 16:32:49,455 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:32:49,845 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:32:49,853 - INFO - ExchangeBase initialized
+2025-06-14 16:32:50,266 - INFO - Successfully retrieved positions
+2025-06-14 16:32:50,561 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:32:50,561 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:34:30,820 - INFO - MarketAnalyzer initialized
+2025-06-14 16:34:30,824 - INFO - 所有API初始化成功
+2025-06-14 16:34:31,834 - INFO - BitcoinTradingSystem logging initialized
+2025-06-14 16:34:31,834 - INFO - ExchangeBase initialized
+2025-06-14 16:34:31,838 - INFO - 所有API初始化成功
+2025-06-14 16:34:32,454 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:34:32,458 - INFO - 从账户获取初始资金: 555.6519100475334 USDT
+2025-06-14 16:34:39,519 - INFO - Starting task get_pattern_stats_from_table (ID: 1700158363904)
+2025-06-14 16:34:39,906 - INFO - Task get_pattern_stats_from_table (ID: 1700158363904) completed in 0.39 seconds
+2025-06-14 16:34:42,412 - INFO - 模型数据加载完成
+2025-06-14 16:34:42,412 - INFO - 策略初始化完成
+2025-06-14 16:34:42,412 - INFO - 系统初始化完成
+2025-06-14 16:34:42,412 - INFO - 交易循环已启动
+2025-06-14 16:34:42,412 - INFO - 开始执行交易循环检查...
+2025-06-14 16:34:42,701 - INFO - Successfully retrieved ticker for BTC-USDT
+2025-06-14 16:34:42,978 - INFO - Successfully retrieved candlesticks for BTC-USDT
+2025-06-14 16:34:42,987 - INFO - ExchangeBase initialized
+2025-06-14 16:34:43,532 - INFO - Successfully retrieved positions
+2025-06-14 16:34:44,003 - INFO - Successfully retrieved balance for USDT: 555.6519100475334
+2025-06-14 16:34:44,004 - INFO - 当前无持仓，检查是否应该开仓
+2025-06-14 16:37:01,619 - INFO - Current day: 周六, Previous day: 周五, Pattern: continuous_fall
+2025-06-14 16:37:02,286 - INFO - Available days in pattern_stats: ['周四', '周日', '周一', '周三', '周二', '周五', '周六']
+2025-06-14 16:40:56,586 - INFO - Pattern continuous_fall not found for previous day 周五
+2025-06-14 16:41:07,885 - INFO - 交易循环检查完成，等待10秒后继续...
+2025-06-14 16:41:09,082 - INFO - 定时任务已启动
+2025-06-14 16:41:09,084 - INFO - 开始执行定时任务 - 刷新模型数据...
+2025-06-14 16:41:09,108 - INFO - 模型数据已刷新
+2025-06-14 16:41:09,108 - INFO - Starting task get_pattern_stats_from_table (ID: 1700161168544)
+2025-06-14 16:41:09,112 - INFO - Task get_pattern_stats_from_table (ID: 1700161168544) completed in 0.00 seconds
+2025-06-14 16:41:10,104 - INFO - 模型数据加载完成
+2025-06-14 16:41:10,107 - INFO - 模型数据刷新完成
+2025-06-14 16:41:10,107 - INFO - 下次模型数据更新将在: 2025-06-15 00:41:10.107858

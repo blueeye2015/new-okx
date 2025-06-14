@@ -24,7 +24,7 @@ class OkexOrderManager(ExchangeBase):
         self.init_api()
         
         # 设置日志
-        self.setup_logging()
+        #self.setup_logging()
         
     def init_api(self):
         """初始化API连接"""
@@ -41,14 +41,14 @@ class OkexOrderManager(ExchangeBase):
             self.logger.error(f"API初始化失败: {str(e)}")
             raise
     
-    def setup_logging(self):
-        """设置日志配置"""
-        logging.basicConfig(
-            filename='place_order.log',
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
-        self.logger = logging.getLogger(__name__)
+    # def setup_logging(self):
+    #     """设置日志配置"""
+    #     logging.basicConfig(
+    #         filename='place_order.log',
+    #         level=logging.INFO,
+    #         format='%(asctime)s - %(levelname)s - %(message)s'
+    #     )
+    #     self.logger = logging.getLogger(__name__)
         self.logger.info('OkexAccountManager initialized')
             
     def place_order(self, instrument_id, order_type, side, price, size):

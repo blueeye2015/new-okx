@@ -20,27 +20,50 @@ class PatternStrategy:
         
     def analyze_pattern(self, price_history: pd.Series) -> str:
         """
-        分析价格模式
-        :param price_history: 最近4小时的价格数据
+        分析价格模式（基于前一天的数据）
+        :param price_history: 前一天的价格数据（至少2个数据点）
         :return: 价格模式类型
         """
-        if len(price_history) < 4:
+        if len(price_history) < 2:
             return "insufficient_data"
+        
+        # 如果有2个数据点，直接比较前后变化
+        if len(price_history) == 2:
+            if price_history.iloc[1] > price_history.iloc[0]:
+                return "continuous_rise"
+            else:
+                return "continuous_fall"
+        
+        # 如果有更多数据点，使用原有的4点分析逻辑
+        if len(price_history) >= 4:
+            first_half = price_history[:len(price_history)//2]
+            second_half = price_history[len(price_history)//2:]
             
-        first_half = price_history[:len(price_history)//2]
-        second_half = price_history[len(price_history)//2:]
+            first_trend = first_half.iloc[-1] > first_half.iloc[0]
+            second_trend = second_half.iloc[-1] > second_half.iloc[0]
+            
+            if first_trend and not second_trend:
+                return "rise_then_fall"
+            elif not first_trend and second_trend:
+                return "fall_then_rise"
+            elif first_trend and second_trend:
+                return "continuous_rise"
+            else:
+                return "continuous_fall"
         
-        first_trend = first_half[-1] > first_half[0]
-        second_trend = second_half[-1] > second_half[0]
-        
-        if first_trend and not second_trend:
-            return "rise_then_fall"
-        elif not first_trend and second_trend:
-            return "fall_then_rise"
-        elif first_trend and second_trend:
-            return "continuous_rise"
+        # 如果是3个数据点，简化分析
         else:
-            return "continuous_fall"
+            first_change = price_history.iloc[1] > price_history.iloc[0]
+            second_change = price_history.iloc[2] > price_history.iloc[1]
+            
+            if first_change and not second_change:
+                return "rise_then_fall"
+            elif not first_change and second_change:
+                return "fall_then_rise"
+            elif first_change and second_change:
+                return "continuous_rise"
+            else:
+                return "continuous_fall"
 
     def calculate_position_size(self, pattern: str, day: str) -> float:
         """
@@ -107,8 +130,8 @@ class PatternStrategy:
         判断是否应该交易
         :return: (是否交易, 交易方向, 建议仓位比例)
         """
-        if len(price_history) < 4:
-            self.logger.warning("价格历史数据不足，不进行交易")
+        if len(price_history) < 2:
+            self.logger.warning("价格历史数据不足，需要至少2个数据点")
             return False, "none", 0
             
         pattern = self.analyze_pattern(price_history)
@@ -118,17 +141,52 @@ class PatternStrategy:
             self.logger.warning("模型数据为空，不进行交易")
             return False, "none", 0
         
-        # 检查是否是禁止交易的模式
-        if (day == 'Saturday' and pattern == 'continuous_rise') or \
-           (day == 'Sunday' and pattern == 'fall_then_rise'):
+        # 将英文星期转换为中文
+        weekday_map = {
+            'Monday': '周一',
+            'Tuesday': '周二',
+            'Wednesday': '周三',
+            'Thursday': '周四',
+            'Friday': '周五',
+            'Saturday': '周六',
+            'Sunday': '周日'
+        }
+        current_day = weekday_map.get(day, day)  # 当前日期
+        
+        # 获取前一天的日期（因为next_day_win_rate是指前一天的模式对今天的影响）
+        previous_day_map = {
+            '周一': '周日',
+            '周二': '周一', 
+            '周三': '周二',
+            '周四': '周三',
+            '周五': '周四',
+            '周六': '周五',
+            '周日': '周六'
+        }
+        previous_day = previous_day_map.get(current_day, current_day)
+        
+        # 打印调试信息
+        self.logger.info(f"Current day: {current_day}, Previous day: {previous_day}, Pattern: {pattern}")
+        self.logger.info(f"Available days in pattern_stats: {list(pattern_stats.keys())}")
+        
+        # 检查是否是禁止交易的模式（基于前一天的模式）
+        if (previous_day == '周五' and pattern == 'continuous_rise') or \
+           (previous_day == '周六' and pattern == 'fall_then_rise'):
+            self.logger.info(f"Pattern {pattern} from {previous_day} is forbidden for trading on {current_day}")
             return False, "none", 0
             
-        # 检查是否是优势模式
-        if day in pattern_stats and pattern in pattern_stats[day]:
-            stats = pattern_stats[day][pattern]
+        # 检查前一天的模式统计数据来预测今天的表现
+        if previous_day in pattern_stats and pattern in pattern_stats[previous_day]:
+            stats = pattern_stats[previous_day][pattern]
+            self.logger.info(f"Found stats for {previous_day}/{pattern}: {stats}")
             if stats['win_rate'] > 0.55:
-                position_size = self.calculate_position_size(pattern, day)
+                position_size = self.calculate_position_size(pattern, previous_day)
+                self.logger.info(f"Trading signal: {previous_day} pattern '{pattern}' predicts good performance for {current_day}")
                 return True, "long", position_size
+            else:
+                self.logger.info(f"Win rate {stats['win_rate']} is below threshold 0.55")
+        else:
+            self.logger.info(f"Pattern {pattern} not found for previous day {previous_day}")
                 
         return False, "none", 0
 

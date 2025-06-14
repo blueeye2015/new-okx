@@ -218,10 +218,6 @@ class ExchangeBase:
 
     def _setup_base_logging(self):
         """设置基本的日志配置"""
-        logging.basicConfig(
-            filename='exchange_base.log',
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
+        # 使用根日志记录器，这样所有模块的日志都会记录到同一个文件
         self.logger = logging.getLogger(self.__class__.__name__)
         self.logger.info(f'{self.__class__.__name__} initialized')

@@ -289,9 +289,16 @@ class TradeStrategyDAO(BaseDAO):
                     entry_time TIMESTAMP NOT NULL,
                     pattern VARCHAR(50),
                     day_of_week VARCHAR(20),
+                    instrument_id VARCHAR(50) DEFAULT 'BTC-USDT-SWAP',
                     created_at TIMESTAMP DEFAULT NOW(),
                     updated_at TIMESTAMP DEFAULT NOW()
                 );
+            """))
+            
+            # 添加instrument_id字段（如果表已存在但没有该字段）
+            await session.execute(text("""
+                ALTER TABLE active_positions 
+                ADD COLUMN IF NOT EXISTS instrument_id VARCHAR(50) DEFAULT 'BTC-USDT-SWAP';
             """))
             await session.commit()
 
@@ -444,7 +451,75 @@ class TradeStrategyDAO(BaseDAO):
         pass
 
     async def get_active_position(self) -> Optional[Dict]:
-        """获取当前活跃的持仓"""
+        """获取当前活跃的持仓（从交易所API获取实时数据）"""
+        try:
+            from exchange.base import ExchangeBase
+            
+            # 使用交易所API获取实时持仓信息
+            exchange = ExchangeBase()
+            account_info = exchange.get_account_info()
+            
+            positions_data = account_info.get('positions', {})
+            
+            # 检查是否有持仓数据
+            if positions_data and 'data' in positions_data and positions_data['data']:
+                for position in positions_data['data']:
+                    # 检查是否有实际持仓（持仓量不为0）
+                    pos_size = float(position.get('pos', 0))
+                    if pos_size != 0:
+                        # 从数据库获取对应的策略信息（如果存在）
+                        strategy_info = await self._get_position_strategy_info(position.get('instId'))
+                        
+                        return {
+                            'direction': 'long' if pos_size > 0 else 'short',
+                            'entry_price': float(position.get('avgPx', 0)),
+                            'size': abs(pos_size),
+                            'stop_loss': strategy_info.get('stop_loss', 0) if strategy_info else 0,
+                            'take_profit': strategy_info.get('take_profit', 0) if strategy_info else 0,
+                            'entry_time': strategy_info.get('entry_time') if strategy_info else None,
+                            'pattern': strategy_info.get('pattern', 'unknown') if strategy_info else 'unknown',
+                            'day': strategy_info.get('day', 'unknown') if strategy_info else 'unknown',
+                            'instrument_id': position.get('instId'),
+                            'unrealized_pnl': float(position.get('upl', 0)),
+                            'margin': float(position.get('margin', 0)),
+                            'mark_price': float(position.get('markPx', 0))
+                        }
+            
+            return None
+            
+        except Exception as e:
+            logging.error(f"从交易所API获取持仓信息失败: {e}")
+            # 如果API调用失败，回退到数据库查询
+            return await self._get_active_position_from_db()
+
+    async def _get_position_strategy_info(self, instrument_id: str) -> Optional[Dict]:
+        """从数据库获取持仓的策略信息"""
+        async with self.db_manager.get_session() as session:
+            try:
+                result = await session.execute(text("""
+                    SELECT stop_loss, take_profit, entry_time, pattern, day_of_week
+                    FROM active_positions 
+                    WHERE instrument_id = :instrument_id
+                    ORDER BY entry_time DESC 
+                    LIMIT 1
+                """), {'instrument_id': instrument_id})
+                
+                strategy_data = result.fetchone()
+                if strategy_data:
+                    return {
+                        'stop_loss': float(strategy_data.stop_loss),
+                        'take_profit': float(strategy_data.take_profit),
+                        'entry_time': strategy_data.entry_time,
+                        'pattern': strategy_data.pattern,
+                        'day': strategy_data.day_of_week
+                    }
+                return None
+            except Exception as e:
+                logging.error(f"获取策略信息失败: {e}")
+                return None
+
+    async def _get_active_position_from_db(self) -> Optional[Dict]:
+        """从数据库获取当前活跃的持仓（备用方法）"""
         async with self.db_manager.get_session() as session:
             result = await session.execute(text("""
                 SELECT * FROM active_positions 
@@ -477,10 +552,10 @@ class TradeStrategyDAO(BaseDAO):
             await session.execute(text("""
                 INSERT INTO active_positions (
                     direction, entry_price, size, stop_loss, take_profit,
-                    entry_time, pattern, day_of_week
+                    entry_time, pattern, day_of_week, instrument_id
                 ) VALUES (
                     :direction, :entry_price, :size, :stop_loss, :take_profit,
-                    :entry_time, :pattern, :day
+                    :entry_time, :pattern, :day, :instrument_id
                 )
             """), {
                 'direction': position['direction'],
@@ -490,7 +565,8 @@ class TradeStrategyDAO(BaseDAO):
                 'take_profit': position['take_profit'],
                 'entry_time': position['entry_time'],
                 'pattern': position['pattern'],
-                'day': position['day']
+                'day': position['day'],
+                'instrument_id': position.get('instrument_id', 'BTC-USDT-SWAP')  # 默认值
             })
             await session.commit()
 
@@ -515,3 +591,101 @@ class TradeStrategyDAO(BaseDAO):
         async with self.db_manager.get_session() as session:
             await session.execute(text("DELETE FROM active_positions"))
             await session.commit()
+
+    @async_timer
+    async def get_funding_cost_data(self, symbol: str, hours: int = 24) -> List[Dict]:
+        """
+        获取资金费率数据用于成本计算
+        :param symbol: 交易对符号
+        :param hours: 时间范围（小时）
+        :return: 资金费率记录列表
+        """
+        async with self.db_manager.get_session() as session:
+            try:
+                from_time = datetime.now() - timedelta(hours=hours)
+                
+                result = await session.execute(text("""
+                    SELECT 
+                        fundingTime,
+                        fundingRate,
+                        realizedRate,
+                        method
+                    FROM Fundingrate 
+                    WHERE symbol = :symbol 
+                        AND fundingTime >= :from_time
+                    ORDER BY fundingTime DESC
+                """), {
+                    'symbol': symbol,
+                    'from_time': from_time
+                })
+                
+                funding_records = result.fetchall()
+                return [dict(row._mapping) for row in funding_records] if funding_records else []
+                
+            except Exception as e:
+                logging.error(f"获取资金费率数据失败: {e}")
+                return []
+
+    @async_timer
+    async def get_funding_rate_trend_data(self, symbol: str, days: int = 7) -> List[Dict]:
+        """
+        获取资金费率趋势数据
+        :param symbol: 交易对符号
+        :param days: 分析天数
+        :return: 趋势数据列表
+        """
+        async with self.db_manager.get_session() as session:
+            try:
+                from_time = datetime.now() - timedelta(days=days)
+                
+                result = await session.execute(text("""
+                    SELECT 
+                        DATE(fundingTime) as funding_date,
+                        AVG(fundingRate) as avg_rate,
+                        MIN(fundingRate) as min_rate,
+                        MAX(fundingRate) as max_rate,
+                        COUNT(*) as periods_count
+                    FROM Fundingrate 
+                    WHERE symbol = :symbol 
+                        AND fundingTime >= :from_time
+                    GROUP BY DATE(fundingTime)
+                    ORDER BY funding_date DESC
+                """), {
+                    'symbol': symbol,
+                    'from_time': from_time
+                })
+                
+                trend_data = result.fetchall()
+                return [dict(row._mapping) for row in trend_data] if trend_data else []
+                
+            except Exception as e:
+                logging.error(f"获取资金费率趋势数据失败: {e}")
+                return []
+
+    @async_timer
+    async def get_latest_funding_rate(self, symbol: str) -> Optional[Dict]:
+        """
+        获取最新的资金费率
+        :param symbol: 交易对符号
+        :return: 最新资金费率信息
+        """
+        async with self.db_manager.get_session() as session:
+            try:
+                result = await session.execute(text("""
+                    SELECT 
+                        fundingTime,
+                        fundingRate,
+                        realizedRate,
+                        method
+                    FROM Fundingrate 
+                    WHERE symbol = :symbol 
+                    ORDER BY fundingTime DESC
+                    LIMIT 1
+                """), {'symbol': symbol})
+                
+                latest_record = result.fetchone()
+                return dict(latest_record._mapping) if latest_record else None
+                
+            except Exception as e:
+                logging.error(f"获取最新资金费率失败: {e}")
+                return None

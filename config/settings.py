@@ -32,4 +32,5 @@ class Config:
     def update_symbols(self):
         #self.SYMBOLS = self.market_analyzer.get_valid_symbols()
         self.SYMBOLS = ['BTC-USDT']
+        self.SYMBOLS_SWAP = ['BTC-USDT-SWAP']
         #self.SYMBOLS_SWAP = self.market_analyzer.get_valid_swap() 
