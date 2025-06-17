@@ -241,7 +241,7 @@ class MarketDataService(ExchangeBase):
         while True:
             await asyncio.gather(
                 self.update_market_data(),
-                ##self.update_swap_data()
+                self.update_swap_data()
             )
             await asyncio.sleep(60) #8小时更新一次
     

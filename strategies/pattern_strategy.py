@@ -170,10 +170,10 @@ class PatternStrategy:
         self.logger.info(f"Available days in pattern_stats: {list(pattern_stats.keys())}")
         
         # 检查是否是禁止交易的模式（基于前一天的模式）
-        if (previous_day == '周五' and pattern == 'continuous_rise') or \
-           (previous_day == '周六' and pattern == 'fall_then_rise'):
-            self.logger.info(f"Pattern {pattern} from {previous_day} is forbidden for trading on {current_day}")
-            return False, "none", 0
+        # if (previous_day == '周五' and pattern == 'continuous_rise') or \
+        #    (previous_day == '周六' and pattern == 'fall_then_rise'):
+        #     self.logger.info(f"Pattern {pattern} from {previous_day} is forbidden for trading on {current_day}")
+        #     return False, "none", 0
             
         # 检查前一天的模式统计数据来预测今天的表现
         if previous_day in pattern_stats and pattern in pattern_stats[previous_day]:

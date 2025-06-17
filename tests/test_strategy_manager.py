@@ -100,8 +100,8 @@ async def test_strategy_manager():
         # 测试交易信号生成
         print("3. 测试交易信号生成...")
         # 创建模拟价格历史
-        price_history = pd.Series([50000, 50100, 49900, 50200], 
-                                 index=pd.date_range('2024-01-01', periods=4, freq='H'))
+        price_history = pd.Series([50000, 50100], 
+                                 index=pd.date_range('2024-01-01', periods=2, freq='D'))
         
         signal = await strategy_manager.generate_trade_signal(50000, 'Monday', price_history)
         print(f"   交易信号: {signal}")
