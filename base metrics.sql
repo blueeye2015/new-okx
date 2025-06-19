@@ -645,3 +645,96 @@ ORDER BY
     pattern;
 END;
 $BODY$;
+
+-- Table: public.price_patterns
+
+-- DROP TABLE IF EXISTS public.price_patterns;
+
+CREATE TABLE IF NOT EXISTS public.price_patterns
+(
+    id integer NOT NULL DEFAULT nextval('price_patterns_id_seq'::regclass),
+    week_period text COLLATE pg_catalog."default" NOT NULL,
+    pattern text COLLATE pg_catalog."default" NOT NULL,
+    cases integer NOT NULL,
+    avg_next_return numeric(8,4) NOT NULL,
+    next_day_win_rate numeric(8,4) NOT NULL,
+    avg_current_return numeric(8,4) NOT NULL,
+    avg_movement numeric(8,4) NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    CONSTRAINT price_patterns_pkey PRIMARY KEY (id),
+    CONSTRAINT price_patterns_week_period_pattern_key UNIQUE (week_period, pattern)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.price_patterns
+    OWNER to postgres;
+
+
+    
+CREATE TABLE IF NOT EXISTS public.kline_data
+(
+    id integer NOT NULL DEFAULT nextval('kline_data_id_seq'::regclass),
+    "timestamp" timestamp with time zone,
+    open_price numeric(20,8),
+    high_price numeric(20,8),
+    low_price numeric(20,8),
+    close_price numeric(20,8),
+    volume numeric(20,8),
+    volume_currency numeric(20,8),
+    volume_currency_quote numeric(20,8),
+    is_confirmed boolean,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    symbol character varying(20) COLLATE pg_catalog."default",
+    CONSTRAINT kline_data_pkey PRIMARY KEY (id),
+    CONSTRAINT unique_key UNIQUE (symbol, "timestamp")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.kline_data
+    OWNER to postgres;
+-- Index: idx_kline_timestamp
+
+-- DROP INDEX IF EXISTS public.idx_kline_timestamp;
+
+CREATE INDEX IF NOT EXISTS idx_kline_timestamp
+    ON public.kline_data USING btree
+    ("timestamp" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
+CREATE TABLE IF NOT EXISTS public.active_positions
+(
+    id integer NOT NULL DEFAULT nextval('active_positions_id_seq'::regclass),
+    direction character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    entry_price numeric(20,8) NOT NULL,
+    size numeric(20,8) NOT NULL,
+    stop_loss numeric(20,8) NOT NULL,
+    take_profit numeric(20,8) NOT NULL,
+    entry_time timestamp without time zone NOT NULL,
+    pattern character varying(50) COLLATE pg_catalog."default",
+    day_of_week character varying(20) COLLATE pg_catalog."default",
+    created_at timestamp without time zone DEFAULT now(),
+    updated_at timestamp without time zone DEFAULT now(),
+    CONSTRAINT active_positions_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.active_positions
+    OWNER to postgres;
+
+ALTER TABLE crypto_prices
+ADD COLUMN date_period VARCHAR(10) 
+GENERATED ALWAYS AS (
+    CASE 
+        WHEN EXTRACT(MONTH FROM trade_date) = 1 AND EXTRACT(DAY FROM trade_date) <= 3 THEN '年初'
+        WHEN EXTRACT(MONTH FROM trade_date) = 12 AND EXTRACT(DAY FROM trade_date) >= 28 THEN '年末'
+        WHEN EXTRACT(MONTH FROM trade_date) IN (1,4,7,10) AND EXTRACT(DAY FROM trade_date) <= 3 THEN '季初'
+        WHEN EXTRACT(MONTH FROM trade_date) IN (3,6,9,12) AND EXTRACT(DAY FROM trade_date) >= 28 THEN '季末'
+        WHEN EXTRACT(DAY FROM trade_date) <= 3 THEN '月初'
+        WHEN EXTRACT(DAY FROM trade_date) >= 28 THEN '月末'
+		ELSE '其他'
+    END
+) STORED;
